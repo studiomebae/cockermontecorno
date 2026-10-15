@@ -1,6 +1,6 @@
-# Podere Montecorno
+# Allevamento Cocker Montecorno
 
-A responsive Italian and English website for Natascia’s English Cocker Spaniel breeding home in Grosseto, Tuscany. Built with Vite and plain JavaScript, with complete HTML generated before development and production builds so the content is available to search engines without executing JavaScript.
+A photographic Italian and English website for Natascia’s English Cocker Spaniel breeding home in Grosseto, Tuscany. The design uses beige, terracotta and dark brown, locally hosted Inter Tight and Source Serif 4, restrained copy, generous vertical spacing, and outer margins no wider than 25 pixels.
 
 ## Develop
 
@@ -11,43 +11,55 @@ npm ci --cache /tmp/montecorno-npm-cache
 npm run dev
 ```
 
-Italian: `/`. English: `/en/`. The default development port is 5173.
+The default development port is 5173. Each page is generated as complete HTML for visitors and search engines:
+
+| Page | Italian | English |
+| --- | --- | --- |
+| Home | `/` | `/en/` |
+| Puppies | `/cuccioli/` | `/en/puppies/` |
+| Gallery | `/galleria/` | `/en/gallery/` |
+| Story | `/storia/` | `/en/our-story/` |
+| Dogs | `/i-nostri-cani/` | `/en/our-dogs/` |
 
 ## Build and deploy
-
-Set `SITE_URL` to the final public HTTPS origin, without a path, before building:
 
 ```sh
 SITE_URL=https://your-domain.example npm run build
 npm run preview
 ```
 
-Deploy the `dist/` directory to a static web host. No database, API keys, form service, or server runtime is required. The `/en/` directory must be served as a normal directory index; no SPA fallback is required.
+Deploy `dist/` to a static host. No database, API keys, or server runtime is required. Serve directory indexes normally; no SPA fallback is needed. `SITE_URL` must be the final HTTPS origin without a path.
+
+The build generates unique translated titles/descriptions, canonical URLs and language alternates for each page, Open Graph metadata, business and page structured data, breadcrumbs, a puppy FAQ schema, `robots.txt`, and a bilingual sitemap containing all ten pages. Without `SITE_URL`, canonical URLs and the sitemap are omitted instead of inventing a domain.
 
 ### Netlify
 
-Import `studiomebae/cockermontecorno` from GitHub and select the `main` branch. The included `netlify.toml` sets Node.js 24, the build command, and the `dist` publish directory. No manual build settings are needed.
+Connect `studiomebae/cockermontecorno`, branch `main`. The included `netlify.toml` specifies Node 24, the build command, and `dist`. Netlify’s primary site URL (`URL`) is used automatically for SEO. An explicitly configured `SITE_URL` takes precedence. After making a custom domain primary, trigger a production rebuild to update canonical URLs and the sitemap.
 
-Netlify's primary site URL (`URL`) is automatically used for canonical URLs, language alternates, social images, and the sitemap. An explicitly configured `SITE_URL` takes precedence. When adding a custom domain, make it the primary domain and trigger a new production build so the SEO URLs update.
+## Content
 
-With `SITE_URL` set, the build includes absolute canonical and Open Graph URLs, language alternates, and `sitemap.xml`. `robots.txt` is always generated. Without a final domain, the build deliberately omits canonical URLs and the sitemap rather than inventing a production address. Submit the sitemap to Google Search Console after deployment.
+- `src/content.js`: Italian/English copy and actual business contact information.
+- `src/routes.js`: matching page routes and production origin validation.
+- `src/templates.js`: shared header, footer, page layouts, and dialogs.
+- `src/dogs.js`: ten **fictional demonstration profiles**, explicitly requested by the user. Each has a name, coat, birth year, pedigree flag and test flag. The visible page labels these records as examples. Replace with verified records before presenting them as actual breeding dogs. No individual health-test names are displayed.
+- `src/style.css`: responsive styles.
+- `src/main.js`: navigation, WhatsApp composer, coat filter, gallery lightbox.
+- `scripts/generate.mjs`: writes all ten HTML files before dev/build. Generated routes are ignored; edit the source templates rather than generated HTML.
 
-## Content and images
+General business facts and contact details were supplied by the user. The October 2026 litter is an enquiry invitation; confirm current availability with Natascia. The original source website remains linked in structured data under its existing URL.
 
-- Edit `src/content.js` for Italian and English copy, phone, email, and business facts.
-- `scripts/generate.mjs` generates both HTML pages. Generated `index.html` and `en/index.html` are ignored; edit the generator rather than its output.
-- `src/style.css` contains the responsive design; fonts and photographs are hosted locally.
-- Facts were provided by the owner in the setup conversation, referencing the existing Jimdo website. The October 2026 litter is an enquiry invitation, not a real-time inventory. Update both languages when it changes.
-- The two photographs were generated for this design. They are explicitly labelled as illustrative and do not represent Natascia’s own dogs or litters. Replace them with owner-supplied photos in `public/images/` before publication if available, and update image labels and alt text accordingly. The JPG version of the hero is used for social previews.
-- Enquiries prepare an encoded message to the supplied WhatsApp number. Visitors must send it themselves in WhatsApp. No data is submitted to or stored by this website. Telephone and email links use the supplied contact details.
-- Confirm privacy text and current business information before publishing.
+All displayed photographs were generated for the design and labelled as illustrative. They do not depict the breeder’s actual dogs. `public/images/cocker-portraits.webp` is a 5×2 contact sheet; each demonstration profile uses one distinct cell, cropped in CSS without downloading ten separate files. Replace these images with owner-supplied photographs when available. JPG versions of the hero and puppy photographs support social previews.
+
+The contact composer opens a message addressed to Natascia’s supplied WhatsApp number; visitors must send it in WhatsApp themselves. The website stores no form data and uses no analytics or marketing cookies. Telephone and email actions use the supplied contact details.
 
 ## Verify
 
 ```sh
-# First-time browser install on machines without system Chromium:
+# Only needed if neither system Chromium nor a Playwright browser is installed:
 npx playwright install chromium
 npm test
 ```
 
-The test runner builds the site and starts a production preview. It uses `/usr/bin/chromium` when available, otherwise Playwright’s installed browser. Ten checks across desktop and mobile cover static translated content, metadata, structured data, images, script errors, layouts from 360 to 1440 pixels, language and section navigation, FAQs, required enquiry fields, correctly encoded WhatsApp messages, and privacy controls. WhatsApp navigation is intercepted during tests so no real enquiry is sent.
+The runner builds with a reserved example domain and starts its own production preview on port 4173. Twenty-two browser checks across desktop and mobile cover all ten routes, fonts, margins, layouts at 360–1440 pixels, images, metadata, canonical URLs, language pairs, sitemap and internal links, the ten demonstration dog records and coat filtering, keyboard gallery controls, FAQs, WhatsApp form validation and encoding, and privacy controls. WhatsApp navigation is intercepted; no real message is sent.
+
+Run `npm run build` after testing if you want to replace the ignored local test output with a build for your own domain.

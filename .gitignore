@@ -1,7 +1,11 @@
 node_modules/
 dist/
 .npm/
-index.html
-en/index.html
+/index.html
+/en/
+/cuccioli/
+/galleria/
+/storia/
+/i-nostri-cani/
 test-results/
 playwright-report/

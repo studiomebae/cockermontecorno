@@ -1,5 +1,5 @@
 {
-  "name": "podere-montecorno",
+  "name": "allevamento-cocker-montecorno",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -15,7 +15,7 @@
     "vite": "^7.1.0"
   },
   "dependencies": {
-    "@fontsource/cormorant-garamond": "^5.2.0",
-    "@fontsource/dm-sans": "^5.2.0"
+    "@fontsource/inter-tight": "^5.3.0",
+    "@fontsource/source-serif-4": "^5.3.1"
   }
 }
