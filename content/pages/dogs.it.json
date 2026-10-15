@@ -22,5 +22,9 @@
   "dogCta": "Vieni a conoscerli",
   "checkYesReal": "Sì",
   "checkNo": "Non indicato",
-  "dogsEmpty": "Presto ti presenteremo i nostri cani. Nel frattempo, scrivici."
+  "dogsEmpty": "Presto ti presenteremo i nostri cani. Nel frattempo, scrivici.",
+  "sexLabel": "Sesso",
+  "maleLabel": "Maschio",
+  "femaleLabel": "Femmina",
+  "sexUnknown": "Non indicato"
 }

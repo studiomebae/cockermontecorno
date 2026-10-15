@@ -1,6 +1,8 @@
 import {test,expect} from '@playwright/test';
 import {pages,menuPages} from '../src/routes.js';
 import settings from '../content/settings.json' with {type:'json'};
+import {dogs as savedDogs} from '../cms/data.js';
+const activeDogs=savedDogs.filter(d=>!d.retired);
 
 for(const target of pages){
  test(`${target.key}: both languages are indexable, readable and responsive`,async({page,request})=>{
@@ -44,13 +46,13 @@ test('navigation opens separate pages and language switching preserves the page'
 
 test('active dog profiles exclude retired dogs and coat filtering works',async({page})=>{
  for(const path of ['/i-nostri-cani/','/en/our-dogs/']){
-  await page.goto(path);await expect(page.locator('.dog-card')).toHaveCount(8);await expect(page.locator('.demo-note')).toBeVisible();await expect(page.locator('.dog-name h2')).toHaveText(['Miele','Olimpia','Nora','Enora Holmes','Ortica','Otto','Ortica di Podere  Montecorno','Livia']);
+  await page.goto(path);await expect(page.locator('.dog-card')).toHaveCount(activeDogs.length);await expect(page.locator('.demo-note')).toBeVisible();await expect(page.locator('.dog-name h2')).toHaveText(activeDogs.map(d=>d.name.trim()));
   for(const card of await page.locator('.dog-card').all()){
-   await expect(card.locator('dl>div')).toHaveCount(2);await expect(card.locator('dl')).toContainText(/20\d\d/);await expect(card.locator('.dog-checks svg')).toHaveCount(2);
+   await expect(card.locator('dl>div')).toHaveCount(3);await expect(card.locator('dl')).toContainText(/20\d\d/);await expect(card.locator('.dog-checks svg')).toHaveCount(2);
   }
-  await page.getByLabel(path.startsWith('/en/')?'Coat':'Mantello',{exact:true}).selectOption('black');await expect(page.locator('.dog-card:visible')).toHaveCount(1);await expect(page.locator('#dog-count')).toHaveText('1');
-  await page.locator('#coat-filter').selectOption('golden');await expect(page.locator('.dog-card:visible')).toHaveCount(2);await expect(page.locator('#dog-count')).toHaveText('2');
-  await page.locator('#coat-filter').selectOption('all');await expect(page.locator('.dog-card:visible')).toHaveCount(8);
+  await page.getByLabel(path.startsWith('/en/')?'Coat':'Mantello',{exact:true}).selectOption('black');await expect(page.locator('.dog-card:visible')).toHaveCount(activeDogs.filter(d=>d.coat==='black').length);await expect(page.locator('#dog-count')).toHaveText(String(activeDogs.filter(d=>d.coat==='black').length));
+  await page.locator('#coat-filter').selectOption('golden');await expect(page.locator('.dog-card:visible')).toHaveCount(activeDogs.filter(d=>d.coat==='golden').length);await expect(page.locator('#dog-count')).toHaveText(String(activeDogs.filter(d=>d.coat==='golden').length));
+  await page.locator('#coat-filter').selectOption('all');await expect(page.locator('.dog-card:visible')).toHaveCount(activeDogs.length);
  }
 });
 
@@ -100,7 +102,7 @@ test('latest and planned litters show the supplied dates, colours and parents',a
 
 test('champions, retired dogs and placement conditions have dedicated pages',async({page})=>{
  await page.goto('/campioni/');await expect(page.locator('.dog-card')).toHaveCount(2);await expect(page.locator('.dog-awards')).toHaveCount(2);await expect(page.locator('.demo-note')).toBeVisible();
- await page.goto('/cani-ritirati/');await expect(page.locator('.dog-name h2')).toHaveText(['Bruno','Teo']);await expect(page.locator('.dog-description')).toHaveCount(2);
+ await page.goto('/cani-ritirati/');await expect(page.locator('.dog-name h2')).toHaveText(savedDogs.filter(d=>d.retired).map(d=>d.name.trim()));await expect(page.locator('.dog-description')).toHaveCount(2);
  await page.goto('/affido/');await expect(page.locator('.condition-list article')).toHaveCount(4);await expect(page.locator('.condition-list')).toContainText('accordo scritto');await expect(page.locator('.foster-area')).toContainText('tutta Italia');await expect(page.locator('.foster-dogs .empty-content')).toBeVisible();
  await page.locator('.foster-area [data-contact]').click();await expect(page.locator('#topic')).toHaveValue('L’affido di un cane');await page.keyboard.press('Escape');
 });

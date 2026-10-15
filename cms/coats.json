@@ -22,5 +22,57 @@
   "whiteRoan": {
     "it": "Bianco roano",
     "en": "White roan"
+  },
+  "roan": {
+    "it": "Roano",
+    "en": "Roan"
+  },
+  "blueRoan": {
+    "it": "Blu roano",
+    "en": "Blue roan"
+  },
+  "lemonRoan": {
+    "it": "Limone roano",
+    "en": "Lemon roan"
+  },
+  "liverRoan": {
+    "it": "Fegato roano",
+    "en": "Liver roan"
+  },
+  "liver": {
+    "it": "Fegato (cioccolato)",
+    "en": "Liver (chocolate)"
+  },
+  "blackTan": {
+    "it": "Nero focato",
+    "en": "Black & tan"
+  },
+  "liverTan": {
+    "it": "Fegato focato",
+    "en": "Liver & tan"
+  },
+  "lemonWhite": {
+    "it": "Bianco limone",
+    "en": "Lemon & white"
+  },
+  "liverWhite": {
+    "it": "Bianco fegato",
+    "en": "Liver & white"
+  },
+  "blackWhiteTan": {
+    "it": "Tricolore bianco nero focato",
+    "en": "Black, white & tan"
+  },
+  "liverWhiteTan": {
+    "it": "Tricolore bianco fegato focato",
+    "en": "Liver, white & tan"
+  },
+  "blueRoanTan": {
+    "it": "Blu roano focato",
+    "en": "Blue roan & tan"
+  },
+  "liverRoanTan": {
+    "it": "Fegato roano focato",
+    "en": "Liver roan & tan"
   }
 }

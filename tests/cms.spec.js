@@ -33,6 +33,18 @@ test('client can update a dog and hide it with a visibility switch',async({page}
  expect(data.name).toBe('Miele aggiornata');expect(data.born).toBe(2023);expect(data.published).toBe(false);expect(data.portrait).toBe(0);
 });
 
+test('client can select a new coat and sex, preview them and publish the dog',async({page})=>{
+ await openMemoryEditor(page,'#/collections/dog-records/entries/miele');
+ const sex=page.getByRole('combobox',{name:'Sesso (opzionale)',exact:true});
+ await sex.fill('Femmina');await sex.press('ArrowDown');await sex.press('Enter');
+ const coat=page.getByRole('combobox',{name:'Mantello',exact:true});
+ await coat.fill('Blu roano focato');await coat.press('ArrowDown');await coat.press('Enter');
+ await expect(page.frameLocator('iframe').locator('.preview')).toContainText('Sesso: Femmina');
+ await publish(page);
+ const dog=await page.evaluate(()=>JSON.parse(window.repoFiles.content.dogs['miele.json'].content));
+ expect(dog.sex).toBe('female');expect(dog.coat).toBe('blueRoanTan');
+});
+
 test('client can manage champions, retired dogs, placements and show results from one record',async({page})=>{
  await openMemoryEditor(page,'#/collections/dog-records/entries/miele');
  await page.getByRole('switch',{name:'Cane ritirato (opzionale)',exact:true}).click();

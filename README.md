@@ -54,7 +54,7 @@ Connect `studiomebae/cockermontecorno`, branch `main`. `netlify.toml` specifies 
 - `content/settings.json`: business contacts, branding, SEO location, main photographs and bilingual alt text.
 - `content/pages/{page}.{it|en}.json`: each page’s copy and SEO.
 - `content/common.{it|en}.json`: shared interface, contact and privacy copy.
-- `content/dogs/*.json`: records with name, coat, birth year, photo, pedigree/test flags, demonstration status, categories, bilingual description/show results, order and visibility. A retired dog leaves the active-dogs list; champion and placement flags are independent. All categories use the same record.
+- `content/dogs/*.json`: records with name, coat, optional male/female sex, birth year, photo, pedigree/test flags, demonstration status, categories, bilingual description/show results, order and visibility. A retired dog leaves the active-dogs list; champion and placement flags are independent. All categories use the same record. The optional sex selector supports male/female without assigning a value to existing dogs; unspecified records display a localized placeholder. The coat options cover solids, particolours, roans, tan markings and tricolours.
 - `content/gallery/*.json`: photos with Italian/English captions and descriptions, order and visibility.
 - `public/images/uploads/`: CMS-uploaded media.
 - `cms/collections.json`: stable CMS fields and validation schema.
@@ -78,6 +78,6 @@ npx playwright install chromium
 npm test
 ```
 
-Ten isolated content tests check edits to copy/SEO/photos/contacts, dog/gallery creation and visibility, empty states, safe text rendering and invalid-data rejection. Thirty-four public-site browser checks cover all sixteen localized pages, layouts, SEO, language switching, navigation, gallery, filters and contact actions. CMS browser checks cover production login routing, Italian editing/preview/publishing, dog visibility/categories/show results, litter dates/parents, guide/configuration and media uploads. Editor saves use an in-memory backend; OAuth is intercepted. They never push test edits or send real messages and do not prove production authentication is activated.
+Eleven isolated content tests check edits to copy/SEO/photos/contacts, dog/gallery creation and visibility, empty states, safe text rendering and invalid-data rejection. Thirty-four public-site browser checks cover all sixteen localized pages, layouts, SEO, language switching, navigation, gallery, filters and contact actions. CMS browser checks cover production login routing, Italian editing/preview/publishing, dog visibility/categories/show results, coat/sex selection, litter dates/parents, guide/configuration and media uploads. Editor saves use an in-memory backend; OAuth is intercepted. They never push test edits or send real messages and do not prove production authentication is activated.
 
 The browser runner uses a reserved canonical domain for its production preview on port 4173. Run `npm run build` afterwards to replace ignored local test output with a normal build. Generated HTML routes are ignored; edit content or templates rather than HTML output.

@@ -22,5 +22,9 @@
   "dogCta": "Come and meet them",
   "checkYesReal": "Yes",
   "checkNo": "Not listed",
-  "dogsEmpty": "Meet our dogs here soon. In the meantime, say hello."
+  "dogsEmpty": "Meet our dogs here soon. In the meantime, say hello.",
+  "sexLabel": "Sex",
+  "maleLabel": "Male",
+  "femaleLabel": "Female",
+  "sexUnknown": "Not specified"
 }

@@ -247,8 +247,77 @@
           {
             "label": "Bianco roano",
             "value": "whiteRoan"
+          },
+          {
+            "label": "Roano",
+            "value": "roan"
+          },
+          {
+            "label": "Blu roano",
+            "value": "blueRoan"
+          },
+          {
+            "label": "Limone roano",
+            "value": "lemonRoan"
+          },
+          {
+            "label": "Fegato roano",
+            "value": "liverRoan"
+          },
+          {
+            "label": "Fegato (cioccolato)",
+            "value": "liver"
+          },
+          {
+            "label": "Nero focato",
+            "value": "blackTan"
+          },
+          {
+            "label": "Fegato focato",
+            "value": "liverTan"
+          },
+          {
+            "label": "Bianco limone",
+            "value": "lemonWhite"
+          },
+          {
+            "label": "Bianco fegato",
+            "value": "liverWhite"
+          },
+          {
+            "label": "Tricolore bianco nero focato",
+            "value": "blackWhiteTan"
+          },
+          {
+            "label": "Tricolore bianco fegato focato",
+            "value": "liverWhiteTan"
+          },
+          {
+            "label": "Blu roano focato",
+            "value": "blueRoanTan"
+          },
+          {
+            "label": "Fegato roano focato",
+            "value": "liverRoanTan"
           }
         ]
+      },
+      {
+        "name": "sex",
+        "label": "Sesso",
+        "widget": "select",
+        "required": false,
+        "options": [
+          {
+            "label": "Maschio",
+            "value": "male"
+          },
+          {
+            "label": "Femmina",
+            "value": "female"
+          }
+        ],
+        "hint": "Seleziona il sesso confermato del cane. Lascia vuoto se non ancora indicato."
       },
       {
         "name": "born",
@@ -1823,6 +1892,26 @@
             "name": "dogsEmpty",
             "label": "Testo se non ci sono cani pubblicati",
             "widget": "string"
+          },
+          {
+            "name": "sexLabel",
+            "label": "Etichetta sesso",
+            "widget": "string"
+          },
+          {
+            "name": "maleLabel",
+            "label": "Etichetta maschio",
+            "widget": "string"
+          },
+          {
+            "name": "femaleLabel",
+            "label": "Etichetta femmina",
+            "widget": "string"
+          },
+          {
+            "name": "sexUnknown",
+            "label": "Sesso non indicato",
+            "widget": "string"
           }
         ]
       },
@@ -1948,6 +2037,26 @@
           {
             "name": "dogsEmpty",
             "label": "Testo se non ci sono cani pubblicati",
+            "widget": "string"
+          },
+          {
+            "name": "sexLabel",
+            "label": "Etichetta sesso",
+            "widget": "string"
+          },
+          {
+            "name": "maleLabel",
+            "label": "Etichetta maschio",
+            "widget": "string"
+          },
+          {
+            "name": "femaleLabel",
+            "label": "Etichetta femmina",
+            "widget": "string"
+          },
+          {
+            "name": "sexUnknown",
+            "label": "Sesso non indicato",
             "widget": "string"
           }
         ]

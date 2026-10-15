@@ -45,3 +45,13 @@ test('litter edits automatically update the home teaser and the puppy page',asyn
  const f=await fixture(t);await edit(f,'pages/puppies.it.json',d=>{d.currentLitter.readyPeriod='Fine dicembre 2026';d.nextLitter.period='Febbraio 2027';return d;});await generate(f);
  for(const path of ['index.html','cuccioli/index.html']){assert.match(await html(f,path),/Fine dicembre 2026/);assert.match(await html(f,path),/Febbraio 2027/);}
 });
+
+test('new coats and confirmed sexes render in both languages while older records remain unspecified',async t=>{
+ const f=await fixture(t);await generate(f);
+ assert.match(await html(f,'i-nostri-cani/index.html'),/<dt>Sesso<\/dt><dd>Non indicato<\/dd>/);
+ for(const [sex,coat,it,en] of [['male','blueRoanTan','Maschio','Male'],['female','liverWhiteTan','Femmina','Female']]){
+  await edit(f,'dogs/miele.json',d=>({...d,sex,coat,champion:true,retired:true,availableForFoster:true}));await generate(f);
+  for(const [path,label,value] of [['campioni/index.html','Sesso',it],['cani-ritirati/index.html','Sesso',it],['affido/index.html','Sesso',it],['en/champions/index.html','Sex',en]])assert.match(await html(f,path),new RegExp(`<dt>${label}</dt><dd>${value}</dd>`));
+ }
+ await edit(f,'dogs/miele.json',d=>({...d,sex:'invalid'}));await assert.rejects(generate(f),/opzione non riconosciuta/);
+});

@@ -15,7 +15,7 @@
    const nodes=[h('div',{className:'preview-brand',key:'brand'},presentation.business.name),h('h1',{style:{whiteSpace:'pre-line'},key:'title'},title)];
    if(image)nodes.push(h('img',{src:asset(getAsset,image),alt:'',key:'image'}));
    if(key==='dog-records'){
-    nodes.push(h('div',{className:'specs',key:'specs'},h('p',{},`Mantello: ${data.coat||'—'}`),h('p',{},`Anno di nascita: ${data.born||'—'}`),h('p',{},`Pedigree: ${data.pedigree?'✓':'—'} · Test: ${data.tests?'✓':'—'}`)));
+    nodes.push(h('div',{className:'specs',key:'specs'},h('p',{},`Mantello: ${data.coat||'—'}`),h('p',{},`Sesso: ${data.sex==='male'?'Maschio':data.sex==='female'?'Femmina':'Non indicato'}`),h('p',{},`Anno di nascita: ${data.born||'—'}`),h('p',{},`Pedigree: ${data.pedigree?'✓':'—'} · Test: ${data.tests?'✓':'—'}`)));
     for(const field of ['descriptionIt','descriptionEn','awardsIt','awardsEn'])if(data[field])nodes.push(h('p',{key:field},data[field]));
     const categories=[data.champion?'Campione':'',data.retired?'Ritirato':'',data.availableForFoster?'Affido':''].filter(Boolean);if(categories.length)nodes.push(h('p',{className:'preview-muted',key:'categories'},categories.join(' · ')));
     if(data.illustrative)nodes.push(h('p',{className:'demo',key:'demo'},'Scheda dimostrativa'));
