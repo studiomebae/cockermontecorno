@@ -1,12 +1,12 @@
 {
-  "name": "Arturo",
-  "coat": "golden",
-  "born": 2020,
-  "pedigree": true,
-  "tests": true,
-  "image": "",
-  "portrait": 4,
   "illustrative": true,
+  "tests": true,
+  "pedigree": true,
+  "born": 2023,
+  "name": "Enora Holmes ",
   "published": true,
-  "order": 50
+  "order": 50,
+  "image": "/images/uploads/img_8807.jpeg",
+  "portrait": 4,
+  "coat": "golden"
 }
