@@ -1,12 +1,12 @@
 {
-  "name": "Adele",
-  "coat": "golden",
-  "born": 2022,
-  "pedigree": true,
-  "tests": true,
-  "image": "",
-  "portrait": 7,
   "illustrative": true,
+  "tests": true,
+  "pedigree": true,
+  "born": 2022,
+  "name": "Ortica di Pidere Montecorno",
   "published": true,
-  "order": 80
+  "order": 80,
+  "image": "/images/uploads/img_2086.jpeg",
+  "portrait": 7,
+  "coat": "orangeRoan"
 }
