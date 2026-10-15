@@ -1,36 +1,36 @@
 {
   "business": {
-    "name": "Allevamento Cocker Montecorno",
-    "phone": "+39 347 335 1061",
-    "email": "allevamentomontecorno@gmail.com",
-    "source": "https://allevamento-podere-montecorno.jimdosite.com/",
+    "brandEyebrow": "ALLEVAMENTO COCKER",
+    "name": "Allevamento Cocker di Podere Montecorno",
     "contactName": "Natascia",
+    "phone": "+39 347 335 1061",
+    "brandTitle": "Podere Montecorno",
     "whatsapp": "393473351061",
     "town": "Grosseto",
     "region": "Toscana",
     "country": "IT",
-    "foundingYear": 2005,
-    "brandEyebrow": "ALLEVAMENTO COCKER",
-    "brandTitle": "Montecorno"
+    "source": "https://allevamento-podere-montecorno.jimdosite.com/",
+    "email": "allevamentomontecorno@gmail.com",
+    "foundingYear": 2005
   },
   "photos": {
     "hero": {
-      "src": "/images/cocker-editorial.webp",
-      "altIt": "Fotografia illustrativa: dettaglio del mantello fulvo e delle orecchie di un Cocker Spaniel Inglese",
-      "altEn": "Illustrative photograph: the golden coat and silky ear of an English Cocker Spaniel",
-      "illustrative": true
+      "src": "/images/uploads/img_5173.png",
+      "altIt": "Cocker Spaniel Inglese",
+      "altEn": "English Cocker Spaniel",
+      "illustrative": false
     },
     "puppies": {
-      "src": "/images/cocker-linen-puppies.webp",
-      "altIt": "Fotografia illustrativa: due cuccioli di Cocker Spaniel Inglese su un divano di lino",
-      "altEn": "Illustrative photograph: two English Cocker Spaniel puppies on an ivory linen sofa",
-      "illustrative": true
+      "src": "/images/uploads/071c1a48-ad35-4f64-be77-31fd05f568db.jpeg",
+      "altIt": "Nakano di Podere cucciolo Cocker spaniel inglese arancio roano",
+      "altEn": "Puppy orange english cocker spaniel ",
+      "illustrative": false
     },
     "portrait": {
-      "src": "/images/cocker-portrait.webp",
-      "altIt": "Fotografia illustrativa: Cocker Spaniel Inglese bianco arancio in una casa toscana",
-      "altEn": "Illustrative photograph: an orange and white English Cocker Spaniel in a Tuscan home",
-      "illustrative": true
+      "src": "/images/uploads/img_0841.jpeg",
+      "altIt": "Cocker Spaniel Inglese bianco arancio in una casa toscana",
+      "altEn": " an orange and white English Cocker Spaniel in a Tuscan home",
+      "illustrative": false
     }
   }
 }
