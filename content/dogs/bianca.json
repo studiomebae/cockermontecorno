@@ -2,6 +2,7 @@
   "illustrative": true,
   "tests": true,
   "pedigree": true,
+  "sex": "female",
   "born": 2023,
   "name": "Camilla di Podere Montecorno",
   "published": true,
