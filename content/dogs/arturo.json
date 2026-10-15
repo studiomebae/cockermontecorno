@@ -1,12 +1,19 @@
 {
-  "illustrative": true,
-  "tests": true,
-  "pedigree": true,
-  "born": 2023,
   "name": "Enora Holmes ",
-  "published": true,
-  "order": 50,
+  "coat": "golden",
+  "born": 2023,
+  "pedigree": true,
+  "tests": true,
   "image": "/images/uploads/img_8807.jpeg",
   "portrait": 4,
-  "coat": "golden"
+  "illustrative": true,
+  "published": true,
+  "order": 50,
+  "champion": false,
+  "retired": false,
+  "availableForFoster": false,
+  "descriptionIt": "",
+  "descriptionEn": "",
+  "awardsIt": "",
+  "awardsEn": ""
 }

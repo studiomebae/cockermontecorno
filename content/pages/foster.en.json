@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "English Cocker Spaniel Family Placements in Italy | Allevamento Cocker Montecorno",
+    "description": "Learn about English Cocker Spaniel family placements: introductory meetings, responsible families, transparent terms and a written agreement.",
+    "socialImage": ""
+  },
+  "fosterLabel": "FAMILY PLACEMENTS FOR OUR COCKERS",
+  "fosterTitle": {
+    "line1": "A family.",
+    "line2": "A bond that continues."
+  },
+  "fosterIntro": "We consider every placement carefully, looking for a suitable family and a stable, lasting home for each dog.",
+  "fosterEmpty": "Message us about placement opportunities. Each arrangement is considered individually.",
+  "fosterWhyTitle": "Why we choose\nwith such care.",
+  "fosterWhyText": "Welcoming an English Cocker Spaniel means sharing your life with them. We want to meet interested families, understand their lifestyle and expectations, and learn about the home the dog will live in.",
+  "fosterConditionsTitle": "Clear terms.\nA thoughtful beginning.",
+  "fosterAreaTitle": "Across Italy.\nAnd sometimes beyond.",
+  "fosterAreaText": "We do not impose a specific geographical area. We consider families throughout Italy and, where possible, abroad. Every situation is assessed individually.",
+  "fosterDogsTitle": "Family placement opportunities.",
+  "fosterCta": "Let’s discuss a placement",
+  "fosterConditions": [
+    {
+      "heading": "Time, care and a shared life",
+      "text": "We look for families who understand the commitment: companionship, attention, exercise, veterinary care and a life genuinely shared with the family."
+    },
+    {
+      "heading": "An introduction comes first",
+      "text": "Before a placement, we meet and consider together whether the arrangement suits both the dog and the family."
+    },
+    {
+      "heading": "Transparent costs and agreements",
+      "text": "Costs and financial terms are explained before confirming a puppy. A written agreement records the dog’s details, the family’s details and all agreed conditions."
+    },
+    {
+      "heading": "A relationship that continues",
+      "text": "The handover is not the end of the relationship. We remain available for advice, updates and support as the dog grows."
+    }
+  ]
+}

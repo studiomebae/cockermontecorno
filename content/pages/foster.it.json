@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "Affido Cocker Spaniel Inglese in Italia | Allevamento Cocker Montecorno",
+    "description": "Affido di Cocker Spaniel Inglesi: incontri conoscitivi, famiglie consapevoli, condizioni trasparenti e accordo scritto con Allevamento Cocker Montecorno.",
+    "socialImage": ""
+  },
+  "fosterLabel": "L’AFFIDO DEI NOSTRI COCKER",
+  "fosterTitle": {
+    "line1": "Una famiglia.",
+    "line2": "Un legame che continua."
+  },
+  "fosterIntro": "Valutiamo ogni affido con attenzione, cercando per ciascun cane una famiglia adatta e una sistemazione stabile nel tempo.",
+  "fosterEmpty": "Scrivici per conoscere le possibilità di affido: ogni percorso viene valutato personalmente.",
+  "fosterWhyTitle": "Perché scegliamo\ncon tanta cura.",
+  "fosterWhyText": "Accogliere un Cocker Spaniel significa condividere la vita con lui. Per questo vogliamo conoscere le persone interessate, il loro stile di vita, l’ambiente in cui vivrà il cane e le aspettative della famiglia.",
+  "fosterConditionsTitle": "Le condizioni,\ncon chiarezza.",
+  "fosterAreaTitle": "Da tutta Italia.\nAnche un po’ più in là.",
+  "fosterAreaText": "Non imponiamo una zona geografica specifica. Valutiamo famiglie da tutta Italia e, quando possibile, anche dall’estero. Ogni situazione viene considerata personalmente.",
+  "fosterDogsTitle": "I percorsi di affido.",
+  "fosterCta": "Parliamo dell’affido",
+  "fosterConditions": [
+    {
+      "heading": "Tempo, attenzioni e vita insieme",
+      "text": "Cerchiamo famiglie consapevoli dell’impegno: tempo, attenzioni, movimento, cure veterinarie e una vita realmente condivisa con la famiglia."
+    },
+    {
+      "heading": "Un incontro, prima di tutto",
+      "text": "Prima dell’affido ci conosciamo e valutiamo insieme se il percorso è adatto al cane e alla famiglia."
+    },
+    {
+      "heading": "Costi e accordi trasparenti",
+      "text": "Costi e condizioni economiche vengono comunicati prima della conferma. L’affido è formalizzato con un accordo scritto, che riporta i dati del cane, della famiglia e tutte le condizioni concordate."
+    },
+    {
+      "heading": "Un rapporto che continua",
+      "text": "La consegna non è la fine del rapporto: restiamo disponibili per consigli, aggiornamenti e supporto durante la crescita del cane."
+    }
+  ]
+}

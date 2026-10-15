@@ -9,7 +9,7 @@ const mobileNav=document.querySelector('#mobile-nav');
 function closeMenu(){mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false');}
 menuButton.addEventListener('click',()=>{const expanded=menuButton.getAttribute('aria-expanded')==='true';mobileNav.hidden=expanded;menuButton.setAttribute('aria-expanded',String(!expanded));});
 mobileNav.querySelectorAll('a,button').forEach(a=>a.addEventListener('click',closeMenu));
-window.matchMedia('(min-width: 1001px)').addEventListener('change',e=>{if(e.matches)closeMenu();});
+window.matchMedia('(min-width: 1101px)').addEventListener('change',e=>{if(e.matches)closeMenu();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
 const contactDialog=document.querySelector('#contact-dialog');
 document.querySelectorAll('[data-contact]').forEach(button=>button.addEventListener('click',()=>{

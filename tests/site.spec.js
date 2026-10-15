@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test';
-import {pages} from '../src/routes.js';
+import {pages,menuPages} from '../src/routes.js';
+import settings from '../content/settings.json' with {type:'json'};
 
 for(const target of pages){
  test(`${target.key}: both languages are indexable, readable and responsive`,async({page,request})=>{
@@ -8,17 +9,19 @@ for(const target of pages){
    const html=await response.text();expect(html).toContain('<h1>');expect(html).toContain('Allevamento Cocker Montecorno');
    await page.goto(path);await page.evaluate(()=>document.fonts.ready);
    await expect(page.locator('html')).toHaveAttribute('lang',lang);await expect(page.locator('h1')).toHaveCount(1);
-   expect(await page.locator('body').innerText()).not.toMatch(/podere/i);
+   await expect(page.locator('.site-header .brand strong')).toHaveText(settings.business.brandTitle);
+   await expect(page.locator('a[href^="tel:"]')).toHaveCount(0);await expect(page.locator('.phone-notice')).toContainText(/WhatsApp/);
    await expect(page.locator('meta[name="description"]')).toHaveAttribute('content',/.{65,}/);
    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href',`https://montecorno.example${path}`);
    for(const other of ['it','en'])await expect(page.locator(`link[hreflang="${other}"]`)).toHaveAttribute('href',`https://montecorno.example${target.paths[other]}`);
    const schemas=await page.locator('script[type="application/ld+json"]').evaluateAll(es=>es.flatMap(e=>JSON.parse(e.textContent)));
-   expect(schemas.find(s=>s['@type']==='LocalBusiness').name).toBe('Allevamento Cocker Montecorno');
+   expect(schemas.find(s=>s['@type']==='LocalBusiness').name).toBe(settings.business.name);
    if(target.key==='puppies')expect(schemas.find(s=>s['@type']==='FAQPage').mainEntity).toHaveLength(3);
    const fonts=await page.evaluate(()=>({body:getComputedStyle(document.body).fontFamily,title:getComputedStyle(document.querySelector('h1')).fontFamily,padding:parseFloat(getComputedStyle(document.querySelector('.wrap')).paddingLeft)}));
    expect(fonts.body).toContain('Inter Tight');expect(fonts.title).toContain('Source Serif 4');expect(fonts.padding).toBeLessThanOrEqual(25);
    for(const width of [360,390,768,1024,1440]){
     await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${path} overflow at ${width}px`).toBe(true);
+    if(width<=1100){const brand=await page.locator('.site-header .brand strong').boundingBox(),actions=await page.locator('.header-right').boundingBox();expect(brand.x+brand.width,`${path} branding overlaps navigation at ${width}px`).toBeLessThanOrEqual(actions.x-8);}
    }
    for(const img of await page.locator('main img:not(#lightbox-image)').all()){
     await img.scrollIntoViewIfNeeded();await expect.poll(()=>img.evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
@@ -39,15 +42,15 @@ test('navigation opens separate pages and language switching preserves the page'
  expect(errors).toEqual([]);
 });
 
-test('ten demonstration dog profiles contain requested fields and coat filtering works',async({page})=>{
+test('active dog profiles exclude retired dogs and coat filtering works',async({page})=>{
  for(const path of ['/i-nostri-cani/','/en/our-dogs/']){
-  await page.goto(path);await expect(page.locator('.dog-card')).toHaveCount(10);await expect(page.locator('.demo-note')).toBeVisible();await expect(page.locator('.dog-name h2')).toHaveText(['Miele','Olimpia','Bruno','Nora','Arturo','Bianca','Otto','Adele','Teo','Livia']);
+  await page.goto(path);await expect(page.locator('.dog-card')).toHaveCount(8);await expect(page.locator('.demo-note')).toBeVisible();await expect(page.locator('.dog-name h2')).toHaveText(['Miele','Olimpia','Nora','Enora Holmes','Ortica','Otto','Ortica di Podere  Montecorno','Livia']);
   for(const card of await page.locator('.dog-card').all()){
    await expect(card.locator('dl>div')).toHaveCount(2);await expect(card.locator('dl')).toContainText(/20\d\d/);await expect(card.locator('.dog-checks svg')).toHaveCount(2);
   }
-  await page.getByLabel(path.startsWith('/en/')?'Coat':'Mantello',{exact:true}).selectOption('black');await expect(page.locator('.dog-card:visible')).toHaveCount(2);await expect(page.locator('#dog-count')).toHaveText('2');
-  await page.locator('#coat-filter').selectOption('golden');await expect(page.locator('.dog-card:visible')).toHaveCount(3);await expect(page.locator('#dog-count')).toHaveText('3');
-  await page.locator('#coat-filter').selectOption('all');await expect(page.locator('.dog-card:visible')).toHaveCount(10);
+  await page.getByLabel(path.startsWith('/en/')?'Coat':'Mantello',{exact:true}).selectOption('black');await expect(page.locator('.dog-card:visible')).toHaveCount(1);await expect(page.locator('#dog-count')).toHaveText('1');
+  await page.locator('#coat-filter').selectOption('golden');await expect(page.locator('.dog-card:visible')).toHaveCount(2);await expect(page.locator('#dog-count')).toHaveText('2');
+  await page.locator('#coat-filter').selectOption('all');await expect(page.locator('.dog-card:visible')).toHaveCount(8);
  }
 });
 
@@ -71,18 +74,39 @@ test('puppy FAQ and WhatsApp enquiry validation work',async({page,context})=>{
  await expect(page.locator('.message-ready')).toBeVisible();await popup.close();await page.keyboard.press('Escape');await expect(page.locator('#contact-dialog')).toBeHidden();
 });
 
-test('all internal links resolve and the sitemap includes all ten pages',async({page,request})=>{
+test('all internal links resolve and the sitemap includes every translated page',async({page,request})=>{
  const paths=new Set(pages.flatMap(p=>Object.values(p.paths)));
- const sitemap=await request.get('/sitemap.xml');expect(sitemap.status()).toBe(200);const xml=await sitemap.text();expect(xml.match(/<loc>/g)).toHaveLength(10);
+ const sitemap=await request.get('/sitemap.xml');expect(sitemap.status()).toBe(200);const xml=await sitemap.text();expect(xml.match(/<loc>/g)).toHaveLength(paths.size);
  const titles=new Set();
  for(const path of paths){
   expect(xml).toContain(`<loc>https://montecorno.example${path}</loc>`);await page.goto(path);titles.add(await page.title());
   const bad=await page.locator('a[href^="/"] , a[href^="#"]').evaluateAll((links,allowed)=>links.map(a=>a.getAttribute('href')).filter(h=>h.startsWith('#')?!document.getElementById(h.slice(1)):!allowed.includes(h)),[...paths]);expect(bad).toEqual([]);
  }
- expect(titles.size).toBe(10);expect(await (await request.get('/robots.txt')).text()).toContain('Sitemap: https://montecorno.example/sitemap.xml');
+ expect(titles.size).toBe(paths.size);expect(await (await request.get('/robots.txt')).text()).toContain('Sitemap: https://montecorno.example/sitemap.xml');
 });
 
 test('contact details and privacy dialog remain available',async({page})=>{
- await page.goto('/en/our-story/');await expect(page.locator('a[href="tel:+393473351061"]')).toBeVisible();await expect(page.locator('a[href="mailto:allevamentomontecorno@gmail.com"]')).toBeVisible();
+ await page.goto('/en/our-story/');await expect(page.locator('a.whatsapp-number[href="https://wa.me/393473351061"]')).toBeVisible();await expect(page.locator('a[href="mailto:allevamentomontecorno@gmail.com"]')).toBeVisible();
  await page.getByRole('button',{name:'Privacy',exact:true}).click();await expect(page.locator('#privacy-dialog')).toBeVisible();await page.locator('#privacy-dialog').getByRole('button',{name:'Close',exact:true}).click();await expect(page.locator('#privacy-dialog')).toBeHidden();
+});
+
+test('latest and planned litters show the supplied dates, colours and parents',async({page})=>{
+ for(const [path,ready,next] of [['/cuccioli/','Metà dicembre 2026','Gennaio 2027'],['/en/puppies/','Mid-December 2026','January 2027']]){
+  await page.goto(path);await expect(page.locator('.current-litter h2')).toContainText(/(Ottobre|October) 2026/);await expect(page.locator('.ready-banner h2')).toHaveText(ready);await expect(page.locator('.planned-heading h2')).toHaveText(next);
+  await expect(page.locator('.litter-parents')).toContainText('Henora di Podere Montecorno');await expect(page.locator('.litter-parents')).toContainText('Isidoro di Podere Montecorno');
+  await expect(page.locator('.litter-colours')).toContainText(path.startsWith('/en/')?'Golden.':'Fulve.');await expect(page.locator('.expected-colours')).toContainText(path.startsWith('/en/')?'Black and white':'Bianco nero');
+ }
+});
+
+test('champions, retired dogs and placement conditions have dedicated pages',async({page})=>{
+ await page.goto('/campioni/');await expect(page.locator('.dog-card')).toHaveCount(2);await expect(page.locator('.dog-awards')).toHaveCount(2);await expect(page.locator('.demo-note')).toBeVisible();
+ await page.goto('/cani-ritirati/');await expect(page.locator('.dog-name h2')).toHaveText(['Bruno','Teo']);await expect(page.locator('.dog-description')).toHaveCount(2);
+ await page.goto('/affido/');await expect(page.locator('.condition-list article')).toHaveCount(4);await expect(page.locator('.condition-list')).toContainText('accordo scritto');await expect(page.locator('.foster-area')).toContainText('tutta Italia');await expect(page.locator('.foster-dogs .empty-content')).toBeVisible();
+ await page.locator('.foster-area [data-contact]').click();await expect(page.locator('#topic')).toHaveValue('L’affido di un cane');await page.keyboard.press('Escape');
+});
+
+test('page links stay on the left and mobile navigation uses a three-line hamburger',async({page,isMobile})=>{
+ await page.goto('/');
+ if(isMobile){await expect(page.locator('.menu-button>span')).toHaveCount(3);await page.locator('.menu-button').click();await expect(page.locator('#mobile-nav a')).toHaveCount(menuPages.length);await page.locator('#mobile-nav a[href="/affido/"]').click();await expect(page).toHaveURL(/\/affido\/$/);}
+ else {await expect(page.locator('.header-left a')).toHaveCount(menuPages.length);await expect(page.locator('.header-right a')).toHaveCount(2);await expect(page.locator('.header-right [data-contact]')).toBeVisible();}
 });

@@ -239,6 +239,14 @@
           {
             "label": "Bianco arancio roano",
             "value": "orangeRoan"
+          },
+          {
+            "label": "Bianco nero",
+            "value": "blackWhite"
+          },
+          {
+            "label": "Bianco roano",
+            "value": "whiteRoan"
           }
         ]
       },
@@ -288,6 +296,52 @@
         "name": "portrait",
         "label": "Ritratto dimostrativo interno",
         "widget": "hidden",
+        "required": false
+      },
+      {
+        "name": "champion",
+        "label": "Mostra tra i campioni",
+        "widget": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "retired",
+        "label": "Cane ritirato",
+        "widget": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "availableForFoster",
+        "label": "Valutiamo l’affido per questo cane",
+        "widget": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "descriptionIt",
+        "label": "Descrizione del cane — Italiano",
+        "widget": "text",
+        "required": false
+      },
+      {
+        "name": "descriptionEn",
+        "label": "Descrizione del cane — English",
+        "widget": "text",
+        "required": false
+      },
+      {
+        "name": "awardsIt",
+        "label": "Gare vinte e riconoscimenti — Italiano",
+        "widget": "text",
+        "required": false,
+        "hint": "Inserisci esposizione, anno e risultato verificato. Puoi andare a capo."
+      },
+      {
+        "name": "awardsEn",
+        "label": "Gare vinte e riconoscimenti — English",
+        "widget": "text",
         "required": false
       }
     ]
@@ -734,24 +788,134 @@
             "widget": "text"
           },
           {
-            "name": "litter",
-            "label": "Periodo della cucciolata",
-            "widget": "string"
+            "name": "currentLitter",
+            "label": "Ultima cucciolata: nascita e consegna",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "label",
+                "label": "Sopratitolo",
+                "widget": "string"
+              },
+              {
+                "name": "bornLabel",
+                "label": "Etichetta nascita",
+                "widget": "string"
+              },
+              {
+                "name": "bornPeriod",
+                "label": "Periodo di nascita",
+                "widget": "string"
+              },
+              {
+                "name": "readyLabel",
+                "label": "Etichetta disponibilità",
+                "widget": "string"
+              },
+              {
+                "name": "readyPeriod",
+                "label": "Periodo pronto per la famiglia",
+                "widget": "string"
+              },
+              {
+                "name": "intro",
+                "label": "Descrizione",
+                "widget": "text"
+              },
+              {
+                "name": "malesLabel",
+                "label": "Etichetta maschi",
+                "widget": "string"
+              },
+              {
+                "name": "males",
+                "label": "Mantelli maschi",
+                "widget": "string"
+              },
+              {
+                "name": "femalesLabel",
+                "label": "Etichetta femmine",
+                "widget": "string"
+              },
+              {
+                "name": "females",
+                "label": "Mantelli femmine",
+                "widget": "string"
+              },
+              {
+                "name": "availability",
+                "label": "Nota disponibilità e WhatsApp",
+                "widget": "text"
+              },
+              {
+                "name": "image",
+                "label": "Fotografia (facoltativa)",
+                "widget": "image",
+                "required": false
+              }
+            ]
           },
           {
-            "name": "litterLabel",
-            "label": "Etichetta della cucciolata",
-            "widget": "string"
-          },
-          {
-            "name": "colours",
-            "label": "Mantelli e informazioni della cucciolata",
-            "widget": "string"
-          },
-          {
-            "name": "availability",
-            "label": "Nota sulla disponibilità",
-            "widget": "string"
+            "name": "nextLitter",
+            "label": "Prossima cucciolata: genitori e colori",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "label",
+                "label": "Sopratitolo",
+                "widget": "string"
+              },
+              {
+                "name": "period",
+                "label": "Periodo previsto",
+                "widget": "string"
+              },
+              {
+                "name": "intro",
+                "label": "Descrizione",
+                "widget": "text"
+              },
+              {
+                "name": "coloursLabel",
+                "label": "Etichetta colori",
+                "widget": "string"
+              },
+              {
+                "name": "colours",
+                "label": "Colori previsti",
+                "widget": "string"
+              },
+              {
+                "name": "parentsLabel",
+                "label": "Titolo genitori",
+                "widget": "string"
+              },
+              {
+                "name": "motherLabel",
+                "label": "Etichetta mamma",
+                "widget": "string"
+              },
+              {
+                "name": "mother",
+                "label": "Nome completo della mamma",
+                "widget": "string"
+              },
+              {
+                "name": "fatherLabel",
+                "label": "Etichetta papà",
+                "widget": "string"
+              },
+              {
+                "name": "father",
+                "label": "Nome completo del papà",
+                "widget": "string"
+              },
+              {
+                "name": "note",
+                "label": "Nota sulle previsioni",
+                "widget": "text"
+              }
+            ]
           },
           {
             "name": "puppyCta",
@@ -895,24 +1059,134 @@
             "widget": "text"
           },
           {
-            "name": "litter",
-            "label": "Periodo della cucciolata",
-            "widget": "string"
+            "name": "currentLitter",
+            "label": "Ultima cucciolata: nascita e consegna",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "label",
+                "label": "Sopratitolo",
+                "widget": "string"
+              },
+              {
+                "name": "bornLabel",
+                "label": "Etichetta nascita",
+                "widget": "string"
+              },
+              {
+                "name": "bornPeriod",
+                "label": "Periodo di nascita",
+                "widget": "string"
+              },
+              {
+                "name": "readyLabel",
+                "label": "Etichetta disponibilità",
+                "widget": "string"
+              },
+              {
+                "name": "readyPeriod",
+                "label": "Periodo pronto per la famiglia",
+                "widget": "string"
+              },
+              {
+                "name": "intro",
+                "label": "Descrizione",
+                "widget": "text"
+              },
+              {
+                "name": "malesLabel",
+                "label": "Etichetta maschi",
+                "widget": "string"
+              },
+              {
+                "name": "males",
+                "label": "Mantelli maschi",
+                "widget": "string"
+              },
+              {
+                "name": "femalesLabel",
+                "label": "Etichetta femmine",
+                "widget": "string"
+              },
+              {
+                "name": "females",
+                "label": "Mantelli femmine",
+                "widget": "string"
+              },
+              {
+                "name": "availability",
+                "label": "Nota disponibilità e WhatsApp",
+                "widget": "text"
+              },
+              {
+                "name": "image",
+                "label": "Fotografia (facoltativa)",
+                "widget": "image",
+                "required": false
+              }
+            ]
           },
           {
-            "name": "litterLabel",
-            "label": "Etichetta della cucciolata",
-            "widget": "string"
-          },
-          {
-            "name": "colours",
-            "label": "Mantelli e informazioni della cucciolata",
-            "widget": "string"
-          },
-          {
-            "name": "availability",
-            "label": "Nota sulla disponibilità",
-            "widget": "string"
+            "name": "nextLitter",
+            "label": "Prossima cucciolata: genitori e colori",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "label",
+                "label": "Sopratitolo",
+                "widget": "string"
+              },
+              {
+                "name": "period",
+                "label": "Periodo previsto",
+                "widget": "string"
+              },
+              {
+                "name": "intro",
+                "label": "Descrizione",
+                "widget": "text"
+              },
+              {
+                "name": "coloursLabel",
+                "label": "Etichetta colori",
+                "widget": "string"
+              },
+              {
+                "name": "colours",
+                "label": "Colori previsti",
+                "widget": "string"
+              },
+              {
+                "name": "parentsLabel",
+                "label": "Titolo genitori",
+                "widget": "string"
+              },
+              {
+                "name": "motherLabel",
+                "label": "Etichetta mamma",
+                "widget": "string"
+              },
+              {
+                "name": "mother",
+                "label": "Nome completo della mamma",
+                "widget": "string"
+              },
+              {
+                "name": "fatherLabel",
+                "label": "Etichetta papà",
+                "widget": "string"
+              },
+              {
+                "name": "father",
+                "label": "Nome completo del papà",
+                "widget": "string"
+              },
+              {
+                "name": "note",
+                "label": "Nota sulle previsioni",
+                "widget": "text"
+              }
+            ]
           },
           {
             "name": "puppyCta",
@@ -1719,6 +1993,21 @@
                 "name": "dogs",
                 "label": "Cani",
                 "widget": "string"
+              },
+              {
+                "name": "champions",
+                "label": "Campioni",
+                "widget": "string"
+              },
+              {
+                "name": "retired",
+                "label": "Cani ritirati",
+                "widget": "string"
+              },
+              {
+                "name": "foster",
+                "label": "Affido",
+                "widget": "string"
               }
             ]
           },
@@ -1749,11 +2038,6 @@
                 "widget": "string"
               },
               {
-                "name": "call",
-                "label": "Pulsante chiama",
-                "widget": "string"
-              },
-              {
                 "name": "footerLine",
                 "label": "Descrizione nel piè di pagina",
                 "widget": "string"
@@ -1776,6 +2060,11 @@
               {
                 "name": "imageDisclaimer",
                 "label": "Nota sulle immagini illustrative",
+                "widget": "string"
+              },
+              {
+                "name": "phoneNotice",
+                "label": "Nota obbligatoria: solo messaggi WhatsApp",
                 "widget": "string"
               }
             ]
@@ -1946,6 +2235,21 @@
                 "name": "dogs",
                 "label": "Cani",
                 "widget": "string"
+              },
+              {
+                "name": "champions",
+                "label": "Campioni",
+                "widget": "string"
+              },
+              {
+                "name": "retired",
+                "label": "Cani ritirati",
+                "widget": "string"
+              },
+              {
+                "name": "foster",
+                "label": "Affido",
+                "widget": "string"
               }
             ]
           },
@@ -1976,11 +2280,6 @@
                 "widget": "string"
               },
               {
-                "name": "call",
-                "label": "Pulsante chiama",
-                "widget": "string"
-              },
-              {
                 "name": "footerLine",
                 "label": "Descrizione nel piè di pagina",
                 "widget": "string"
@@ -2003,6 +2302,11 @@
               {
                 "name": "imageDisclaimer",
                 "label": "Nota sulle immagini illustrative",
+                "widget": "string"
+              },
+              {
+                "name": "phoneNotice",
+                "label": "Nota obbligatoria: solo messaggi WhatsApp",
                 "widget": "string"
               }
             ]
@@ -2133,6 +2437,526 @@
                 "name": "discover",
                 "label": "Scopri",
                 "widget": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "champions",
+    "label": "Pagina campioni",
+    "files": [
+      {
+        "name": "champions-it",
+        "label": "Italiano",
+        "file": "content/pages/champions.it.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine social",
+                "widget": "image",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "championsLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "championsTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "championsIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "championsEmpty",
+            "label": "Testo senza schede pubblicate",
+            "widget": "text"
+          },
+          {
+            "name": "championsResultsLabel",
+            "label": "Titolo del palmarès",
+            "widget": "string"
+          },
+          {
+            "name": "championsResultsPending",
+            "label": "Nota senza risultati verificati",
+            "widget": "text"
+          }
+        ]
+      },
+      {
+        "name": "champions-en",
+        "label": "English",
+        "file": "content/pages/champions.en.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine social",
+                "widget": "image",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "championsLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "championsTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "championsIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "championsEmpty",
+            "label": "Testo senza schede pubblicate",
+            "widget": "text"
+          },
+          {
+            "name": "championsResultsLabel",
+            "label": "Titolo del palmarès",
+            "widget": "string"
+          },
+          {
+            "name": "championsResultsPending",
+            "label": "Nota senza risultati verificati",
+            "widget": "text"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "retired",
+    "label": "Pagina cani ritirati",
+    "files": [
+      {
+        "name": "retired-it",
+        "label": "Italiano",
+        "file": "content/pages/retired.it.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine social",
+                "widget": "image",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "retiredLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "retiredTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "retiredIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "retiredEmpty",
+            "label": "Testo senza schede pubblicate",
+            "widget": "text"
+          }
+        ]
+      },
+      {
+        "name": "retired-en",
+        "label": "English",
+        "file": "content/pages/retired.en.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine social",
+                "widget": "image",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "retiredLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "retiredTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "retiredIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "retiredEmpty",
+            "label": "Testo senza schede pubblicate",
+            "widget": "text"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "foster",
+    "label": "Affido e condizioni",
+    "files": [
+      {
+        "name": "foster-it",
+        "label": "Italiano",
+        "file": "content/pages/foster.it.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine social",
+                "widget": "image",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "fosterLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "fosterTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "fosterIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "fosterEmpty",
+            "label": "Testo senza schede pubblicate",
+            "widget": "text"
+          },
+          {
+            "name": "fosterWhyTitle",
+            "label": "Titolo della filosofia di affido",
+            "widget": "text"
+          },
+          {
+            "name": "fosterWhyText",
+            "label": "Perché scegliamo con cura",
+            "widget": "text"
+          },
+          {
+            "name": "fosterConditionsTitle",
+            "label": "Titolo delle condizioni",
+            "widget": "text"
+          },
+          {
+            "name": "fosterAreaTitle",
+            "label": "Titolo della zona geografica",
+            "widget": "text"
+          },
+          {
+            "name": "fosterAreaText",
+            "label": "Famiglie dall’Italia e dall’estero",
+            "widget": "text"
+          },
+          {
+            "name": "fosterDogsTitle",
+            "label": "Titolo delle schede in affido",
+            "widget": "text"
+          },
+          {
+            "name": "fosterCta",
+            "label": "Pulsante informazioni",
+            "widget": "text"
+          },
+          {
+            "name": "fosterConditions",
+            "label": "Condizioni per l’affido",
+            "widget": "list",
+            "fields": [
+              {
+                "name": "heading",
+                "label": "Titolo",
+                "widget": "string"
+              },
+              {
+                "name": "text",
+                "label": "Descrizione",
+                "widget": "text"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "foster-en",
+        "label": "English",
+        "file": "content/pages/foster.en.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine social",
+                "widget": "image",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "fosterLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "fosterTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "fosterIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "fosterEmpty",
+            "label": "Testo senza schede pubblicate",
+            "widget": "text"
+          },
+          {
+            "name": "fosterWhyTitle",
+            "label": "Titolo della filosofia di affido",
+            "widget": "text"
+          },
+          {
+            "name": "fosterWhyText",
+            "label": "Perché scegliamo con cura",
+            "widget": "text"
+          },
+          {
+            "name": "fosterConditionsTitle",
+            "label": "Titolo delle condizioni",
+            "widget": "text"
+          },
+          {
+            "name": "fosterAreaTitle",
+            "label": "Titolo della zona geografica",
+            "widget": "text"
+          },
+          {
+            "name": "fosterAreaText",
+            "label": "Famiglie dall’Italia e dall’estero",
+            "widget": "text"
+          },
+          {
+            "name": "fosterDogsTitle",
+            "label": "Titolo delle schede in affido",
+            "widget": "text"
+          },
+          {
+            "name": "fosterCta",
+            "label": "Pulsante informazioni",
+            "widget": "text"
+          },
+          {
+            "name": "fosterConditions",
+            "label": "Condizioni per l’affido",
+            "widget": "list",
+            "fields": [
+              {
+                "name": "heading",
+                "label": "Titolo",
+                "widget": "string"
+              },
+              {
+                "name": "text",
+                "label": "Descrizione",
+                "widget": "text"
               }
             ]
           }

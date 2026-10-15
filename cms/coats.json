@@ -14,5 +14,13 @@
   "orangeRoan": {
     "it": "Bianco arancio roano",
     "en": "Orange roan"
+  },
+  "blackWhite": {
+    "it": "Bianco nero",
+    "en": "Black & white"
+  },
+  "whiteRoan": {
+    "it": "Bianco roano",
+    "en": "White roan"
   }
 }

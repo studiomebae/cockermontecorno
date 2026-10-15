@@ -4,23 +4,26 @@
     "puppies": "Puppies",
     "gallery": "Gallery",
     "story": "Our story",
-    "dogs": "Our dogs"
+    "dogs": "Our dogs",
+    "champions": "Champions",
+    "retired": "Retired dogs",
+    "foster": "Family placements"
   },
   "contactSection": {
     "contactLabel": "LOVELY THINGS START WITH HELLO.",
     "contactTitle": "Shall we meet?",
-    "contactText": "A little curiosity or the dream of a new best friend. Natascia is here.",
+    "contactText": "A little curiosity or the dream of a new best friend. Message Natascia: we reply to WhatsApp messages only.",
     "whatsapp": "Write to Natascia",
-    "call": "Call",
     "footerLine": "English Cocker Spaniels. A family passion.",
     "location": "Grosseto, Tuscany · Italy",
     "recognition": "Since 2005 · ENCI and FCI recognition since 2010",
     "privacy": "Privacy",
-    "imageDisclaimer": "Illustrative photographs."
+    "imageDisclaimer": "Illustrative photographs.",
+    "phoneNotice": "WhatsApp messages only · We do not answer calls"
   },
   "enquiry": {
     "dialogTitle": "Let’s start with hello.",
-    "dialogText": "Prepare your message for Natascia. You can review and send it in WhatsApp.",
+    "dialogText": "Prepare your message for Natascia. We reply to WhatsApp messages only, not calls.",
     "nameLabel": "Your name",
     "namePlaceholder": "What’s your name?",
     "topicLabel": "Let’s talk about",
@@ -29,7 +32,8 @@
       "A visit to meet you",
       "Our dogs",
       "Visiting from abroad",
-      "Another question"
+      "Another question",
+      "A family placement"
     ],
     "messageLabel": "Your message",
     "messagePlaceholder": "Tell us a little about yourself…",

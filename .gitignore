@@ -13,3 +13,7 @@ playwright-report/
 /public/admin/locale-it.js
 /public/admin/config.json
 /public/admin/preview-settings.json
+
+/campioni/
+/cani-ritirati/
+/affido/

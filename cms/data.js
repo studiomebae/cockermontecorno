@@ -1,6 +1,7 @@
 import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {resolve,join} from 'node:path';
+import {pages} from '../src/routes.js';
 export const projectRoot=fileURLToPath(new URL('../',import.meta.url));
 export const contentRoot=process.env.MONTECORNO_CONTENT_ROOT?resolve(process.env.MONTECORNO_CONTENT_ROOT):join(projectRoot,'content');
 export const collections=JSON.parse(readFileSync(new URL('./collections.json',import.meta.url),'utf8'));
@@ -37,12 +38,12 @@ export const dogs=allDogs.filter(d=>d.published);
 export const photos=allGallery.filter(p=>p.published);
 export const content={};
 export const seoDetails={};
-const pairKeys=new Set(['heroTitle','puppiesTitle','galleryTitle','storyTitle','dogsTitle']);
+const pairKeys=new Set(['heroTitle','puppiesTitle','galleryTitle','storyTitle','dogsTitle','championsTitle','retiredTitle','fosterTitle']);
 for(const lang of ['it','en']){
  const common=fileData(`content/common.${lang}.json`);
  const c={nav:common.nav,...common.contactSection,...common.enquiry,...common.privacyNotice,...common.interface,seo:{}};
  seoDetails[lang]={};
- for(const page of ['home','puppies','gallery','story','dogs']){
+ for(const {key:page} of pages){
   const data=fileData(`content/pages/${page}.${lang}.json`);
   c.seo[page]=[data.seo.title,data.seo.description];seoDetails[lang][page]=data.seo;
   for(const [key,value] of Object.entries(data)){

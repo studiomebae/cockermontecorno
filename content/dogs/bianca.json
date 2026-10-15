@@ -1,12 +1,19 @@
 {
-  "illustrative": true,
-  "tests": true,
-  "pedigree": true,
-  "born": 2023,
   "name": "Ortica",
-  "published": true,
-  "order": 60,
+  "coat": "orangeRoan",
+  "born": 2023,
+  "pedigree": true,
+  "tests": true,
   "image": "",
   "portrait": 5,
-  "coat": "orangeRoan"
+  "illustrative": true,
+  "published": true,
+  "order": 60,
+  "champion": false,
+  "retired": false,
+  "availableForFoster": false,
+  "descriptionIt": "",
+  "descriptionEn": "",
+  "awardsIt": "",
+  "awardsEn": ""
 }

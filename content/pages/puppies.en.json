@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "English Cocker Spaniel Puppies in Tuscany, Italy | Allevamento Cocker Montecorno",
-    "description": "Discover English Cocker Spaniel puppies at Allevamento Cocker Montecorno, Grosseto. October 2026 litter enquiries, ENCI/FCI pedigrees and family visits in Tuscany.",
+    "description": "English Cocker Spaniel puppies born in early October 2026, ready from mid-December. Next litter expected in January 2027 in Grosseto, Tuscany.",
     "socialImage": ""
   },
   "puppiesLabel": "ENGLISH COCKER SPANIEL PUPPIES",
@@ -10,10 +10,6 @@
     "line2": "beginnings."
   },
   "puppiesIntro": "A new best friend isn’t chosen in a hurry. You meet, get to know each other. Then, one day, it just feels right.",
-  "litter": "October 2026",
-  "litterLabel": "THE NEXT LITTER",
-  "colours": "Orange and white and orange roan males. Golden females.",
-  "availability": "Ask Natascia for current availability.",
   "puppyCta": "Let’s talk puppies",
   "careTitle": "Ready for life.\nTogether with you.",
   "careText": "Puppies join their families after 60 days of age, with thoughtful care and an introductory visit to our breeding home.",
@@ -44,16 +40,43 @@
   "faqs": [
     {
       "question": "When can a puppy join our family?",
-      "answer": "After 60 days of age, following an introductory visit. International travel must also meet the health requirements and rules of the destination country."
+      "answer": "The litter born in early October 2026 will be ready from mid-December 2026, following an introductory meeting. International travel must also meet the health requirements and rules of the destination country."
     },
     {
       "question": "How do I check availability?",
-      "answer": "Please contact Natascia directly. The listed litter is October 2026; availability and timing are confirmed together."
+      "answer": "Message Natascia on WhatsApp; we do not answer calls. The October 2026 litter includes orange and white and white-roan males, and golden females. The next litter is expected in January 2027, with black and white and orange and white colours."
     },
     {
       "question": "What comes with a puppy?",
       "answer": "An ENCI/FCI pedigree, vaccinations, microchip, deworming, and parasite treatment. Natascia will explain the documents and care for your individual puppy."
     }
   ],
-  "faqTitle": "Before we meet."
+  "faqTitle": "Before we meet.",
+  "currentLitter": {
+    "label": "OUR LATEST LITTER",
+    "bornLabel": "Born in early",
+    "bornPeriod": "October 2026",
+    "readyLabel": "Ready from",
+    "readyPeriod": "Mid-December 2026",
+    "intro": "Little English Cocker Spaniels growing up with us, day by day. They will be ready to join their new families from mid-December 2026.",
+    "malesLabel": "Males",
+    "males": "Orange and white, and white roan.",
+    "femalesLabel": "Females",
+    "females": "Golden.",
+    "availability": "Message Natascia on WhatsApp for current availability.",
+    "image": ""
+  },
+  "nextLitter": {
+    "label": "THE NEXT CHAPTER",
+    "period": "January 2027",
+    "intro": "Our next litter is expected in January 2027. A new beginning to look forward to, with the same thoughtful care.",
+    "coloursLabel": "Expected colours",
+    "colours": "Black and white, and orange and white.",
+    "parentsLabel": "Parents of the planned litter",
+    "motherLabel": "Mother",
+    "mother": "Henora di Podere Montecorno",
+    "fatherLabel": "Father",
+    "father": "Isidoro di Podere Montecorno",
+    "note": "Timing and colours are expected, not guaranteed. Message us on WhatsApp for updates."
+  }
 }

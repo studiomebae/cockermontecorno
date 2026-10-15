@@ -12,7 +12,7 @@ async function edit(f,path,change){const full=join(f.content,path);const data=JS
 async function generate(f){return run(process.execPath,[join(root,'scripts/generate.mjs')],{cwd:f.output,env:{...process.env,MONTECORNO_CONTENT_ROOT:f.content,SITE_URL:'https://montecorno.example'}});}
 const html=(f,path='index.html')=>readFile(join(f.output,path),'utf8');
 
-test('existing content builds ten pages with original business contacts',async t=>{const f=await fixture(t);await generate(f);assert.match(await html(f),/Una vita insieme\./);assert.match(await html(f,'en/index.html'),/A life together\./);assert.match(await html(f),/data-whatsapp="393473351061"/);assert.equal((await html(f,'i-nostri-cani/index.html')).match(/class="dog-card"/g).length,10);});
+test('existing content builds translated pages with original business contacts',async t=>{const f=await fixture(t);await generate(f);assert.match(await html(f),/Una vita insieme\./);assert.match(await html(f,'en/index.html'),/A life together\./);assert.match(await html(f),/data-whatsapp="393473351061"/);assert.equal((await html(f,'i-nostri-cani/index.html')).match(/class="dog-card"/g).length,8);});
 
 test('page text and SEO updates are rendered safely as plain text',async t=>{const f=await fixture(t);await edit(f,'pages/home.it.json',data=>{data.heroTitle.line1='Una nuova <storia> & amicizia';data.seo.title='Cocker "Montecorno" & famiglia';data.seo.description='Una descrizione <script>alert(1)</script> con caratteri speciali.';return data;});await generate(f);const it=await html(f);assert.match(it,/Una nuova &lt;storia&gt; &amp; amicizia/);assert.match(it,/<title>Cocker &quot;Montecorno&quot; &amp; famiglia<\/title>/);assert(!it.includes('<script>alert(1)</script>'));assert.match(await html(f,'en/index.html'),/A life together\./);});
 
@@ -22,7 +22,7 @@ test('dog records support adding, hiding, custom images and negative checkboxes'
 
 test('gallery additions, hiding, order and captions use the editable collection',async t=>{const f=await fixture(t);await edit(f,'gallery/foto-1.json',data=>({...data,published:false}));await writeFile(join(f.content,'gallery','nuova.json'),JSON.stringify({name:'Nuova',image:'/images/cocker-portrait.webp',captionIt:'Il nostro nuovo incontro',captionEn:'Our new hello',altIt:'Una foto nuova',altEn:'A new photo',illustrative:false,published:true,order:0}));await generate(f);const it=await html(f,'galleria/index.html');assert.match(it,/data-gallery-index="0" aria-label="Apri fotografia: Il nostro nuovo incontro"/);assert.match(await html(f,'en/gallery/index.html'),/Open photograph: Our new hello/);assert.equal(it.match(/class="gallery-photo"/g).length,3);});
 
-test('phone, WhatsApp, contact name, branding and SEO location follow settings',async t=>{const f=await fixture(t);await edit(f,'settings.json',data=>{Object.assign(data.business,{phone:'+39 333 1234567',whatsapp:'393331234567',contactName:'Elena',town:'Siena',name:'Allevamento Cocker Montecorno',brandTitle:'Montecorno'});return data;});await generate(f);const page=await html(f);assert.match(page,/href="tel:\+393331234567"/);assert.match(page,/data-whatsapp="393331234567" data-contact-name="Elena"/);assert.match(page,/"addressLocality":"Siena"/);});
+test('phone, WhatsApp, contact name, branding and SEO location follow settings',async t=>{const f=await fixture(t);await edit(f,'settings.json',data=>{Object.assign(data.business,{phone:'+39 333 1234567',whatsapp:'393331234567',contactName:'Elena',town:'Siena',name:'Allevamento Cocker Montecorno',brandTitle:'Montecorno'});return data;});await generate(f);const page=await html(f);assert.match(page,/href="https:\/\/wa.me\/393331234567"/);assert.match(page,/data-whatsapp="393331234567" data-contact-name="Elena"/);assert.match(page,/"addressLocality":"Siena"/);});
 
 test('empty published collections render useful empty states',async t=>{const f=await fixture(t);for(const folder of ['dogs','gallery'])for(const file of await readdir(join(f.content,folder)))await edit(f,folder+'/'+file,data=>({...data,published:false}));await generate(f);assert.match(await html(f,'galleria/index.html'),/Nuove fotografie in arrivo/);assert.match(await html(f,'i-nostri-cani/index.html'),/Presto ti presenteremo i nostri cani/);});
 
@@ -33,4 +33,15 @@ test('missing images, invalid records and unverified photo removal stop bad buil
   ['dogs/miele.json',d=>({...d,illustrative:false,image:''}),/carica una foto reale/],
   ['pages/home.it.json',d=>{delete d.heroTitle.line1;return d;},/campo mancante/],
  ]){const f=await fixture(t);await edit(f,file,change);await assert.rejects(generate(f),expected);}
+});
+
+test('categories, descriptions and show results follow one shared dog record',async t=>{
+ const f=await fixture(t);await edit(f,'dogs/miele.json',d=>({...d,retired:true,champion:true,availableForFoster:true,awardsIt:'Esposizione di prova 2026 — risultato dimostrativo',awardsEn:'Example show 2026 — demonstration result',descriptionIt:'Una storia nuova, da raccontare.'}));
+ await generate(f);const champions=await html(f,'campioni/index.html'),retired=await html(f,'cani-ritirati/index.html'),foster=await html(f,'affido/index.html');
+ assert.match(champions,/Esposizione di prova 2026/);assert.match(retired,/<h2>Miele<\/h2>/);assert.match(retired,/Una storia nuova/);assert.match(foster,/<h2>Miele<\/h2>/);assert(!(await html(f,'i-nostri-cani/index.html')).includes('<h2>Miele</h2>'));
+});
+
+test('litter edits automatically update the home teaser and the puppy page',async t=>{
+ const f=await fixture(t);await edit(f,'pages/puppies.it.json',d=>{d.currentLitter.readyPeriod='Fine dicembre 2026';d.nextLitter.period='Febbraio 2027';return d;});await generate(f);
+ for(const path of ['index.html','cuccioli/index.html']){assert.match(await html(f,path),/Fine dicembre 2026/);assert.match(await html(f,path),/Febbraio 2027/);}
 });

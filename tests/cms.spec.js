@@ -33,10 +33,36 @@ test('client can update a dog and hide it with a visibility switch',async({page}
  expect(data.name).toBe('Miele aggiornata');expect(data.born).toBe(2023);expect(data.published).toBe(false);expect(data.portrait).toBe(0);
 });
 
+test('client can manage champions, retired dogs, placements and show results from one record',async({page})=>{
+ await openMemoryEditor(page,'#/collections/dog-records/entries/miele');
+ await page.getByRole('switch',{name:'Cane ritirato (opzionale)',exact:true}).click();
+ await page.getByRole('switch',{name:'Valutiamo l’affido per questo cane (opzionale)',exact:true}).click();
+ await page.getByRole('textbox',{name:'Descrizione del cane — Italiano (opzionale)',exact:true}).fill('Una descrizione aggiornata dal cliente.');
+ await page.getByRole('textbox',{name:'Gare vinte e riconoscimenti — Italiano (opzionale)',exact:true}).fill('Risultato di prova nel pannello, non pubblicato sul sito reale.');
+ await expect(page.frameLocator('iframe').locator('.preview')).toContainText('Una descrizione aggiornata dal cliente.');
+ await publish(page);
+ const dog=await page.evaluate(()=>JSON.parse(window.repoFiles.content.dogs['miele.json'].content));
+ expect(dog.champion).toBe(true);expect(dog.retired).toBe(true);expect(dog.availableForFoster).toBe(true);
+ expect(dog.descriptionIt).toContain('aggiornata dal cliente');expect(dog.awardsIt).toContain('Risultato di prova');expect(dog.awardsEn).toBe('');
+});
+
+test('client can update the two litter periods and parents in the puppy editor',async({page})=>{
+ await openMemoryEditor(page,'#/collections/puppies/entries/puppies-it');
+ await page.getByRole('textbox',{name:'Periodo di nascita',exact:true}).fill('Novembre 2026');
+ await page.getByRole('textbox',{name:'Periodo pronto per la famiglia',exact:true}).fill('Gennaio 2027');
+ await page.getByRole('textbox',{name:'Periodo previsto',exact:true}).fill('Marzo 2027');
+ await page.getByRole('textbox',{name:'Nome completo della mamma',exact:true}).fill('Mamma aggiornata');
+ await expect(page.frameLocator('iframe').locator('.preview')).toContainText('Marzo 2027');
+ await publish(page);
+ const litter=await page.evaluate(()=>JSON.parse(window.repoFiles.content.pages['puppies.it.json'].content));
+ expect(litter.currentLitter.bornPeriod).toBe('Novembre 2026');expect(litter.currentLitter.readyPeriod).toBe('Gennaio 2027');
+ expect(litter.nextLitter.period).toBe('Marzo 2027');expect(litter.nextLitter.mother).toBe('Mamma aggiornata');
+});
+
 test('client guide is available and the configuration covers pages, photos, dogs and contacts',async({page,request})=>{
  const config=await (await request.get('/admin/config.json')).json();expect(config.backend.name).toBe('github');expect(config.backend.repo).toBe('studiomebae/cockermontecorno');expect(config.backend.branch).toBe('main');expect(config.locale).toBe('it');expect(config.media_folder).toBe('public/images/uploads');expect(JSON.stringify(config)).not.toMatch(/client_secret|access_token/);
- expect(config.collections.map(c=>c.name)).toEqual(expect.arrayContaining(['settings','dog-records','gallery-photos','home','puppies','gallery','story','dogs','common']));
- for(const key of ['home','puppies','gallery','story','dogs','common'])expect(config.collections.find(c=>c.name===key).files).toHaveLength(2);
+ expect(config.collections.map(c=>c.name)).toEqual(expect.arrayContaining(['settings','dog-records','gallery-photos','home','puppies','gallery','story','dogs','champions','retired','foster','common']));
+ for(const key of ['home','puppies','gallery','story','dogs','champions','retired','foster','common'])expect(config.collections.find(c=>c.name===key).files).toHaveLength(2);
  await page.goto('/admin/guida.html');await expect(page.locator('h1')).toContainText('nelle tue mani.');await expect(page.getByRole('heading',{name:'Aggiungere un cane'})).toBeVisible();
  for(const width of [390,1440]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);}
 });

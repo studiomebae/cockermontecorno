@@ -8,5 +8,12 @@
   "portrait": 8,
   "illustrative": true,
   "published": true,
-  "order": 90
+  "order": 90,
+  "champion": false,
+  "retired": true,
+  "availableForFoster": false,
+  "descriptionIt": "Una nuova stagione, con la stessa voglia di coccole. Profilo dimostrativo, da aggiornare con la storia del cane reale.",
+  "descriptionEn": "A new season, with the same love of cuddles. A demonstration profile to replace with the real dog’s story.",
+  "awardsIt": "",
+  "awardsEn": ""
 }

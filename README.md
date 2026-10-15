@@ -20,6 +20,9 @@ The default port is 5173. Changes to content JSON regenerate the HTML in develop
 | Gallery | `/galleria/` | `/en/gallery/` |
 | Story | `/storia/` | `/en/our-story/` |
 | Dogs | `/i-nostri-cani/` | `/en/our-dogs/` |
+| Champions | `/campioni/` | `/en/champions/` |
+| Retired dogs | `/cani-ritirati/` | `/en/retired-dogs/` |
+| Family placements | `/affido/` | `/en/family-placements/` |
 
 ## Client handoff
 
@@ -27,7 +30,7 @@ The default port is 5173. Changes to content JSON regenerate the HTML in develop
 - **Client guide:** `/admin/guida.html`.
 - **Owner setup:** [docs/ATTIVAZIONE-CMS.md](docs/ATTIVAZIONE-CMS.md).
 
-The editor manages main photographs, bilingual page text and SEO, gallery uploads/captions/order/visibility, dog records/photos/checkboxes/order/visibility, contacts, menu, privacy and the enquiry form labels. Publishing writes content and media to GitHub `main`; a connected Netlify project rebuilds the site automatically. The CMS has an Italian interface and content previews. It uses a locally hosted, pinned Decap bundle and its Italian locale, with no CDN dependency.
+The editor manages main photographs, bilingual page text and SEO, gallery uploads/captions/order/visibility, dog records/photos/checkboxes/order/visibility, champion/retired/placement categories and bilingual show results, contacts, menu, privacy and the enquiry form labels. Publishing writes content and media to GitHub `main`; a connected Netlify project rebuilds the site automatically. The CMS has an Italian interface and content previews. It uses a locally hosted, pinned Decap bundle and its Italian locale, with no CDN dependency.
 
 **Production login is not activated by adding the code.** The owner must configure a GitHub OAuth provider in Netlify and give the client repository write access. This integration uses the GitHub backend and Netlify’s OAuth service, not Netlify Identity/Git Gateway. No secret belongs in browser code or content files. The final authenticated save → GitHub commit → Netlify deploy must be checked in the owner’s account before client handoff.
 
@@ -40,7 +43,7 @@ npm run preview
 
 Deploy `dist/` to a static host. No application database or API server is needed. Serve directory indexes normally; no SPA fallback is required.
 
-`SITE_URL` is the final HTTPS origin without a path. A configured build generates canonical and language URLs, social metadata, structured business/page/breadcrumb data, puppy FAQ schema, `robots.txt` and a ten-page bilingual sitemap. Without a domain, canonical URLs and the sitemap are omitted. The admin and guide have `noindex`; admin responses have no-store/noindex headers on Netlify and are excluded from the sitemap.
+`SITE_URL` is the final HTTPS origin without a path. A configured build generates canonical and language URLs, social metadata, structured business/page/breadcrumb data, puppy FAQ schema, `robots.txt` and a sixteen-page bilingual sitemap. Without a domain, canonical URLs and the sitemap are omitted. The admin and guide have `noindex`; admin responses have no-store/noindex headers on Netlify and are excluded from the sitemap.
 
 ### Netlify
 
@@ -51,7 +54,7 @@ Connect `studiomebae/cockermontecorno`, branch `main`. `netlify.toml` specifies 
 - `content/settings.json`: business contacts, branding, SEO location, main photographs and bilingual alt text.
 - `content/pages/{page}.{it|en}.json`: each page’s copy and SEO.
 - `content/common.{it|en}.json`: shared interface, contact and privacy copy.
-- `content/dogs/*.json`: records with name, coat, birth year, photo, pedigree/test flags, demonstration status, order and visibility.
+- `content/dogs/*.json`: records with name, coat, birth year, photo, pedigree/test flags, demonstration status, categories, bilingual description/show results, order and visibility. A retired dog leaves the active-dogs list; champion and placement flags are independent. All categories use the same record.
 - `content/gallery/*.json`: photos with Italian/English captions and descriptions, order and visibility.
 - `public/images/uploads/`: CMS-uploaded media.
 - `cms/collections.json`: stable CMS fields and validation schema.
@@ -63,7 +66,9 @@ HTML in content is displayed as plain text. Missing photos and invalid records s
 
 Business facts were supplied by the user. Ten fictional dog profiles and generated portraits were explicitly requested and remain labelled as demonstrations. Replace those records/photos with verified information before presenting them as actual dogs. The original generated portraits use a shared sprite; individual uploaded photos take precedence. Public text, contacts and gallery/dog counts are not hardcoded in the renderer.
 
-The WhatsApp composer reads its recipient and contact name from settings. Visitors must send their prepared message themselves. This website stores no enquiry data and uses no analytics or marketing cookies. The authenticated CMS uses its own necessary session storage.
+The puppy page manages the latest litter (birth, ready date, coats and optional photo) and the next planned litter (period, colours and parents). Home automatically reads these periods from the puppy content for its language. FAQ and SEO copy remain separately editable. Placement conditions use the owner-supplied text; no dog is marked available by default.
+
+The phone number always links to WhatsApp and is accompanied by a messages-only notice. The WhatsApp composer reads its recipient and contact name from settings. Visitors must send their prepared message themselves. This website stores no enquiry data and uses no analytics or marketing cookies. The authenticated CMS uses its own necessary session storage.
 
 ## Verify
 
@@ -73,6 +78,6 @@ npx playwright install chromium
 npm test
 ```
 
-Eight isolated content tests check edits to copy/SEO/photos/contacts, dog/gallery creation and visibility, empty states, safe text rendering and invalid-data rejection. Twenty-two public-site browser checks cover all ten pages, layouts, SEO, language switching, navigation, gallery, filters and contact actions. CMS browser checks cover production login routing, Italian editing/preview/publishing, dog visibility, guide/configuration and media uploads. Editor saves use an in-memory backend; OAuth is intercepted. They never push test edits or send real messages and do not prove production authentication is activated.
+Ten isolated content tests check edits to copy/SEO/photos/contacts, dog/gallery creation and visibility, empty states, safe text rendering and invalid-data rejection. Thirty-four public-site browser checks cover all sixteen localized pages, layouts, SEO, language switching, navigation, gallery, filters and contact actions. CMS browser checks cover production login routing, Italian editing/preview/publishing, dog visibility/categories/show results, litter dates/parents, guide/configuration and media uploads. Editor saves use an in-memory backend; OAuth is intercepted. They never push test edits or send real messages and do not prove production authentication is activated.
 
 The browser runner uses a reserved canonical domain for its production preview on port 4173. Run `npm run build` afterwards to replace ignored local test output with a normal build. Generated HTML routes are ignored; edit content or templates rather than HTML output.

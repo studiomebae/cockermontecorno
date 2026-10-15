@@ -1,12 +1,19 @@
 {
-  "illustrative": true,
-  "tests": true,
-  "pedigree": true,
-  "born": 2021,
   "name": "Ortica di Podere  Montecorno",
-  "published": true,
-  "order": 80,
+  "coat": "orangeRoan",
+  "born": 2021,
+  "pedigree": true,
+  "tests": true,
   "image": "/images/uploads/img_2086.jpeg",
   "portrait": 7,
-  "coat": "orangeRoan"
+  "illustrative": true,
+  "published": true,
+  "order": 80,
+  "champion": false,
+  "retired": false,
+  "availableForFoster": false,
+  "descriptionIt": "",
+  "descriptionEn": "",
+  "awardsIt": "",
+  "awardsEn": ""
 }

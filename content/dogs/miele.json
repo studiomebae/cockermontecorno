@@ -8,5 +8,12 @@
   "portrait": 0,
   "illustrative": true,
   "published": true,
-  "order": 10
+  "order": 10,
+  "champion": true,
+  "retired": false,
+  "availableForFoster": false,
+  "descriptionIt": "",
+  "descriptionEn": "",
+  "awardsIt": "",
+  "awardsEn": ""
 }

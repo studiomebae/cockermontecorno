@@ -4,7 +4,11 @@ export const pages = [
   { key:'gallery', paths:{it:'/galleria/',en:'/en/gallery/'} },
   { key:'story', paths:{it:'/storia/',en:'/en/our-story/'} },
   { key:'dogs', paths:{it:'/i-nostri-cani/',en:'/en/our-dogs/'} },
+  { key:'champions', paths:{it:'/campioni/',en:'/en/champions/'} },
+  { key:'retired', paths:{it:'/cani-ritirati/',en:'/en/retired-dogs/'} },
+  { key:'foster', paths:{it:'/affido/',en:'/en/family-placements/'} },
 ];
+export const menuPages=['home','story','dogs','champions','retired','puppies','foster','gallery'];
 export const pathFor=(key,lang)=>pages.find(p=>p.key===key).paths[lang];
 export function siteOrigin(){
  const value=process.env.SITE_URL?.replace(/\/$/,'')||'';

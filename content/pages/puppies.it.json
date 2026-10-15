@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Cuccioli Cocker Spaniel Inglese a Grosseto, Toscana | Allevamento Cocker Montecorno",
-    "description": "Scopri i cuccioli di Cocker Spaniel Inglese di Allevamento Cocker Montecorno. Cucciolata ottobre 2026, pedigree ENCI/FCI e incontro conoscitivo a Grosseto.",
+    "description": "Cuccioli Cocker Spaniel Inglese nati a inizio ottobre 2026, pronti da metà dicembre. Prossima cucciolata prevista a gennaio 2027 a Grosseto, Toscana.",
     "socialImage": ""
   },
   "puppiesLabel": "CUCCIOLI DI COCKER SPANIEL INGLESE",
@@ -10,10 +10,6 @@
     "line2": "inizi."
   },
   "puppiesIntro": "Un nuovo amico non si sceglie di fretta. Si incontra, si conosce. E a un certo punto, ci si riconosce.",
-  "litter": "Ottobre 2026",
-  "litterLabel": "LA PROSSIMA CUCCIOLATA",
-  "colours": "Maschi bianco arancio e bianco arancio roano. Femmine fulve.",
-  "availability": "Chiedi a Natascia la disponibilità aggiornata.",
   "puppyCta": "Parliamo dei cuccioli",
   "careTitle": "Pronti per la vita.\nInsieme a te.",
   "careText": "Dopo i 60 giorni di età, con le giuste attenzioni e solo dopo un colloquio conoscitivo in allevamento.",
@@ -44,16 +40,43 @@
   "faqs": [
     {
       "question": "Quando posso accogliere un cucciolo?",
-      "answer": "Dopo i 60 giorni di età, previo colloquio in allevamento. Per l’estero, vanno rispettati anche i requisiti sanitari e le regole del Paese di destinazione."
+      "answer": "La cucciolata nata a inizio ottobre 2026 sarà pronta da metà dicembre 2026, previo colloquio conoscitivo. Per l’estero vanno rispettati anche i requisiti sanitari e le regole del Paese di destinazione."
     },
     {
       "question": "Come posso conoscere la disponibilità?",
-      "answer": "Contatta direttamente Natascia. La cucciolata indicata è per ottobre 2026; disponibilità e tempistiche si confermano insieme."
+      "answer": "Scrivi a Natascia solo tramite messaggi WhatsApp. Per ottobre 2026: maschi bianco arancio e bianco roano, femmine fulve. La prossima cucciolata è prevista per gennaio 2027, con colori bianco nero e bianco arancio."
     },
     {
       "question": "Cosa accompagna il cucciolo?",
       "answer": "Pedigree ENCI/FCI, vaccinazioni, microchip, sverminazione e trattamento antiparassitario. Natascia ti illustrerà la documentazione e le cure del tuo cucciolo."
     }
   ],
-  "faqTitle": "Prima di conoscerci."
+  "faqTitle": "Prima di conoscerci.",
+  "currentLitter": {
+    "label": "L’ULTIMA CUCCIOLATA",
+    "bornLabel": "Nati a inizio",
+    "bornPeriod": "Ottobre 2026",
+    "readyLabel": "Pronti da",
+    "readyPeriod": "Metà dicembre 2026",
+    "intro": "Piccoli Cocker Spaniel Inglesi che crescono con noi, giorno dopo giorno. Le nuove famiglie potranno accoglierli da metà dicembre 2026.",
+    "malesLabel": "Maschi",
+    "males": "Bianco arancio e bianco roano.",
+    "femalesLabel": "Femmine",
+    "females": "Fulve.",
+    "availability": "Scrivi a Natascia su WhatsApp per conoscere la disponibilità aggiornata.",
+    "image": ""
+  },
+  "nextLitter": {
+    "label": "IL PROSSIMO CAPITOLO",
+    "period": "Gennaio 2027",
+    "intro": "La prossima cucciolata è prevista per gennaio 2027. Un nuovo incontro da immaginare, con la stessa cura di sempre.",
+    "coloursLabel": "Colori previsti",
+    "colours": "Bianco nero e bianco arancio.",
+    "parentsLabel": "I genitori della prossima cucciolata",
+    "motherLabel": "Mamma",
+    "mother": "Henora di Podere Montecorno",
+    "fatherLabel": "Papà",
+    "father": "Isidoro di Podere Montecorno",
+    "note": "Periodo e colori sono indicazioni previste. Scrivici su WhatsApp per aggiornamenti."
+  }
 }

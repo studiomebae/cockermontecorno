@@ -4,23 +4,26 @@
     "puppies": "Cuccioli",
     "gallery": "Galleria",
     "story": "La storia",
-    "dogs": "I nostri cani"
+    "dogs": "I nostri cani",
+    "champions": "Campioni",
+    "retired": "Cani ritirati",
+    "foster": "Affido"
   },
   "contactSection": {
     "contactLabel": "LE COSE BELLE INIZIANO CON UN CIAO.",
     "contactTitle": "Ci conosciamo?",
-    "contactText": "Una curiosità o il sogno di un nuovo amico. Natascia è qui.",
+    "contactText": "Una curiosità o il sogno di un nuovo amico. Scrivi a Natascia: rispondiamo solo ai messaggi WhatsApp.",
     "whatsapp": "Scrivi a Natascia",
-    "call": "Chiama",
     "footerLine": "Cocker Spaniel Inglesi. Una passione di famiglia.",
     "location": "Grosseto, Toscana · Italia",
     "recognition": "Dal 2005 · Riconosciuto ENCI e FCI dal 2010",
     "privacy": "Privacy",
-    "imageDisclaimer": "Fotografie illustrative."
+    "imageDisclaimer": "Fotografie illustrative.",
+    "phoneNotice": "Solo messaggi WhatsApp · Non rispondiamo alle chiamate"
   },
   "enquiry": {
     "dialogTitle": "Cominciamo da un ciao.",
-    "dialogText": "Prepara il tuo messaggio per Natascia. Potrai rileggerlo e inviarlo su WhatsApp.",
+    "dialogText": "Prepara il tuo messaggio per Natascia. Rispondiamo solo ai messaggi WhatsApp, non alle chiamate.",
     "nameLabel": "Il tuo nome",
     "namePlaceholder": "Come ti chiami?",
     "topicLabel": "Di cosa parliamo?",
@@ -29,7 +32,8 @@
       "Una visita in allevamento",
       "I nostri cani",
       "Una visita dall’estero",
-      "Un’altra domanda"
+      "Un’altra domanda",
+      "L’affido di un cane"
     ],
     "messageLabel": "Il tuo messaggio",
     "messagePlaceholder": "Raccontaci un po’ di te…",

@@ -16,16 +16,19 @@
    if(image)nodes.push(h('img',{src:asset(getAsset,image),alt:'',key:'image'}));
    if(key==='dog-records'){
     nodes.push(h('div',{className:'specs',key:'specs'},h('p',{},`Mantello: ${data.coat||'—'}`),h('p',{},`Anno di nascita: ${data.born||'—'}`),h('p',{},`Pedigree: ${data.pedigree?'✓':'—'} · Test: ${data.tests?'✓':'—'}`)));
+    for(const field of ['descriptionIt','descriptionEn','awardsIt','awardsEn'])if(data[field])nodes.push(h('p',{key:field},data[field]));
+    const categories=[data.champion?'Campione':'',data.retired?'Ritirato':'',data.availableForFoster?'Affido':''].filter(Boolean);if(categories.length)nodes.push(h('p',{className:'preview-muted',key:'categories'},categories.join(' · ')));
     if(data.illustrative)nodes.push(h('p',{className:'demo',key:'demo'},'Scheda dimostrativa'));
    }else if(key==='gallery-photos'){
     nodes.push(h('p',{key:'it'},data.captionIt),h('p',{key:'en'},data.captionEn));
    }else{
-    const sections={home:['homeIntroTitle','homeIntro','worldTitle','worldNote','homePuppyTitle','homePuppyText'],puppies:['puppiesIntro','litter','colours','availability','careTitle','careText','europeTitle','europeText'],story:['storyIntro','storyFirstTitle','storyFirst','storySecond','storyQuote','storyEnd'],gallery:['galleryIntro','galleryNote'],dogs:['dogsIntro','demoNote']}[key]||[];
+    const sections={home:['homeIntroTitle','homeIntro','worldTitle','worldNote','homePuppyTitle','homePuppyText'],puppies:['puppiesIntro','careTitle','careText','europeTitle','europeText'],story:['storyIntro','storyFirstTitle','storyFirst','storySecond','storyQuote','storyEnd'],gallery:['galleryIntro','galleryNote'],dogs:['dogsIntro','demoNote'],champions:['championsIntro','championsResultsPending'],retired:['retiredIntro'],foster:['fosterIntro','fosterWhyTitle','fosterWhyText','fosterConditionsTitle','fosterAreaTitle','fosterAreaText']}[key]||[];
     for(const field of sections){if(data[field])nodes.push(h(/Title$|^litter$/.test(field)?'h2':'p',{key:field},pair(data[field])));}
+    if(data.currentLitter){const v=data.currentLitter;nodes.push(h('h2',{key:'current'},`${v.bornLabel} ${v.bornPeriod}`),h('p',{key:'ready'},`${v.readyLabel} ${v.readyPeriod}`),h('p',{key:'litter-intro'},v.intro),h('p',{key:'males'},`${v.malesLabel}: ${v.males}`),h('p',{key:'females'},`${v.femalesLabel}: ${v.females}`));}if(data.nextLitter){const v=data.nextLitter;nodes.push(h('h2',{key:'next'},v.period),h('p',{key:'next-text'},v.intro),h('p',{key:'next-colours'},v.colours),h('p',{key:'mother'},`${v.motherLabel}: ${v.mother}`),h('p',{key:'father'},`${v.fatherLabel}: ${v.father}`));}if(data.fosterConditions)for(const [i,item] of data.fosterConditions.entries())nodes.push(h('h2',{key:'condition'+i},item.heading),h('p',{key:'condition-text'+i},item.text));
     if(data.checks)nodes.push(h('ul',{key:'checks'},...data.checks.map((v,i)=>h('li',{key:i},v))));
     if(data.faqs)for(const [i,item] of data.faqs.entries())nodes.push(h('h2',{key:'q'+i},item.question),h('p',{key:'a'+i},item.answer));
     if(key==='settings')for(const [name,photo] of Object.entries(data.photos||{}))nodes.push(h('h2',{key:name},({hero:'Copertina',puppies:'Cuccioli',portrait:'Storia'})[name]),h('img',{key:name+'img',src:asset(getAsset,photo.src),alt:photo.altIt||''}));
-    if(key==='common'){for(const [field,text] of Object.entries(data.contactSection||{}))if(['contactTitle','contactText','location'].includes(field))nodes.push(h(field==='contactTitle'?'h2':'p',{key:field},text));}
+    if(key==='common'){for(const [field,text] of Object.entries(data.contactSection||{}))if(['contactTitle','contactText','phoneNotice','location'].includes(field))nodes.push(h(field==='contactTitle'?'h2':'p',{key:field},text));}
    }
    if(data.seo)nodes.push(h('div',{className:'seo',key:'seo'},h('h3',{},'Anteprima ricerca'),h('strong',{},data.seo.title),h('p',{},data.seo.description)));
    return h('article',{className:'preview'},...nodes);
