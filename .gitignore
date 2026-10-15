@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.npm/
+index.html
+en/index.html
+test-results/
+playwright-report/
