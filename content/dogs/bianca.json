@@ -1,12 +1,12 @@
 {
-  "name": "Bianca",
-  "coat": "orangeWhite",
-  "born": 2023,
-  "pedigree": true,
+  "illustrative": true,
   "tests": true,
+  "pedigree": true,
+  "born": 2023,
+  "name": "Ortica",
+  "published": true,
+  "order": 60,
   "image": "",
   "portrait": 5,
-  "illustrative": true,
-  "published": true,
-  "order": 60
+  "coat": "orangeRoan"
 }
