@@ -1,0 +1,59 @@
+{
+  "seo": {
+    "title": "English Cocker Spaniel Puppies in Tuscany, Italy | Allevamento Cocker Montecorno",
+    "description": "Discover English Cocker Spaniel puppies at Allevamento Cocker Montecorno, Grosseto. October 2026 litter enquiries, ENCI/FCI pedigrees and family visits in Tuscany.",
+    "socialImage": ""
+  },
+  "puppiesLabel": "ENGLISH COCKER SPANIEL PUPPIES",
+  "puppiesTitle": {
+    "line1": "Little, lovely",
+    "line2": "beginnings."
+  },
+  "puppiesIntro": "A new best friend isn’t chosen in a hurry. You meet, get to know each other. Then, one day, it just feels right.",
+  "litter": "October 2026",
+  "litterLabel": "THE NEXT LITTER",
+  "colours": "Orange and white and orange roan males. Golden females.",
+  "availability": "Ask Natascia for current availability.",
+  "puppyCta": "Let’s talk puppies",
+  "careTitle": "Ready for life.\nTogether with you.",
+  "careText": "Puppies join their families after 60 days of age, with thoughtful care and an introductory visit to our breeding home.",
+  "checks": [
+    "ENCI / FCI pedigree",
+    "Vaccinations",
+    "Microchip",
+    "Deworming",
+    "Parasite treatment"
+  ],
+  "journeyTitle": "Three thoughtful steps.",
+  "steps": [
+    {
+      "heading": "A conversation",
+      "text": "Tell us about your life, your routines, and your family."
+    },
+    {
+      "heading": "A visit to Grosseto",
+      "text": "Come and meet us, and spend time with our cockers."
+    },
+    {
+      "heading": "A new beginning",
+      "text": "We help you prepare for your puppy’s arrival at home."
+    }
+  ],
+  "europeTitle": "A little Tuscany. Wherever you call home.",
+  "europeText": "You’re welcome to write in English. We’ll plan your visit to Tuscany and discuss requirements for your country. For international travel, puppies may need to be older than 60 days.",
+  "faqs": [
+    {
+      "question": "When can a puppy join our family?",
+      "answer": "After 60 days of age, following an introductory visit. International travel must also meet the health requirements and rules of the destination country."
+    },
+    {
+      "question": "How do I check availability?",
+      "answer": "Please contact Natascia directly. The listed litter is October 2026; availability and timing are confirmed together."
+    },
+    {
+      "question": "What comes with a puppy?",
+      "answer": "An ENCI/FCI pedigree, vaccinations, microchip, deworming, and parasite treatment. Natascia will explain the documents and care for your individual puppy."
+    }
+  ],
+  "faqTitle": "Before we meet."
+}

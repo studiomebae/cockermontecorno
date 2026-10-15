@@ -1,0 +1,12 @@
+{
+  "name": "Olimpia",
+  "coat": "orangeWhite",
+  "born": 2020,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 1,
+  "illustrative": true,
+  "published": true,
+  "order": 20
+}

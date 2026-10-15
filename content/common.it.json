@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Home",
+    "puppies": "Cuccioli",
+    "gallery": "Galleria",
+    "story": "La storia",
+    "dogs": "I nostri cani"
+  },
+  "contactSection": {
+    "contactLabel": "LE COSE BELLE INIZIANO CON UN CIAO.",
+    "contactTitle": "Ci conosciamo?",
+    "contactText": "Una curiosità o il sogno di un nuovo amico. Natascia è qui.",
+    "whatsapp": "Scrivi a Natascia",
+    "call": "Chiama",
+    "footerLine": "Cocker Spaniel Inglesi. Una passione di famiglia.",
+    "location": "Grosseto, Toscana · Italia",
+    "recognition": "Dal 2005 · Riconosciuto ENCI e FCI dal 2010",
+    "privacy": "Privacy",
+    "imageDisclaimer": "Fotografie illustrative."
+  },
+  "enquiry": {
+    "dialogTitle": "Cominciamo da un ciao.",
+    "dialogText": "Prepara il tuo messaggio per Natascia. Potrai rileggerlo e inviarlo su WhatsApp.",
+    "nameLabel": "Il tuo nome",
+    "namePlaceholder": "Come ti chiami?",
+    "topicLabel": "Di cosa parliamo?",
+    "topics": [
+      "I cuccioli",
+      "Una visita in allevamento",
+      "I nostri cani",
+      "Una visita dall’estero",
+      "Un’altra domanda"
+    ],
+    "messageLabel": "Il tuo messaggio",
+    "messagePlaceholder": "Raccontaci un po’ di te…",
+    "send": "Continua su WhatsApp",
+    "formNote": "Nessun messaggio viene inviato automaticamente. I dati non vengono salvati sul sito.",
+    "sent": "Il tuo messaggio è pronto. Apri WhatsApp per inviarlo a Natascia.",
+    "openWhatsapp": "Apri WhatsApp"
+  },
+  "privacyNotice": {
+    "privacyTitle": "La tua privacy.",
+    "privacyText": "Questo sito non usa cookie di analisi o marketing. Il modulo prepara un messaggio sul tuo dispositivo e non salva i dati. Se continui su WhatsApp o scrivi via email, i dati sono gestiti dai rispettivi servizi e da Natascia per rispondere alla richiesta. Per domande, contattaci all’indirizzo email indicato sul sito."
+  },
+  "interface": {
+    "contact": "Parliamone",
+    "menu": "Apri menu",
+    "close": "Chiudi",
+    "skip": "Vai al contenuto",
+    "back": "Torna alla home",
+    "discover": "Scopri"
+  }
+}

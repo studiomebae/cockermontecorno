@@ -1,0 +1,12 @@
+{
+  "name": "Bianca",
+  "coat": "orangeWhite",
+  "born": 2023,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 5,
+  "illustrative": true,
+  "published": true,
+  "order": 60
+}

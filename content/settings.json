@@ -1,0 +1,36 @@
+{
+  "business": {
+    "name": "Allevamento Cocker Montecorno",
+    "phone": "+39 347 335 1061",
+    "email": "allevamentomontecorno@gmail.com",
+    "source": "https://allevamento-podere-montecorno.jimdosite.com/",
+    "contactName": "Natascia",
+    "whatsapp": "393473351061",
+    "town": "Grosseto",
+    "region": "Toscana",
+    "country": "IT",
+    "foundingYear": 2005,
+    "brandEyebrow": "ALLEVAMENTO COCKER",
+    "brandTitle": "Montecorno"
+  },
+  "photos": {
+    "hero": {
+      "src": "/images/cocker-editorial.webp",
+      "altIt": "Fotografia illustrativa: dettaglio del mantello fulvo e delle orecchie di un Cocker Spaniel Inglese",
+      "altEn": "Illustrative photograph: the golden coat and silky ear of an English Cocker Spaniel",
+      "illustrative": true
+    },
+    "puppies": {
+      "src": "/images/cocker-linen-puppies.webp",
+      "altIt": "Fotografia illustrativa: due cuccioli di Cocker Spaniel Inglese su un divano di lino",
+      "altEn": "Illustrative photograph: two English Cocker Spaniel puppies on an ivory linen sofa",
+      "illustrative": true
+    },
+    "portrait": {
+      "src": "/images/cocker-portrait.webp",
+      "altIt": "Fotografia illustrativa: Cocker Spaniel Inglese bianco arancio in una casa toscana",
+      "altEn": "Illustrative photograph: an orange and white English Cocker Spaniel in a Tuscan home",
+      "illustrative": true
+    }
+  }
+}

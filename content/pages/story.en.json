@@ -1,0 +1,34 @@
+{
+  "seo": {
+    "title": "Our Story with Natascia Since 2005 | Allevamento Cocker Montecorno",
+    "description": "Meet Natascia and discover Allevamento Cocker Montecorno, an English Cocker Spaniel breeding home in Grosseto, Tuscany, recognised by ENCI and FCI since 2010.",
+    "socialImage": ""
+  },
+  "storyLabel": "OUR STORY",
+  "storyTitle": {
+    "line1": "One passion.",
+    "line2": "A whole life."
+  },
+  "storyIntro": "I’m Natascia. Since 2005, my life has had plenty of paws and one thing at its heart: a love of English Cocker Spaniels.",
+  "storyFirstTitle": "Lovely things\ntake their time.",
+  "storyFirst": "Our family breeding home began in Grosseto, Tuscany. I look after it personally, with a little help from my family. In 2010, we were recognised by ENCI and FCI.",
+  "storySecond": "Today, we share our days with a family of around fifteen cockers, mostly orange and white. Just a few litters a year let us give each mother and puppy the time they deserve.",
+  "storyQuote": "The loveliest part?\nWatching them become family.",
+  "storyEnd": "More than awards, it’s the bonds that stay with us. The photos that arrive, the stories that continue, the joy of meeting again. That’s why we take care with every introduction.",
+  "storyMilestones": [
+    {
+      "year": "2005",
+      "text": "The beginning of our story."
+    },
+    {
+      "year": "2010",
+      "text": "ENCI and FCI recognition."
+    },
+    {
+      "year": "Today",
+      "text": "The same care, every day."
+    }
+  ],
+  "storyCta": "Meet our dogs",
+  "storyImageCaption": "Grosseto, Tuscany · A passion since 2005."
+}

@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Home",
+    "puppies": "Puppies",
+    "gallery": "Gallery",
+    "story": "Our story",
+    "dogs": "Our dogs"
+  },
+  "contactSection": {
+    "contactLabel": "LOVELY THINGS START WITH HELLO.",
+    "contactTitle": "Shall we meet?",
+    "contactText": "A little curiosity or the dream of a new best friend. Natascia is here.",
+    "whatsapp": "Write to Natascia",
+    "call": "Call",
+    "footerLine": "English Cocker Spaniels. A family passion.",
+    "location": "Grosseto, Tuscany · Italy",
+    "recognition": "Since 2005 · ENCI and FCI recognition since 2010",
+    "privacy": "Privacy",
+    "imageDisclaimer": "Illustrative photographs."
+  },
+  "enquiry": {
+    "dialogTitle": "Let’s start with hello.",
+    "dialogText": "Prepare your message for Natascia. You can review and send it in WhatsApp.",
+    "nameLabel": "Your name",
+    "namePlaceholder": "What’s your name?",
+    "topicLabel": "Let’s talk about",
+    "topics": [
+      "Puppies",
+      "A visit to meet you",
+      "Our dogs",
+      "Visiting from abroad",
+      "Another question"
+    ],
+    "messageLabel": "Your message",
+    "messagePlaceholder": "Tell us a little about yourself…",
+    "send": "Continue to WhatsApp",
+    "formNote": "Nothing is sent automatically. Your details are not stored on this website.",
+    "sent": "Your message is ready. Open WhatsApp to send it to Natascia.",
+    "openWhatsapp": "Open WhatsApp"
+  },
+  "privacyNotice": {
+    "privacyTitle": "Your privacy.",
+    "privacyText": "This website uses no analytics or marketing cookies. The form prepares a message on your device without storing your details. If you continue to WhatsApp or email us, those services and Natascia handle the information to respond to you. For questions, use the email address shown on the website."
+  },
+  "interface": {
+    "contact": "Let’s talk",
+    "menu": "Open menu",
+    "close": "Close",
+    "skip": "Skip to content",
+    "back": "Back to home",
+    "discover": "Discover"
+  }
+}

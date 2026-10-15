@@ -28,8 +28,9 @@ form.addEventListener('submit',event=>{
  const data=new FormData(form),en=document.documentElement.lang==='en';
  const name=String(data.get('name')).trim(),message=String(data.get('message')).trim();
  if(!name||!message){const input=!name?form.elements.name:form.elements.message;input.setCustomValidity(en?'Please enter more than spaces.':'Inserisci un testo, non solo spazi.');input.reportValidity();return;}
- const text=en?`Hello Natascia! I’m ${name}.\n${data.get('topic')}\n\n${message}`:`Ciao Natascia! Sono ${name}.\n${data.get('topic')}\n\n${message}`;
- const url=`https://wa.me/393473351061?text=${encodeURIComponent(text)}`;
+ const contactName=document.body.dataset.contactName;
+ const text=en?`Hello ${contactName}! I’m ${name}.\n${data.get('topic')}\n\n${message}`:`Ciao ${contactName}! Sono ${name}.\n${data.get('topic')}\n\n${message}`;
+ const url=`https://wa.me/${document.body.dataset.whatsapp}?text=${encodeURIComponent(text)}`;
  document.querySelector('#whatsapp-link').href=url;
  document.querySelector('.message-ready').hidden=false;form.hidden=true;
  window.open(url,'_blank','noopener,noreferrer');

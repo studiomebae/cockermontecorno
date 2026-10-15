@@ -1,0 +1,12 @@
+{
+  "name": "Adele",
+  "coat": "golden",
+  "born": 2022,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 7,
+  "illustrative": true,
+  "published": true,
+  "order": 80
+}

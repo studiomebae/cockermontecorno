@@ -1,0 +1,12 @@
+{
+  "name": "Bruno",
+  "coat": "black",
+  "born": 2019,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 2,
+  "illustrative": true,
+  "published": true,
+  "order": 30
+}

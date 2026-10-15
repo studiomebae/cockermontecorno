@@ -1,0 +1,12 @@
+{
+  "name": "Miele",
+  "coat": "golden",
+  "born": 2021,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 0,
+  "illustrative": true,
+  "published": true,
+  "order": 10
+}

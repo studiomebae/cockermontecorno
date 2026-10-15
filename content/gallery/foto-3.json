@@ -1,0 +1,11 @@
+{
+  "name": "Un carattere tutto suo.",
+  "image": "/images/cocker-portrait.webp",
+  "captionIt": "Un carattere tutto suo.",
+  "captionEn": "A character all their own.",
+  "altIt": "Fotografia illustrativa: Cocker Spaniel Inglese bianco arancio in una casa toscana",
+  "altEn": "Illustrative photograph: an orange and white English Cocker Spaniel in a Tuscan home",
+  "illustrative": true,
+  "published": true,
+  "order": 30
+}

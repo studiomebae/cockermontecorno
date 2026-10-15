@@ -1,0 +1,34 @@
+{
+  "seo": {
+    "title": "Natascia e la nostra storia dal 2005 | Allevamento Cocker Montecorno",
+    "description": "Conosci Natascia e la storia di Allevamento Cocker Montecorno a Grosseto. Una passione per i Cocker Spaniel Inglesi dal 2005, riconosciuta ENCI e FCI dal 2010.",
+    "socialImage": ""
+  },
+  "storyLabel": "LA NOSTRA STORIA",
+  "storyTitle": {
+    "line1": "Una passione.",
+    "line2": "Tutta una vita."
+  },
+  "storyIntro": "Sono Natascia. Dal 2005, la mia vita ha tante zampe e un solo filo conduttore: l’amore per il Cocker Spaniel Inglese.",
+  "storyFirstTitle": "Le cose belle\ncrescono piano.",
+  "storyFirst": "Il nostro allevamento amatoriale è nato a Grosseto, in Toscana. Me ne occupo personalmente, con il prezioso aiuto della mia famiglia. Nel 2010 è arrivato il riconoscimento ENCI e FCI.",
+  "storySecond": "Oggi condividiamo le giornate con una famiglia di circa quindici cocker, soprattutto bianchi e arancio. Poche cucciolate all’anno ci permettono di dedicare tempo a ogni mamma e a ogni cucciolo.",
+  "storyQuote": "Il momento più bello?\nVederli diventare famiglia.",
+  "storyEnd": "Più dei riconoscimenti, ci restano i legami. Le foto che arrivano, le storie che continuano, la gioia di ritrovarsi. È per questo che scegliamo ogni incontro con cura.",
+  "storyMilestones": [
+    {
+      "year": "2005",
+      "text": "L’inizio della nostra storia."
+    },
+    {
+      "year": "2010",
+      "text": "Riconoscimento ENCI e FCI."
+    },
+    {
+      "year": "Oggi",
+      "text": "La stessa cura, ogni giorno."
+    }
+  ],
+  "storyCta": "Conosci i nostri cani",
+  "storyImageCaption": "Grosseto, Toscana · Una passione dal 2005."
+}

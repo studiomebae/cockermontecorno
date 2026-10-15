@@ -1,0 +1,12 @@
+{
+  "name": "Teo",
+  "coat": "orangeRoan",
+  "born": 2018,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 8,
+  "illustrative": true,
+  "published": true,
+  "order": 90
+}

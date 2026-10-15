@@ -1,0 +1,18 @@
+{
+  "golden": {
+    "it": "Fulvo",
+    "en": "Golden"
+  },
+  "orangeWhite": {
+    "it": "Bianco arancio",
+    "en": "Orange & white"
+  },
+  "black": {
+    "it": "Nero",
+    "en": "Black"
+  },
+  "orangeRoan": {
+    "it": "Bianco arancio roano",
+    "en": "Orange roan"
+  }
+}

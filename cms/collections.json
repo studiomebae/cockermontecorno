@@ -1,0 +1,2143 @@
+[
+  {
+    "name": "settings",
+    "label": "Impostazioni e foto principali",
+    "files": [
+      {
+        "name": "settings",
+        "label": "Foto e contatti",
+        "file": "content/settings.json",
+        "fields": [
+          {
+            "name": "business",
+            "label": "Contatti e dati dell’allevamento",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "name",
+                "label": "Nome completo dell’allevamento",
+                "widget": "string"
+              },
+              {
+                "name": "brandEyebrow",
+                "label": "Marchio — riga superiore",
+                "widget": "string"
+              },
+              {
+                "name": "brandTitle",
+                "label": "Marchio — nome in evidenza",
+                "widget": "string"
+              },
+              {
+                "name": "contactName",
+                "label": "Referente",
+                "widget": "string"
+              },
+              {
+                "name": "phone",
+                "label": "Telefono visualizzato",
+                "widget": "string"
+              },
+              {
+                "name": "whatsapp",
+                "label": "Numero WhatsApp con prefisso internazionale, senza + o spazi",
+                "widget": "string",
+                "pattern": [
+                  "^[1-9][0-9]{7,14}$",
+                  "Usa da 8 a 15 cifre, ad esempio 393473351061."
+                ]
+              },
+              {
+                "name": "email",
+                "label": "Email",
+                "widget": "string",
+                "pattern": [
+                  "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                  "Inserisci un indirizzo email valido."
+                ]
+              },
+              {
+                "name": "town",
+                "label": "Comune",
+                "widget": "string"
+              },
+              {
+                "name": "region",
+                "label": "Regione",
+                "widget": "string"
+              },
+              {
+                "name": "country",
+                "label": "Codice Paese",
+                "widget": "string",
+                "pattern": [
+                  "^[A-Z]{2}$",
+                  "Due lettere maiuscole, ad esempio IT."
+                ]
+              },
+              {
+                "name": "foundingYear",
+                "label": "Anno di fondazione",
+                "widget": "number",
+                "value_type": "int",
+                "min": 1900,
+                "max": 2100
+              },
+              {
+                "name": "source",
+                "label": "Sito precedente / fonte",
+                "widget": "string",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "photos",
+            "label": "Fotografie principali",
+            "widget": "object",
+            "fields": [
+              {
+                "name": "hero",
+                "label": "Copertina home e rimando alla galleria",
+                "widget": "object",
+                "fields": [
+                  {
+                    "name": "src",
+                    "label": "Fotografia",
+                    "widget": "image"
+                  },
+                  {
+                    "name": "altIt",
+                    "label": "Descrizione della fotografia — Italiano",
+                    "widget": "string"
+                  },
+                  {
+                    "name": "altEn",
+                    "label": "Descrizione della fotografia — English",
+                    "widget": "string"
+                  },
+                  {
+                    "name": "illustrative",
+                    "label": "Immagine illustrativa",
+                    "widget": "boolean",
+                    "default": true,
+                    "hint": "Disattiva solo dopo aver caricato una fotografia reale dell’allevamento."
+                  }
+                ]
+              },
+              {
+                "name": "puppies",
+                "label": "Cuccioli: home e pagina dedicata",
+                "widget": "object",
+                "fields": [
+                  {
+                    "name": "src",
+                    "label": "Fotografia",
+                    "widget": "image"
+                  },
+                  {
+                    "name": "altIt",
+                    "label": "Descrizione della fotografia — Italiano",
+                    "widget": "string"
+                  },
+                  {
+                    "name": "altEn",
+                    "label": "Descrizione della fotografia — English",
+                    "widget": "string"
+                  },
+                  {
+                    "name": "illustrative",
+                    "label": "Immagine illustrativa",
+                    "widget": "boolean",
+                    "default": true,
+                    "hint": "Disattiva solo dopo aver caricato una fotografia reale dell’allevamento."
+                  }
+                ]
+              },
+              {
+                "name": "portrait",
+                "label": "Storia e rimando ai cani",
+                "widget": "object",
+                "fields": [
+                  {
+                    "name": "src",
+                    "label": "Fotografia",
+                    "widget": "image"
+                  },
+                  {
+                    "name": "altIt",
+                    "label": "Descrizione della fotografia — Italiano",
+                    "widget": "string"
+                  },
+                  {
+                    "name": "altEn",
+                    "label": "Descrizione della fotografia — English",
+                    "widget": "string"
+                  },
+                  {
+                    "name": "illustrative",
+                    "label": "Immagine illustrativa",
+                    "widget": "boolean",
+                    "default": true,
+                    "hint": "Disattiva solo dopo aver caricato una fotografia reale dell’allevamento."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "dog-records",
+    "label": "Schede dei cani",
+    "label_singular": "Cane",
+    "folder": "content/dogs",
+    "create": true,
+    "delete": true,
+    "extension": "json",
+    "format": "json",
+    "identifier_field": "name",
+    "slug": "{{slug}}",
+    "summary": "{{name}} · {{born}}",
+    "sortable_fields": [
+      "order",
+      "name",
+      "born"
+    ],
+    "fields": [
+      {
+        "name": "name",
+        "label": "Nome",
+        "widget": "string"
+      },
+      {
+        "name": "image",
+        "label": "Fotografia",
+        "widget": "image",
+        "required": false,
+        "hint": "Carica una foto per sostituire il ritratto illustrativo. Consigliata per ogni nuovo cane."
+      },
+      {
+        "name": "coat",
+        "label": "Mantello",
+        "widget": "select",
+        "options": [
+          {
+            "label": "Fulvo",
+            "value": "golden"
+          },
+          {
+            "label": "Bianco arancio",
+            "value": "orangeWhite"
+          },
+          {
+            "label": "Nero",
+            "value": "black"
+          },
+          {
+            "label": "Bianco arancio roano",
+            "value": "orangeRoan"
+          }
+        ]
+      },
+      {
+        "name": "born",
+        "label": "Anno di nascita",
+        "widget": "number",
+        "value_type": "int",
+        "min": 1990,
+        "max": 2100
+      },
+      {
+        "name": "pedigree",
+        "label": "Pedigree",
+        "widget": "boolean",
+        "default": false
+      },
+      {
+        "name": "tests",
+        "label": "Test",
+        "widget": "boolean",
+        "default": false
+      },
+      {
+        "name": "illustrative",
+        "label": "Scheda dimostrativa",
+        "widget": "boolean",
+        "default": true,
+        "hint": "Disattiva solo dopo aver verificato tutti i dati e caricato una fotografia reale."
+      },
+      {
+        "name": "published",
+        "label": "Mostra sul sito",
+        "widget": "boolean",
+        "default": true
+      },
+      {
+        "name": "order",
+        "label": "Ordine di visualizzazione",
+        "widget": "number",
+        "value_type": "int",
+        "min": 0,
+        "max": 9999,
+        "default": 100
+      },
+      {
+        "name": "portrait",
+        "label": "Ritratto dimostrativo interno",
+        "widget": "hidden",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "gallery-photos",
+    "label": "Fotografie della galleria",
+    "label_singular": "Fotografia",
+    "folder": "content/gallery",
+    "create": true,
+    "delete": true,
+    "extension": "json",
+    "format": "json",
+    "identifier_field": "name",
+    "slug": "{{slug}}",
+    "summary": "{{name}}",
+    "sortable_fields": [
+      "order",
+      "name"
+    ],
+    "fields": [
+      {
+        "name": "name",
+        "label": "Titolo interno",
+        "widget": "string"
+      },
+      {
+        "name": "image",
+        "label": "Fotografia",
+        "widget": "image"
+      },
+      {
+        "name": "captionIt",
+        "label": "Didascalia — Italiano",
+        "widget": "string"
+      },
+      {
+        "name": "captionEn",
+        "label": "Didascalia — English",
+        "widget": "string"
+      },
+      {
+        "name": "altIt",
+        "label": "Descrizione della fotografia — Italiano",
+        "widget": "string"
+      },
+      {
+        "name": "altEn",
+        "label": "Descrizione della fotografia — English",
+        "widget": "string"
+      },
+      {
+        "name": "illustrative",
+        "label": "Fotografia illustrativa",
+        "widget": "boolean",
+        "default": false
+      },
+      {
+        "name": "published",
+        "label": "Mostra sul sito",
+        "widget": "boolean",
+        "default": true
+      },
+      {
+        "name": "order",
+        "label": "Ordine di visualizzazione",
+        "widget": "number",
+        "value_type": "int",
+        "min": 0,
+        "max": 9999,
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "home",
+    "label": "Home",
+    "files": [
+      {
+        "name": "home-it",
+        "label": "Italiano",
+        "file": "content/pages/home.it.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "heroLabel",
+            "label": "Sopratitolo della copertina",
+            "widget": "string"
+          },
+          {
+            "name": "heroTitle",
+            "label": "Titolo della copertina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "heroCta",
+            "label": "Invito nella copertina",
+            "widget": "string"
+          },
+          {
+            "name": "heroFoot",
+            "label": "Nota in basso nella copertina",
+            "widget": "string"
+          },
+          {
+            "name": "heroScroll",
+            "label": "Invito a scorrere",
+            "widget": "string"
+          },
+          {
+            "name": "homeIntroLabel",
+            "label": "Sopratitolo della presentazione",
+            "widget": "string"
+          },
+          {
+            "name": "homeIntroTitle",
+            "label": "Titolo della presentazione",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "homeIntro",
+            "label": "Testo di presentazione",
+            "widget": "text"
+          },
+          {
+            "name": "homeStoryLink",
+            "label": "Collegamento alla storia",
+            "widget": "string"
+          },
+          {
+            "name": "worldTitle",
+            "label": "Titolo dei rimandi alle pagine",
+            "widget": "string"
+          },
+          {
+            "name": "worldNote",
+            "label": "Sottotitolo dei rimandi",
+            "widget": "string"
+          },
+          {
+            "name": "tileCaptions",
+            "label": "Didascalie dei rimandi",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "dogs",
+                "label": "Cani",
+                "widget": "string"
+              },
+              {
+                "name": "puppies",
+                "label": "Cuccioli",
+                "widget": "string"
+              },
+              {
+                "name": "story",
+                "label": "Storia",
+                "widget": "string"
+              },
+              {
+                "name": "gallery",
+                "label": "Galleria",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "homePuppyLabel",
+            "label": "Sopratitolo del riquadro cuccioli",
+            "widget": "string"
+          },
+          {
+            "name": "homePuppyTitle",
+            "label": "Titolo del riquadro cuccioli",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "homePuppyText",
+            "label": "Testo del riquadro cuccioli",
+            "widget": "text"
+          },
+          {
+            "name": "homePuppyCta",
+            "label": "Collegamento ai cuccioli",
+            "widget": "string"
+          }
+        ]
+      },
+      {
+        "name": "home-en",
+        "label": "English",
+        "file": "content/pages/home.en.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "heroLabel",
+            "label": "Sopratitolo della copertina",
+            "widget": "string"
+          },
+          {
+            "name": "heroTitle",
+            "label": "Titolo della copertina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "heroCta",
+            "label": "Invito nella copertina",
+            "widget": "string"
+          },
+          {
+            "name": "heroFoot",
+            "label": "Nota in basso nella copertina",
+            "widget": "string"
+          },
+          {
+            "name": "heroScroll",
+            "label": "Invito a scorrere",
+            "widget": "string"
+          },
+          {
+            "name": "homeIntroLabel",
+            "label": "Sopratitolo della presentazione",
+            "widget": "string"
+          },
+          {
+            "name": "homeIntroTitle",
+            "label": "Titolo della presentazione",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "homeIntro",
+            "label": "Testo di presentazione",
+            "widget": "text"
+          },
+          {
+            "name": "homeStoryLink",
+            "label": "Collegamento alla storia",
+            "widget": "string"
+          },
+          {
+            "name": "worldTitle",
+            "label": "Titolo dei rimandi alle pagine",
+            "widget": "string"
+          },
+          {
+            "name": "worldNote",
+            "label": "Sottotitolo dei rimandi",
+            "widget": "string"
+          },
+          {
+            "name": "tileCaptions",
+            "label": "Didascalie dei rimandi",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "dogs",
+                "label": "Cani",
+                "widget": "string"
+              },
+              {
+                "name": "puppies",
+                "label": "Cuccioli",
+                "widget": "string"
+              },
+              {
+                "name": "story",
+                "label": "Storia",
+                "widget": "string"
+              },
+              {
+                "name": "gallery",
+                "label": "Galleria",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "homePuppyLabel",
+            "label": "Sopratitolo del riquadro cuccioli",
+            "widget": "string"
+          },
+          {
+            "name": "homePuppyTitle",
+            "label": "Titolo del riquadro cuccioli",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "homePuppyText",
+            "label": "Testo del riquadro cuccioli",
+            "widget": "text"
+          },
+          {
+            "name": "homePuppyCta",
+            "label": "Collegamento ai cuccioli",
+            "widget": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "puppies",
+    "label": "Cuccioli e cucciolate",
+    "files": [
+      {
+        "name": "puppies-it",
+        "label": "Italiano",
+        "file": "content/pages/puppies.it.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "puppiesLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "puppiesTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "puppiesIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "litter",
+            "label": "Periodo della cucciolata",
+            "widget": "string"
+          },
+          {
+            "name": "litterLabel",
+            "label": "Etichetta della cucciolata",
+            "widget": "string"
+          },
+          {
+            "name": "colours",
+            "label": "Mantelli e informazioni della cucciolata",
+            "widget": "string"
+          },
+          {
+            "name": "availability",
+            "label": "Nota sulla disponibilità",
+            "widget": "string"
+          },
+          {
+            "name": "puppyCta",
+            "label": "Pulsante di richiesta informazioni",
+            "widget": "string"
+          },
+          {
+            "name": "careTitle",
+            "label": "Titolo delle cure",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "careText",
+            "label": "Testo delle cure",
+            "widget": "text"
+          },
+          {
+            "name": "checks",
+            "label": "Cure e documenti del cucciolo",
+            "widget": "list",
+            "field": {
+              "name": "value",
+              "label": "Testo",
+              "widget": "string"
+            }
+          },
+          {
+            "name": "journeyTitle",
+            "label": "Titolo dei passi di adozione",
+            "widget": "string"
+          },
+          {
+            "name": "steps",
+            "label": "Passi di adozione",
+            "widget": "list",
+            "fields": [
+              {
+                "name": "heading",
+                "label": "Titolo",
+                "widget": "string"
+              },
+              {
+                "name": "text",
+                "label": "Testo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "europeTitle",
+            "label": "Titolo per famiglie all’estero",
+            "widget": "string"
+          },
+          {
+            "name": "europeText",
+            "label": "Testo per famiglie all’estero",
+            "widget": "text"
+          },
+          {
+            "name": "faqs",
+            "label": "Domande frequenti",
+            "widget": "list",
+            "fields": [
+              {
+                "name": "question",
+                "label": "Domanda",
+                "widget": "string"
+              },
+              {
+                "name": "answer",
+                "label": "Risposta",
+                "widget": "text"
+              }
+            ]
+          },
+          {
+            "name": "faqTitle",
+            "label": "Titolo delle domande frequenti",
+            "widget": "string"
+          }
+        ]
+      },
+      {
+        "name": "puppies-en",
+        "label": "English",
+        "file": "content/pages/puppies.en.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "puppiesLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "puppiesTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "puppiesIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "litter",
+            "label": "Periodo della cucciolata",
+            "widget": "string"
+          },
+          {
+            "name": "litterLabel",
+            "label": "Etichetta della cucciolata",
+            "widget": "string"
+          },
+          {
+            "name": "colours",
+            "label": "Mantelli e informazioni della cucciolata",
+            "widget": "string"
+          },
+          {
+            "name": "availability",
+            "label": "Nota sulla disponibilità",
+            "widget": "string"
+          },
+          {
+            "name": "puppyCta",
+            "label": "Pulsante di richiesta informazioni",
+            "widget": "string"
+          },
+          {
+            "name": "careTitle",
+            "label": "Titolo delle cure",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "careText",
+            "label": "Testo delle cure",
+            "widget": "text"
+          },
+          {
+            "name": "checks",
+            "label": "Cure e documenti del cucciolo",
+            "widget": "list",
+            "field": {
+              "name": "value",
+              "label": "Testo",
+              "widget": "string"
+            }
+          },
+          {
+            "name": "journeyTitle",
+            "label": "Titolo dei passi di adozione",
+            "widget": "string"
+          },
+          {
+            "name": "steps",
+            "label": "Passi di adozione",
+            "widget": "list",
+            "fields": [
+              {
+                "name": "heading",
+                "label": "Titolo",
+                "widget": "string"
+              },
+              {
+                "name": "text",
+                "label": "Testo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "europeTitle",
+            "label": "Titolo per famiglie all’estero",
+            "widget": "string"
+          },
+          {
+            "name": "europeText",
+            "label": "Testo per famiglie all’estero",
+            "widget": "text"
+          },
+          {
+            "name": "faqs",
+            "label": "Domande frequenti",
+            "widget": "list",
+            "fields": [
+              {
+                "name": "question",
+                "label": "Domanda",
+                "widget": "string"
+              },
+              {
+                "name": "answer",
+                "label": "Risposta",
+                "widget": "text"
+              }
+            ]
+          },
+          {
+            "name": "faqTitle",
+            "label": "Titolo delle domande frequenti",
+            "widget": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "gallery",
+    "label": "Testi della galleria",
+    "files": [
+      {
+        "name": "gallery-it",
+        "label": "Italiano",
+        "file": "content/pages/gallery.it.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "galleryLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "galleryTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "galleryIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "galleryNote",
+            "label": "Nota sulle fotografie illustrative",
+            "widget": "string"
+          },
+          {
+            "name": "galleryOpen",
+            "label": "Apri fotografia",
+            "widget": "string"
+          },
+          {
+            "name": "galleryClose",
+            "label": "Chiudi fotografia",
+            "widget": "string"
+          },
+          {
+            "name": "previous",
+            "label": "Foto precedente",
+            "widget": "string"
+          },
+          {
+            "name": "next",
+            "label": "Foto successiva",
+            "widget": "string"
+          },
+          {
+            "name": "galleryEmpty",
+            "label": "Testo se la galleria è vuota",
+            "widget": "string"
+          }
+        ]
+      },
+      {
+        "name": "gallery-en",
+        "label": "English",
+        "file": "content/pages/gallery.en.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "galleryLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "galleryTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "galleryIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "galleryNote",
+            "label": "Nota sulle fotografie illustrative",
+            "widget": "string"
+          },
+          {
+            "name": "galleryOpen",
+            "label": "Apri fotografia",
+            "widget": "string"
+          },
+          {
+            "name": "galleryClose",
+            "label": "Chiudi fotografia",
+            "widget": "string"
+          },
+          {
+            "name": "previous",
+            "label": "Foto precedente",
+            "widget": "string"
+          },
+          {
+            "name": "next",
+            "label": "Foto successiva",
+            "widget": "string"
+          },
+          {
+            "name": "galleryEmpty",
+            "label": "Testo se la galleria è vuota",
+            "widget": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "story",
+    "label": "La nostra storia",
+    "files": [
+      {
+        "name": "story-it",
+        "label": "Italiano",
+        "file": "content/pages/story.it.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "storyLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "storyTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "storyIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "storyFirstTitle",
+            "label": "Titolo della storia",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "storyFirst",
+            "label": "Primo paragrafo",
+            "widget": "text"
+          },
+          {
+            "name": "storySecond",
+            "label": "Secondo paragrafo",
+            "widget": "text"
+          },
+          {
+            "name": "storyQuote",
+            "label": "Citazione",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "storyEnd",
+            "label": "Conclusione",
+            "widget": "text"
+          },
+          {
+            "name": "storyMilestones",
+            "label": "Tappe della storia",
+            "widget": "list",
+            "fields": [
+              {
+                "name": "year",
+                "label": "Anno o periodo",
+                "widget": "string"
+              },
+              {
+                "name": "text",
+                "label": "Testo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "storyCta",
+            "label": "Collegamento ai cani",
+            "widget": "string"
+          },
+          {
+            "name": "storyImageCaption",
+            "label": "Didascalia della fotografia",
+            "widget": "string"
+          }
+        ]
+      },
+      {
+        "name": "story-en",
+        "label": "English",
+        "file": "content/pages/story.en.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "storyLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "storyTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "storyIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "storyFirstTitle",
+            "label": "Titolo della storia",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "storyFirst",
+            "label": "Primo paragrafo",
+            "widget": "text"
+          },
+          {
+            "name": "storySecond",
+            "label": "Secondo paragrafo",
+            "widget": "text"
+          },
+          {
+            "name": "storyQuote",
+            "label": "Citazione",
+            "widget": "text",
+            "hint": "Puoi andare a capo per dividere il titolo."
+          },
+          {
+            "name": "storyEnd",
+            "label": "Conclusione",
+            "widget": "text"
+          },
+          {
+            "name": "storyMilestones",
+            "label": "Tappe della storia",
+            "widget": "list",
+            "fields": [
+              {
+                "name": "year",
+                "label": "Anno o periodo",
+                "widget": "string"
+              },
+              {
+                "name": "text",
+                "label": "Testo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "storyCta",
+            "label": "Collegamento ai cani",
+            "widget": "string"
+          },
+          {
+            "name": "storyImageCaption",
+            "label": "Didascalia della fotografia",
+            "widget": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "dogs",
+    "label": "Testi della pagina cani",
+    "files": [
+      {
+        "name": "dogs-it",
+        "label": "Italiano",
+        "file": "content/pages/dogs.it.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "dogsLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "dogsTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "dogsIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "demoNote",
+            "label": "Nota per schede dimostrative",
+            "widget": "text"
+          },
+          {
+            "name": "filterLabel",
+            "label": "Etichetta filtro mantello",
+            "widget": "string"
+          },
+          {
+            "name": "allCoats",
+            "label": "Tutti i mantelli",
+            "widget": "string"
+          },
+          {
+            "name": "dogCount",
+            "label": "Etichetta conteggio cani",
+            "widget": "string"
+          },
+          {
+            "name": "bornLabel",
+            "label": "Etichetta anno di nascita",
+            "widget": "string"
+          },
+          {
+            "name": "coatLabel",
+            "label": "Etichetta mantello",
+            "widget": "string"
+          },
+          {
+            "name": "pedigree",
+            "label": "Etichetta pedigree",
+            "widget": "string"
+          },
+          {
+            "name": "tests",
+            "label": "Etichetta test",
+            "widget": "string"
+          },
+          {
+            "name": "checkYes",
+            "label": "Spunta per dati di esempio",
+            "widget": "string"
+          },
+          {
+            "name": "dogCta",
+            "label": "Invito a conoscere i cani",
+            "widget": "string"
+          },
+          {
+            "name": "checkYesReal",
+            "label": "Spunta per dati verificati",
+            "widget": "string"
+          },
+          {
+            "name": "checkNo",
+            "label": "Indicazione non disponibile",
+            "widget": "string"
+          },
+          {
+            "name": "dogsEmpty",
+            "label": "Testo se non ci sono cani pubblicati",
+            "widget": "string"
+          }
+        ]
+      },
+      {
+        "name": "dogs-en",
+        "label": "English",
+        "file": "content/pages/dogs.en.json",
+        "fields": [
+          {
+            "name": "seo",
+            "label": "Anteprima sui motori di ricerca",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "title",
+                "label": "Titolo SEO",
+                "widget": "string"
+              },
+              {
+                "name": "description",
+                "label": "Descrizione SEO",
+                "widget": "text"
+              },
+              {
+                "name": "socialImage",
+                "label": "Immagine per condivisioni social",
+                "widget": "image",
+                "required": false,
+                "hint": "Facoltativa. Se vuota, usa la fotografia principale della pagina."
+              }
+            ],
+            "hint": "Titolo indicativo: 50–65 caratteri. Descrizione: 140–165 caratteri, naturale e specifica."
+          },
+          {
+            "name": "dogsLabel",
+            "label": "Sopratitolo della pagina",
+            "widget": "string"
+          },
+          {
+            "name": "dogsTitle",
+            "label": "Titolo della pagina",
+            "widget": "object",
+            "collapsed": false,
+            "fields": [
+              {
+                "name": "line1",
+                "label": "Prima riga",
+                "widget": "string"
+              },
+              {
+                "name": "line2",
+                "label": "Seconda riga in corsivo",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "dogsIntro",
+            "label": "Introduzione",
+            "widget": "text"
+          },
+          {
+            "name": "demoNote",
+            "label": "Nota per schede dimostrative",
+            "widget": "text"
+          },
+          {
+            "name": "filterLabel",
+            "label": "Etichetta filtro mantello",
+            "widget": "string"
+          },
+          {
+            "name": "allCoats",
+            "label": "Tutti i mantelli",
+            "widget": "string"
+          },
+          {
+            "name": "dogCount",
+            "label": "Etichetta conteggio cani",
+            "widget": "string"
+          },
+          {
+            "name": "bornLabel",
+            "label": "Etichetta anno di nascita",
+            "widget": "string"
+          },
+          {
+            "name": "coatLabel",
+            "label": "Etichetta mantello",
+            "widget": "string"
+          },
+          {
+            "name": "pedigree",
+            "label": "Etichetta pedigree",
+            "widget": "string"
+          },
+          {
+            "name": "tests",
+            "label": "Etichetta test",
+            "widget": "string"
+          },
+          {
+            "name": "checkYes",
+            "label": "Spunta per dati di esempio",
+            "widget": "string"
+          },
+          {
+            "name": "dogCta",
+            "label": "Invito a conoscere i cani",
+            "widget": "string"
+          },
+          {
+            "name": "checkYesReal",
+            "label": "Spunta per dati verificati",
+            "widget": "string"
+          },
+          {
+            "name": "checkNo",
+            "label": "Indicazione non disponibile",
+            "widget": "string"
+          },
+          {
+            "name": "dogsEmpty",
+            "label": "Testo se non ci sono cani pubblicati",
+            "widget": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "common",
+    "label": "Menu, contatti e privacy",
+    "files": [
+      {
+        "name": "common-it",
+        "label": "Italiano",
+        "file": "content/common.it.json",
+        "fields": [
+          {
+            "name": "nav",
+            "label": "Voci del menu",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "home",
+                "label": "Home",
+                "widget": "string"
+              },
+              {
+                "name": "puppies",
+                "label": "Cuccioli",
+                "widget": "string"
+              },
+              {
+                "name": "gallery",
+                "label": "Galleria",
+                "widget": "string"
+              },
+              {
+                "name": "story",
+                "label": "Storia",
+                "widget": "string"
+              },
+              {
+                "name": "dogs",
+                "label": "Cani",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "contactSection",
+            "label": "Sezione contatti",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "contactLabel",
+                "label": "Sopratitolo contatti",
+                "widget": "string"
+              },
+              {
+                "name": "contactTitle",
+                "label": "Titolo contatti",
+                "widget": "string"
+              },
+              {
+                "name": "contactText",
+                "label": "Testo contatti",
+                "widget": "text"
+              },
+              {
+                "name": "whatsapp",
+                "label": "Invito a scrivere",
+                "widget": "string"
+              },
+              {
+                "name": "call",
+                "label": "Pulsante chiama",
+                "widget": "string"
+              },
+              {
+                "name": "footerLine",
+                "label": "Descrizione nel piè di pagina",
+                "widget": "string"
+              },
+              {
+                "name": "location",
+                "label": "Località nel piè di pagina",
+                "widget": "string"
+              },
+              {
+                "name": "recognition",
+                "label": "Riconoscimenti nel piè di pagina",
+                "widget": "string"
+              },
+              {
+                "name": "privacy",
+                "label": "Collegamento privacy",
+                "widget": "string"
+              },
+              {
+                "name": "imageDisclaimer",
+                "label": "Nota sulle immagini illustrative",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "enquiry",
+            "label": "Modulo di contatto",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "dialogTitle",
+                "label": "Titolo del modulo",
+                "widget": "string"
+              },
+              {
+                "name": "dialogText",
+                "label": "Introduzione al modulo",
+                "widget": "text"
+              },
+              {
+                "name": "nameLabel",
+                "label": "Etichetta nome",
+                "widget": "string"
+              },
+              {
+                "name": "namePlaceholder",
+                "label": "Suggerimento nome",
+                "widget": "string"
+              },
+              {
+                "name": "topicLabel",
+                "label": "Etichetta argomento",
+                "widget": "string"
+              },
+              {
+                "name": "topics",
+                "label": "Argomenti disponibili",
+                "widget": "list",
+                "field": {
+                  "name": "value",
+                  "label": "Testo",
+                  "widget": "string"
+                }
+              },
+              {
+                "name": "messageLabel",
+                "label": "Etichetta messaggio",
+                "widget": "string"
+              },
+              {
+                "name": "messagePlaceholder",
+                "label": "Suggerimento messaggio",
+                "widget": "string"
+              },
+              {
+                "name": "send",
+                "label": "Pulsante continua",
+                "widget": "string"
+              },
+              {
+                "name": "formNote",
+                "label": "Nota sul trattamento del messaggio",
+                "widget": "string"
+              },
+              {
+                "name": "sent",
+                "label": "Conferma messaggio pronto",
+                "widget": "string"
+              },
+              {
+                "name": "openWhatsapp",
+                "label": "Pulsante apri WhatsApp",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "privacyNotice",
+            "label": "Informativa privacy",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "privacyTitle",
+                "label": "Titolo privacy",
+                "widget": "string"
+              },
+              {
+                "name": "privacyText",
+                "label": "Testo privacy",
+                "widget": "text"
+              }
+            ]
+          },
+          {
+            "name": "interface",
+            "label": "Testi di navigazione",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "contact",
+                "label": "Pulsante contatti",
+                "widget": "string"
+              },
+              {
+                "name": "menu",
+                "label": "Apri menu",
+                "widget": "string"
+              },
+              {
+                "name": "close",
+                "label": "Chiudi",
+                "widget": "string"
+              },
+              {
+                "name": "skip",
+                "label": "Salta al contenuto",
+                "widget": "string"
+              },
+              {
+                "name": "back",
+                "label": "Torna alla home",
+                "widget": "string"
+              },
+              {
+                "name": "discover",
+                "label": "Scopri",
+                "widget": "string"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "common-en",
+        "label": "English",
+        "file": "content/common.en.json",
+        "fields": [
+          {
+            "name": "nav",
+            "label": "Voci del menu",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "home",
+                "label": "Home",
+                "widget": "string"
+              },
+              {
+                "name": "puppies",
+                "label": "Cuccioli",
+                "widget": "string"
+              },
+              {
+                "name": "gallery",
+                "label": "Galleria",
+                "widget": "string"
+              },
+              {
+                "name": "story",
+                "label": "Storia",
+                "widget": "string"
+              },
+              {
+                "name": "dogs",
+                "label": "Cani",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "contactSection",
+            "label": "Sezione contatti",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "contactLabel",
+                "label": "Sopratitolo contatti",
+                "widget": "string"
+              },
+              {
+                "name": "contactTitle",
+                "label": "Titolo contatti",
+                "widget": "string"
+              },
+              {
+                "name": "contactText",
+                "label": "Testo contatti",
+                "widget": "text"
+              },
+              {
+                "name": "whatsapp",
+                "label": "Invito a scrivere",
+                "widget": "string"
+              },
+              {
+                "name": "call",
+                "label": "Pulsante chiama",
+                "widget": "string"
+              },
+              {
+                "name": "footerLine",
+                "label": "Descrizione nel piè di pagina",
+                "widget": "string"
+              },
+              {
+                "name": "location",
+                "label": "Località nel piè di pagina",
+                "widget": "string"
+              },
+              {
+                "name": "recognition",
+                "label": "Riconoscimenti nel piè di pagina",
+                "widget": "string"
+              },
+              {
+                "name": "privacy",
+                "label": "Collegamento privacy",
+                "widget": "string"
+              },
+              {
+                "name": "imageDisclaimer",
+                "label": "Nota sulle immagini illustrative",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "enquiry",
+            "label": "Modulo di contatto",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "dialogTitle",
+                "label": "Titolo del modulo",
+                "widget": "string"
+              },
+              {
+                "name": "dialogText",
+                "label": "Introduzione al modulo",
+                "widget": "text"
+              },
+              {
+                "name": "nameLabel",
+                "label": "Etichetta nome",
+                "widget": "string"
+              },
+              {
+                "name": "namePlaceholder",
+                "label": "Suggerimento nome",
+                "widget": "string"
+              },
+              {
+                "name": "topicLabel",
+                "label": "Etichetta argomento",
+                "widget": "string"
+              },
+              {
+                "name": "topics",
+                "label": "Argomenti disponibili",
+                "widget": "list",
+                "field": {
+                  "name": "value",
+                  "label": "Testo",
+                  "widget": "string"
+                }
+              },
+              {
+                "name": "messageLabel",
+                "label": "Etichetta messaggio",
+                "widget": "string"
+              },
+              {
+                "name": "messagePlaceholder",
+                "label": "Suggerimento messaggio",
+                "widget": "string"
+              },
+              {
+                "name": "send",
+                "label": "Pulsante continua",
+                "widget": "string"
+              },
+              {
+                "name": "formNote",
+                "label": "Nota sul trattamento del messaggio",
+                "widget": "string"
+              },
+              {
+                "name": "sent",
+                "label": "Conferma messaggio pronto",
+                "widget": "string"
+              },
+              {
+                "name": "openWhatsapp",
+                "label": "Pulsante apri WhatsApp",
+                "widget": "string"
+              }
+            ]
+          },
+          {
+            "name": "privacyNotice",
+            "label": "Informativa privacy",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "privacyTitle",
+                "label": "Titolo privacy",
+                "widget": "string"
+              },
+              {
+                "name": "privacyText",
+                "label": "Testo privacy",
+                "widget": "text"
+              }
+            ]
+          },
+          {
+            "name": "interface",
+            "label": "Testi di navigazione",
+            "widget": "object",
+            "collapsed": true,
+            "fields": [
+              {
+                "name": "contact",
+                "label": "Pulsante contatti",
+                "widget": "string"
+              },
+              {
+                "name": "menu",
+                "label": "Apri menu",
+                "widget": "string"
+              },
+              {
+                "name": "close",
+                "label": "Chiudi",
+                "widget": "string"
+              },
+              {
+                "name": "skip",
+                "label": "Salta al contenuto",
+                "widget": "string"
+              },
+              {
+                "name": "back",
+                "label": "Torna alla home",
+                "widget": "string"
+              },
+              {
+                "name": "discover",
+                "label": "Scopri",
+                "widget": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "name": "Livia",
+  "coat": "orangeWhite",
+  "born": 2024,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 9,
+  "illustrative": true,
+  "published": true,
+  "order": 100
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Otto",
+  "coat": "black",
+  "born": 2021,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 6,
+  "illustrative": true,
+  "published": true,
+  "order": 70
+}

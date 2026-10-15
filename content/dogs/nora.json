@@ -1,0 +1,12 @@
+{
+  "name": "Nora",
+  "coat": "orangeRoan",
+  "born": 2022,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 3,
+  "illustrative": true,
+  "published": true,
+  "order": 40
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Arturo",
+  "coat": "golden",
+  "born": 2020,
+  "pedigree": true,
+  "tests": true,
+  "image": "",
+  "portrait": 4,
+  "illustrative": true,
+  "published": true,
+  "order": 50
+}

@@ -9,3 +9,7 @@ dist/
 /i-nostri-cani/
 test-results/
 playwright-report/
+/public/admin/vendor/
+/public/admin/locale-it.js
+/public/admin/config.json
+/public/admin/preview-settings.json

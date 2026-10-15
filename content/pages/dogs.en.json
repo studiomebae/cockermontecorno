@@ -1,0 +1,26 @@
+{
+  "seo": {
+    "title": "Meet Our English Cocker Spaniels | Allevamento Cocker Montecorno",
+    "description": "Discover our English Cocker Spaniel world. Illustrative profiles with names, coats, birth years, and simple pedigree and health-test indicators.",
+    "socialImage": ""
+  },
+  "dogsLabel": "OUR BREEDING HOME’S DOGS",
+  "dogsTitle": {
+    "line1": "Every one,",
+    "line2": "a world of their own."
+  },
+  "dogsIntro": "Our English Cocker Spaniels: different characters, with an endless love of being together.",
+  "demoNote": "Demonstration profiles: names, years, images, pedigree and test indicators are examples, not records of the actual dogs.",
+  "filterLabel": "Coat",
+  "allCoats": "All coats",
+  "dogCount": "dogs",
+  "bornLabel": "Year of birth",
+  "coatLabel": "Coat",
+  "pedigree": "Pedigree",
+  "tests": "Tests",
+  "checkYes": "Yes · demonstration data",
+  "dogCta": "Come and meet them",
+  "checkYesReal": "Yes",
+  "checkNo": "Not listed",
+  "dogsEmpty": "Meet our dogs here soon. In the meantime, say hello."
+}

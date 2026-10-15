@@ -1,0 +1,26 @@
+{
+  "seo": {
+    "title": "I nostri Cocker Spaniel Inglesi | Allevamento Cocker Montecorno",
+    "description": "Conosci il mondo dei nostri Cocker Spaniel Inglesi. Schede dimostrative con nome, mantello, anno di nascita e indicatori per pedigree e test.",
+    "socialImage": ""
+  },
+  "dogsLabel": "I CANI DELL’ALLEVAMENTO",
+  "dogsTitle": {
+    "line1": "Ognuno, un piccolo",
+    "line2": "mondo a sé."
+  },
+  "dogsIntro": "I nostri Cocker Spaniel Inglesi: caratteri da scoprire, un’inesauribile voglia di stare insieme.",
+  "demoNote": "Schede dimostrative: nomi, anni, immagini e indicazioni su pedigree e test sono di esempio, non dati dei cani reali.",
+  "filterLabel": "Mantello",
+  "allCoats": "Tutti i mantelli",
+  "dogCount": "cani",
+  "bornLabel": "Anno di nascita",
+  "coatLabel": "Mantello",
+  "pedigree": "Pedigree",
+  "tests": "Test",
+  "checkYes": "Sì · dato dimostrativo",
+  "dogCta": "Vieni a conoscerli",
+  "checkYesReal": "Sì",
+  "checkNo": "Non indicato",
+  "dogsEmpty": "Presto ti presenteremo i nostri cani. Nel frattempo, scrivici."
+}

@@ -1,0 +1,2 @@
+export const escapeHtml=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+export function escapeDeep(value){if(typeof value==='string')return escapeHtml(value);if(Array.isArray(value))return value.map(escapeDeep);if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,escapeDeep(v)]));return value;}
