@@ -1,19 +1,12 @@
 {
-  "name": "Ortica",
-  "coat": "orangeRoan",
-  "born": 2023,
-  "pedigree": true,
-  "tests": true,
-  "image": "",
-  "portrait": 5,
   "illustrative": true,
+  "tests": true,
+  "pedigree": true,
+  "born": 2023,
+  "name": "Camilla di Podere Montecorno",
   "published": true,
   "order": 60,
-  "champion": false,
-  "retired": false,
-  "availableForFoster": false,
-  "descriptionIt": "",
-  "descriptionEn": "",
-  "awardsIt": "",
-  "awardsEn": ""
+  "image": "/images/uploads/img_6557.jpeg",
+  "portrait": 5,
+  "coat": "orangeRoan"
 }
