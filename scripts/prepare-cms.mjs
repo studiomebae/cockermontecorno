@@ -13,7 +13,12 @@ await writeFile(new URL('locale-it.js',output),`/* Decap CMS Italian locale, MIT
 await copyFile(new URL('../node_modules/decap-cms-locales/LICENSE',import.meta.url),new URL('vendor/locales-LICENSE.txt',output));
 const configureImages=fields=>fields.map(field=>({...field,...(field.widget==='image'?{media_library:{config:{max_file_size:5000000}}}:{}),...(field.fields?{fields:configureImages(field.fields)}:{})}));
 const origin=siteOrigin();
-const config={load_config_file:false,backend:{name:'github',repo:'studiomebae/cockermontecorno',branch:'main',base_url:'https://api.netlify.com',auth_endpoint:'auth'},locale:'it',publish_mode:'simple',media_folder:'public/images/uploads',public_folder:'/images/uploads',logo_url:'/admin/logo.svg',...(origin?{site_url:origin,display_url:origin}:{}),show_preview_links:false,slug:{encoding:'ascii',clean_accents:true,sanitize_replacement:'-'},collections:collections.map(collection=>({...collection,...(collection.files?{files:collection.files.map(file=>({...file,fields:configureImages(file.fields)}))}:{fields:configureImages(collection.fields)}),editor:{preview:true}}))};
+// Login GitHub: CMS_AUTH_URL punta al Worker Cloudflare (sveltia-cms-auth). Senza variabile resta il provider Netlify.
+const authUrl=(process.env.CMS_AUTH_URL||'https://api.netlify.com').replace(/\/$/,'');
+if(!/^https:\/\//.test(authUrl))throw new Error('CMS_AUTH_URL must be an HTTPS URL.');
+// Anteprima di bozza per le raccolte a cartelle: porta alla pagina dove compare la voce.
+const previewPaths={'dog-records':'i-nostri-cani/','gallery-photos':'galleria/'};
+const config={load_config_file:false,backend:{name:'github',repo:'studiomebae/cockermontecorno',branch:'main',base_url:authUrl,auth_endpoint:'auth'},locale:'it',publish_mode:'editorial_workflow',media_folder:'public/images/uploads',public_folder:'/images/uploads',logo_url:'/admin/logo.svg',...(origin?{site_url:origin,display_url:origin}:{}),show_preview_links:true,slug:{encoding:'ascii',clean_accents:true,sanitize_replacement:'-'},collections:collections.map(collection=>({...collection,...(previewPaths[collection.name]?{preview_path:previewPaths[collection.name]}:{}),...(collection.files?{files:collection.files.map(file=>({...file,fields:configureImages(file.fields)}))}:{fields:configureImages(collection.fields)}),editor:{preview:true}}))};
 await writeFile(new URL('config.json',output),JSON.stringify(config,null,2)+'\n');
 await writeFile(new URL('preview-settings.json',output),JSON.stringify({photos:settings.photos,business:{name:settings.business.name}},null,2)+'\n');
 console.log('Prepared self-hosted Decap CMS, Italian locale and editor configuration.');

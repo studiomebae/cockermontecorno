@@ -1,15 +1,16 @@
 import {test,expect} from '@playwright/test';
 import {openMemoryEditor} from './cms-fixtures.js';
+const authOrigin=new URL(process.env.CMS_AUTH_URL||'https://api.netlify.com').origin;
 
 async function publish(page){await page.getByRole('button',{name:'Pubblica',exact:true}).click();await page.getByRole('menuitem',{name:'Pubblica ora',exact:true}).click();await expect(page.getByRole('button',{name:'Pubblicato',exact:true})).toBeVisible();}
 
-test('production admin requires GitHub login and opens the Netlify OAuth provider',async({page,context})=>{
+test('production admin requires GitHub login and opens the configured OAuth provider',async({page,context})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await context.route('https://api.netlify.com/auth**',route=>route.fulfill({status:200,body:'OAuth destination intercepted for testing'}));
+ await context.route(`${authOrigin}/auth**`,route=>route.fulfill({status:200,body:'OAuth destination intercepted for testing'}));
  await page.goto('/admin/');await expect(page).toHaveTitle('Gestione sito | Allevamento Cocker Montecorno');await expect(page.getByRole('button',{name:'Accedi con GitHub'})).toBeVisible();
  await expect(page.locator('meta[name=robots]')).toHaveAttribute('content','noindex, nofollow');
  const popupPromise=page.waitForEvent('popup');await page.getByRole('button',{name:'Accedi con GitHub'}).click();const popup=await popupPromise;
- const url=new URL(popup.url());expect(url.origin).toBe('https://api.netlify.com');expect(url.pathname).toBe('/auth');expect(url.searchParams.get('provider')).toBe('github');await popup.close();
+ const url=new URL(popup.url());expect(url.origin).toBe(authOrigin);expect(url.pathname).toBe('/auth');expect(url.searchParams.get('provider')).toBe('github');await popup.close();
  expect(errors).toEqual([]);
 });
 
@@ -72,7 +73,7 @@ test('client can update the two litter periods and parents in the puppy editor',
 });
 
 test('client guide is available and the configuration covers pages, photos, dogs and contacts',async({page,request})=>{
- const config=await (await request.get('/admin/config.json')).json();expect(config.backend.name).toBe('github');expect(config.backend.repo).toBe('studiomebae/cockermontecorno');expect(config.backend.branch).toBe('main');expect(config.locale).toBe('it');expect(config.media_folder).toBe('public/images/uploads');expect(JSON.stringify(config)).not.toMatch(/client_secret|access_token/);
+ const config=await (await request.get('/admin/config.json')).json();expect(config.backend.name).toBe('github');expect(config.backend.repo).toBe('studiomebae/cockermontecorno');expect(config.backend.branch).toBe('main');expect(config.locale).toBe('it');expect(config.publish_mode).toBe('editorial_workflow');expect(config.show_preview_links).toBe(true);expect(config.collections.find(c=>c.name==='dog-records').preview_path).toBe('i-nostri-cani/');expect(config.media_folder).toBe('public/images/uploads');expect(JSON.stringify(config)).not.toMatch(/client_secret|access_token/);
  expect(config.collections.map(c=>c.name)).toEqual(expect.arrayContaining(['settings','dog-records','gallery-photos','home','puppies','gallery','story','dogs','champions','retired','foster','common']));
  for(const key of ['home','puppies','gallery','story','dogs','champions','retired','foster','common'])expect(config.collections.find(c=>c.name===key).files).toHaveLength(2);
  await page.goto('/admin/guida.html');await expect(page.locator('h1')).toContainText('nelle tue mani.');await expect(page.getByRole('heading',{name:'Aggiungere un cane'})).toBeVisible();

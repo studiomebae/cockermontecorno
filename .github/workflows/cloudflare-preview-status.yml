@@ -1,0 +1,35 @@
+# Le bozze del CMS sono rami GitHub: Cloudflare Pages costruisce un'anteprima per ognuno.
+# Decap CMS mostra il link "Vedi anteprima" solo se trova uno stato commit che contiene "deploy".
+# Cloudflare pubblica invece un check run: questo workflow lo copia in uno stato commit.
+name: Anteprima Cloudflare per il CMS
+on:
+  check_run:
+    types: [completed]
+permissions:
+  checks: read
+  statuses: write
+jobs:
+  preview-status:
+    if: github.event.check_run.app.slug == 'cloudflare-workers-and-pages' && github.event.check_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const run = context.payload.check_run;
+            const html = `${run.output?.summary || ''} ${run.output?.text || ''}`;
+            const urls = [...html.matchAll(/https:\/\/[a-z0-9.-]+\.pages\.dev[^\s'"<>)]*/gi)].map(m => m[0]);
+            if (!urls.length) { core.info('Nessun URL di anteprima nel check Cloudflare.'); return; }
+            // Preferisce l'alias del ramo (stabile tra salvataggi), altrimenti il primo URL trovato.
+            const branchUrl = html.match(/Branch Preview URL[\s\S]*?(https:\/\/[a-z0-9.-]+\.pages\.dev)/i)?.[1];
+            const target = branchUrl || urls[0];
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: run.head_sha,
+              state: 'success',
+              target_url: target,
+              context: 'cloudflare-pages deploy preview',
+              description: 'Anteprima della bozza pronta'
+            });
+            core.info(`Anteprima: ${target}`);
