@@ -29,6 +29,7 @@ The default port is 5173. Changes to content JSON regenerate the HTML in develop
 - **Editor:** `/admin/`.
 - **Client guide:** `/admin/guida.html`.
 - **Owner setup:** [docs/ATTIVAZIONE-CMS.md](docs/ATTIVAZIONE-CMS.md).
+- **Cloudflare Pages + bozze con anteprima:** [docs/CLOUDFLARE-MIGRAZIONE.md](docs/CLOUDFLARE-MIGRAZIONE.md).
 
 The editor manages main photographs, bilingual page text and SEO, gallery uploads/captions/order/visibility, dog records/photos/checkboxes/order/visibility, champion/retired/placement categories and bilingual show results, contacts, menu, privacy and the enquiry form labels. Publishing writes content and media to GitHub `main`; a connected Netlify project rebuilds the site automatically. The CMS has an Italian interface and content previews. It uses a locally hosted, pinned Decap bundle and its Italian locale, with no CDN dependency.
 

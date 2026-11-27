@@ -4,7 +4,8 @@ export async function cmsFixture(){const tree={};async function walk(directory){
 export async function openMemoryEditor(page,path=''){
  const tree=await cmsFixture();
  await page.addInitScript(data=>{window.repoFiles=data;},tree);
- await page.route('**/admin/config.json',async route=>{const config=JSON.parse(await readFile('public/admin/config.json','utf8'));config.backend={name:'test-repo',login:false};await route.fulfill({json:config});});
+ await page.route('**/admin/config.json',async route=>{const config=JSON.parse(await readFile('public/admin/config.json','utf8'));config.backend={name:'test-repo',login:false};config.publish_mode='simple';// I test in memoria verificano i campi; il flusso bozze è verificato dalla configurazione.
+await route.fulfill({json:config});});
  await page.goto('/admin/'+path);
  return tree;
 }
