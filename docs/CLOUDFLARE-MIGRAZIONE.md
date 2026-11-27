@@ -5,7 +5,7 @@ Obiettivo: nessun limite di crediti, e un CMS dove si lavora in **bozza con ante
 ## Cosa cambia nel codice (ramo `cloudflare-cms-bozze`)
 
 - **Bozze**: il CMS usa `publish_mode: editorial_workflow`. Ogni salvataggio crea un ramo `cms/...` con una pull request su GitHub. `main`, e quindi il sito online, cambia solo con **Pubblica**.
-- **Anteprima**: Cloudflare Pages costruisce un sito di anteprima per ogni ramo di bozza. Il workflow `.github/workflows/cloudflare-preview-status.yml` trasforma il check di Cloudflare in uno stato commit, così nel CMS compare **Vedi anteprima**. Le schede cane aprono `/i-nostri-cani/`, le foto `/galleria/`.
+- **Anteprima**: Cloudflare Pages costruisce un sito di anteprima per ogni ramo di bozza. Il workflow `.github/workflows/cloudflare-preview-status.yml` trasforma il check di Cloudflare in uno stato commit, così nel CMS compare **Visualizza l’anteprima**. Le schede cane aprono `/i-nostri-cani/`, le foto `/galleria/`.
 - **Login**: `scripts/prepare-cms.mjs` legge `CMS_AUTH_URL`, cioè l'URL del Worker di autenticazione su Cloudflare. Senza variabile usa ancora il provider Netlify, quindi il sito attuale continua a funzionare durante il passaggio.
 - **Intestazioni**: `public/_headers` replica su Cloudflare il `noindex`/`no-store` del pannello. `.node-version` fissa Node 24.
 - **Guida cliente**: `/admin/guida.html` spiega bozze, anteprima e pubblicazione.
@@ -52,7 +52,7 @@ Il Client Secret resta solo nelle impostazioni del Worker: mai nel codice, in ch
 
 1. Apri `https://cockermontecorno.pages.dev/admin/` e accedi con GitHub.
 2. Modifica una frase della Home e premi **Salva**: il sito non deve cambiare.
-3. Dopo 2–3 minuti premi **Vedi anteprima** e controlla la frase.
+3. Dopo 2–3 minuti premi **Visualizza l’anteprima** e controlla la frase.
 4. Imposta lo stato su **Pronto**, poi **Pubblica → Pubblica ora**. Dopo la build la frase compare sul sito.
 5. Ripristina la frase originale.
 
