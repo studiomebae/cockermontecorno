@@ -43,8 +43,38 @@
     "openWhatsapp": "Apri WhatsApp"
   },
   "privacyNotice": {
-    "privacyTitle": "La tua privacy.",
-    "privacyText": "Questo sito non usa cookie di analisi o marketing. Il modulo prepara un messaggio sul tuo dispositivo e non salva i dati. Se continui su WhatsApp o scrivi via email, i dati sono gestiti dai rispettivi servizi e da Natascia per rispondere alla richiesta. Per domande, contattaci all’indirizzo email indicato sul sito."
+    "privacyTitle": "Privacy e cookie.",
+    "privacyText": "Informativa sul trattamento dei dati personali ai sensi degli artt. 13 e 14 del Regolamento UE 2016/679 (GDPR). Ultimo aggiornamento: 28 novembre 2026.",
+    "privacySections": [
+      {
+        "heading": "Titolare del trattamento",
+        "text": "Natascia Longhi, Allevamento Cocker di Podere Montecorno, Grosseto (GR), Italia. Email: allevamentomontecorno@gmail.com."
+      },
+      {
+        "heading": "Quali dati trattiamo",
+        "text": "Il sito non richiede registrazione e non salva i dati inseriti nel modulo di contatto: il modulo prepara un messaggio sul tuo dispositivo, che arriva a Natascia solo se decidi di inviarlo su WhatsApp. Se ci scrivi su WhatsApp o via email, trattiamo i dati che scegli di condividere, insieme al tuo numero di telefono o indirizzo email. Durante la navigazione il fornitore di hosting registra dati tecnici, come indirizzo IP, browser e pagine richieste, necessari al funzionamento e alla sicurezza del sito."
+      },
+      {
+        "heading": "Finalità e base giuridica",
+        "text": "Usiamo i dati per rispondere alle tue richieste e, se lo desideri, per valutare e organizzare un affido (art. 6.1.b GDPR, misure precontrattuali adottate su tua richiesta). I dati tecnici di navigazione servono al funzionamento e alla sicurezza del sito (art. 6.1.f GDPR, legittimo interesse). Non usiamo i dati per marketing, non li vendiamo e non li cediamo a terzi."
+      },
+      {
+        "heading": "Fornitori di servizi",
+        "text": "I dati possono essere trattati da Cloudflare, Inc. (hosting del sito), Meta Platforms Ireland Ltd. (WhatsApp) e Google Ireland Ltd. (Gmail), come fornitori dei rispettivi servizi. Alcuni di questi fornitori possono trasferire dati fuori dall’Unione europea, con le garanzie previste dal GDPR, come l’EU-US Data Privacy Framework o le clausole contrattuali standard."
+      },
+      {
+        "heading": "Conservazione",
+        "text": "Conserviamo i messaggi per il tempo necessario a rispondere e a seguire l’eventuale affido, poi li cancelliamo. I dati tecnici di navigazione sono conservati dal fornitore di hosting per periodi brevi."
+      },
+      {
+        "heading": "Cookie",
+        "text": "Il sito non usa cookie di analisi, di profilazione o pubblicitari, né altri strumenti di tracciamento. Per questo non è necessario un banner per il consenso. I caratteri tipografici sono ospitati sul sito stesso. L’area riservata /admin, usata solo da chi gestisce il sito, memorizza nel browser i dati tecnici necessari all’accesso."
+      },
+      {
+        "heading": "I tuoi diritti",
+        "text": "Puoi chiedere l’accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e puoi opporti al trattamento (artt. 15–22 GDPR), scrivendo a allevamentomontecorno@gmail.com. Hai anche il diritto di presentare reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it)."
+      }
+    ]
   },
   "interface": {
     "contact": "Contatti",
@@ -52,6 +82,7 @@
     "close": "Chiudi",
     "skip": "Vai al contenuto",
     "back": "Torna alla home",
-    "discover": "Scopri"
+    "discover": "Scopri",
+    "privacy": "Privacy e cookie"
   }
 }

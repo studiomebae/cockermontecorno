@@ -43,8 +43,38 @@
     "openWhatsapp": "Open WhatsApp"
   },
   "privacyNotice": {
-    "privacyTitle": "Your privacy.",
-    "privacyText": "This website uses no analytics or marketing cookies. The form prepares a message on your device without storing your details. If you continue to WhatsApp or email us, those services and Natascia handle the information to respond to you. For questions, use the email address shown on the website."
+    "privacyTitle": "Privacy and cookies.",
+    "privacyText": "Information on the processing of personal data under Articles 13 and 14 of Regulation (EU) 2016/679 (GDPR). Last updated: 28 November 2026.",
+    "privacySections": [
+      {
+        "heading": "Data controller",
+        "text": "Natascia Longhi, Allevamento Cocker di Podere Montecorno, Grosseto (GR), Italy. Email: allevamentomontecorno@gmail.com."
+      },
+      {
+        "heading": "What data we process",
+        "text": "The site requires no registration and does not store what you type in the contact form: the form prepares a message on your device, which reaches Natascia only if you choose to send it on WhatsApp. If you contact us on WhatsApp or by email, we process the information you choose to share, together with your phone number or email address. While you browse, our hosting provider records technical data, such as IP address, browser and requested pages, needed to run and protect the site."
+      },
+      {
+        "heading": "Purposes and legal basis",
+        "text": "We use your data to answer your requests and, if you wish, to assess and arrange a placement (Art. 6(1)(b) GDPR, steps taken at your request before a contract). Technical browsing data is used to run and secure the site (Art. 6(1)(f) GDPR, legitimate interest). We do not use your data for marketing, and we do not sell or share it."
+      },
+      {
+        "heading": "Service providers",
+        "text": "Your data may be processed by Cloudflare, Inc. (website hosting), Meta Platforms Ireland Ltd. (WhatsApp) and Google Ireland Ltd. (Gmail) as providers of their services. Some of these providers may transfer data outside the European Union with the safeguards required by the GDPR, such as the EU-US Data Privacy Framework or standard contractual clauses."
+      },
+      {
+        "heading": "Retention",
+        "text": "We keep messages for as long as needed to answer you and follow any placement, then delete them. Technical browsing data is kept by the hosting provider for short periods."
+      },
+      {
+        "heading": "Cookies",
+        "text": "The site does not use analytics, profiling or advertising cookies, or any other tracking tools, so no consent banner is required. Fonts are hosted on the site itself. The private /admin area, used only by the people who manage the site, stores the technical data needed to sign in in the browser."
+      },
+      {
+        "heading": "Your rights",
+        "text": "You can ask to access, correct or delete your data, restrict processing or receive your data, and you can object to processing (Arts. 15–22 GDPR), by writing to allevamentomontecorno@gmail.com. You also have the right to lodge a complaint with the Italian data protection authority, the Garante per la protezione dei dati personali (www.garanteprivacy.it)."
+      }
+    ]
   },
   "interface": {
     "contact": "Contact",
@@ -52,6 +82,7 @@
     "close": "Close",
     "skip": "Skip to content",
     "back": "Back to home",
-    "discover": "Discover"
+    "discover": "Discover",
+    "privacy": "Privacy and cookies"
   }
 }

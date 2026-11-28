@@ -159,3 +159,7 @@ h1 em,h2 em,blockquote em,.brand>strong{font-style:normal}
  .hero-litter-colours{font-size:18px}
  .hero-litter-ready{font-size:14px}
 }
+.privacy-dialog{max-width:680px;overflow-y:auto}
+.privacy-dialog h3{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--brown);margin:24px 0 6px}
+.privacy-dialog>p{font-size:15px;line-height:1.65}
+.privacy-dialog>.privacy-intro{font-size:13px}

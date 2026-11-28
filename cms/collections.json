@@ -88,6 +88,13 @@
                 "label": "Sito precedente / fonte",
                 "widget": "string",
                 "required": false
+              },
+              {
+                "name": "vatNumber",
+                "label": "Partita IVA (se presente)",
+                "widget": "string",
+                "required": false,
+                "hint": "Se l’allevamento ha una partita IVA, va indicata nel footer. Lascia vuoto se non c’è."
               }
             ]
           },
@@ -2334,6 +2341,23 @@
                 "name": "privacyText",
                 "label": "Testo privacy",
                 "widget": "text"
+              },
+              {
+                "name": "privacySections",
+                "label": "Sezioni dell’informativa",
+                "widget": "list",
+                "fields": [
+                  {
+                    "name": "heading",
+                    "label": "Titolo",
+                    "widget": "string"
+                  },
+                  {
+                    "name": "text",
+                    "label": "Testo",
+                    "widget": "text"
+                  }
+                ]
               }
             ]
           },
@@ -2576,6 +2600,23 @@
                 "name": "privacyText",
                 "label": "Testo privacy",
                 "widget": "text"
+              },
+              {
+                "name": "privacySections",
+                "label": "Sezioni dell’informativa",
+                "widget": "list",
+                "fields": [
+                  {
+                    "name": "heading",
+                    "label": "Titolo",
+                    "widget": "string"
+                  },
+                  {
+                    "name": "text",
+                    "label": "Testo",
+                    "widget": "text"
+                  }
+                ]
               }
             ]
           },
