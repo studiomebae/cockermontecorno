@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Allevamento Cocker Spaniel Inglese in Toscana | Allevamento Cocker Montecorno",
-    "description": "Allevamento Cocker Montecorno a Grosseto, Toscana. Cocker Spaniel Inglesi allevati da Natascia dal 2005. Riconoscimento ENCI e FCI dal 2010.",
+    "description": "Allevamento di Cocker Spaniel Inglesi a Grosseto, in Toscana, dal 2005. Riconosciuto ENCI e FCI. Cuccioli con pedigree per famiglie da tutta Italia.",
     "socialImage": ""
   },
   "heroLabel": "COCKER SPANIEL INGLESE · GROSSETO, TOSCANA",
@@ -10,6 +10,8 @@
     "line2": "allevati con cura."
   },
   "heroCta": "Scopri i cuccioli",
+  "heroContactCta": "Scrivi a Natascia",
+  "heroAvailableLabel": "Cuccioli disponibili",
   "heroFoot": "Allevamento familiare dal 2005.",
   "heroScroll": "Scopri l’allevamento",
   "homeIntroLabel": "L’ALLEVAMENTO",
@@ -27,5 +29,32 @@
   "homePuppyLabel": "CUCCIOLI",
   "homePuppyTitle": "Cucciolate attuali\ne in programma.",
   "homePuppyText": "I cuccioli crescono in allevamento fino all’arrivo nelle nuove famiglie, che incontriamo sempre prima dell’affido. Qui trovi date e colori delle cucciolate.",
-  "homePuppyCta": "Scopri i cuccioli"
+  "homePuppyCta": "Scopri i cuccioli",
+  "homeFaqTitle": "Domande frequenti.",
+  "homeFaqs": [
+    {
+      "question": "Dove si trova l’Allevamento Cocker di Podere Montecorno?",
+      "answer": "A Grosseto, in Toscana. Accogliamo famiglie da tutta Italia e, quando possibile, dall’estero. Ogni affido inizia con un colloquio e una visita in allevamento."
+    },
+    {
+      "question": "L’allevamento è riconosciuto ENCI?",
+      "answer": "Sì. Alleviamo Cocker Spaniel Inglesi dal 2005 e dal 2010 l’allevamento è riconosciuto da ENCI e FCI. Tutti i cuccioli hanno pedigree ENCI/FCI."
+    },
+    {
+      "question": "Cosa riceve un cucciolo di Cocker Spaniel Inglese al momento dell’affido?",
+      "answer": "Pedigree ENCI/FCI, vaccinazioni, microchip, sverminazione e trattamento antiparassitario. Natascia illustra alla famiglia la documentazione e le cure del cucciolo."
+    },
+    {
+      "question": "A che età un cucciolo può andare nella nuova famiglia?",
+      "answer": "Dopo i 60 giorni di età e solo dopo un colloquio conoscitivo in allevamento. Per i viaggi all’estero l’età di partenza può essere successiva."
+    },
+    {
+      "question": "Di che colore sono i Cocker Spaniel Inglesi dell’allevamento?",
+      "answer": "Soprattutto bianco arancio. Nelle cucciolate ci sono anche bianco roano, fulvo e bianco nero. I colori di ogni cucciolata sono indicati nella pagina Cuccioli."
+    },
+    {
+      "question": "Come si contatta l’allevamento?",
+      "answer": "Scrivendo a Natascia su WhatsApp al +39 347 335 1061. Rispondiamo solo ai messaggi, non alle chiamate."
+    }
+  ]
 }

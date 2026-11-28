@@ -120,3 +120,11 @@ h1 em,h2 em,blockquote em,.brand>strong{font-style:normal}
 .site-header a[aria-current=page]:not(.brand),.mobile-nav [aria-current=page]{color:var(--muted);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
 .header-left a:hover,.site-header .header-contact:hover,.mobile-nav a:hover{color:var(--brown)}
 .site-header .menu-button>span{background:var(--muted)}
+/* Hero: due inviti e cucciolata disponibile */
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 44px;margin-top:40px}
+.hero-actions>.hero-link{margin-top:0;color:var(--beige)}
+.hero-litter{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 18px;margin-top:34px;padding:11px 20px;background:#29100c8c;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:14px;line-height:1.5;max-width:min(760px,100%)}
+.hero-litter>strong{font-weight:500;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--chartreuse)}
+.hero-litter>span+span:before{content:'·';margin-right:18px;opacity:.6}
+.home-faq{margin-bottom:0}
+@media(max-width:700px){.hero-actions{flex-direction:column;align-items:center;gap:16px;margin-top:26px}.hero-litter{flex-direction:column;gap:3px;margin-top:22px;font-size:13px;padding:10px 14px}.hero-litter>span+span:before{display:none}}

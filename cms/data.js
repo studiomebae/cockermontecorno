@@ -50,7 +50,7 @@ for(const lang of ['it','en']){
    if(key==='seo')continue;
    if(pairKeys.has(key))c[key]=[value.line1,value.line2];
    else if(key==='steps')c[key]=value.map(v=>[v.heading,v.text]);
-   else if(key==='faqs')c[key]=value.map(v=>[v.question,v.answer]);
+   else if(key==='faqs'||key==='homeFaqs')c[key]=value.map(v=>[v.question,v.answer]);
    else if(key==='storyMilestones')c[key]=value.map(v=>[v.year,v.text]);
    else c[key]=value;
   }

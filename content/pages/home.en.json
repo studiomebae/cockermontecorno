@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "English Cocker Spaniel Breeder in Tuscany, Italy | Allevamento Cocker Montecorno",
-    "description": "Meet Allevamento Cocker Montecorno in Grosseto, Tuscany. Natascia has raised English Cocker Spaniels since 2005. Recognised by ENCI and FCI since 2010.",
+    "description": "English Cocker Spaniel breeding home in Grosseto, Tuscany, since 2005. ENCI and FCI recognised. Pedigree puppies for families across Italy and Europe.",
     "socialImage": ""
   },
   "heroLabel": "ENGLISH COCKER SPANIEL · GROSSETO, TUSCANY",
@@ -10,6 +10,8 @@
     "line2": "bred with care."
   },
   "heroCta": "See the puppies",
+  "heroContactCta": "Message Natascia",
+  "heroAvailableLabel": "Puppies available",
   "heroFoot": "A family breeding home since 2005.",
   "heroScroll": "About the breeding home",
   "homeIntroLabel": "THE BREEDING HOME",
@@ -27,5 +29,32 @@
   "homePuppyLabel": "PUPPIES",
   "homePuppyTitle": "Current and\nplanned litters.",
   "homePuppyText": "Puppies grow up with us until they join their new families, whom we always meet before a placement. Here you will find dates and colours of our litters.",
-  "homePuppyCta": "Meet the puppies"
+  "homePuppyCta": "Meet the puppies",
+  "homeFaqTitle": "Frequently asked questions.",
+  "homeFaqs": [
+    {
+      "question": "Where is Allevamento Cocker di Podere Montecorno?",
+      "answer": "In Grosseto, Tuscany, Italy. We welcome families from all over Italy and, where possible, from abroad. Every placement begins with a conversation and a visit to the breeding home."
+    },
+    {
+      "question": "Is the breeding home recognised by ENCI?",
+      "answer": "Yes. We have bred English Cocker Spaniels since 2005, and the breeding home has been recognised by ENCI and FCI since 2010. All puppies come with an ENCI/FCI pedigree."
+    },
+    {
+      "question": "What comes with an English Cocker Spaniel puppy?",
+      "answer": "An ENCI/FCI pedigree, vaccinations, microchip, deworming and parasite treatment. Natascia explains the documents and care to each family."
+    },
+    {
+      "question": "At what age can a puppy join its new family?",
+      "answer": "After 60 days of age, and only after an introductory meeting at the breeding home. For international travel, puppies may need to be older."
+    },
+    {
+      "question": "What colours are the English Cocker Spaniels at the breeding home?",
+      "answer": "Mostly orange and white. Litters also include white roan, golden, and black and white. The colours of each litter are listed on the Puppies page."
+    },
+    {
+      "question": "How do I contact the breeding home?",
+      "answer": "Message Natascia on WhatsApp at +39 347 335 1061. We reply to messages only, not calls."
+    }
+  ]
 }

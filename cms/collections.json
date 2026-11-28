@@ -549,6 +549,17 @@
             "widget": "string"
           },
           {
+            "name": "heroContactCta",
+            "label": "Secondo pulsante della copertina (messaggio)",
+            "widget": "string"
+          },
+          {
+            "name": "heroAvailableLabel",
+            "label": "Etichetta cuccioli disponibili nella copertina",
+            "widget": "string",
+            "hint": "Colori e periodo vengono presi in automatico dalla pagina Cuccioli (ultima cucciolata)."
+          },
+          {
             "name": "heroFoot",
             "label": "Nota in basso nella copertina",
             "widget": "string"
@@ -637,6 +648,29 @@
             "name": "homePuppyCta",
             "label": "Collegamento ai cuccioli",
             "widget": "string"
+          },
+          {
+            "name": "homeFaqTitle",
+            "label": "Titolo delle domande frequenti",
+            "widget": "string"
+          },
+          {
+            "name": "homeFaqs",
+            "label": "Domande frequenti in home",
+            "widget": "list",
+            "hint": "Risposte brevi e precise: sono usate anche da Google e dagli assistenti AI.",
+            "fields": [
+              {
+                "name": "question",
+                "label": "Domanda",
+                "widget": "string"
+              },
+              {
+                "name": "answer",
+                "label": "Risposta",
+                "widget": "text"
+              }
+            ]
           }
         ]
       },
@@ -700,6 +734,17 @@
             "widget": "string"
           },
           {
+            "name": "heroContactCta",
+            "label": "Secondo pulsante della copertina (messaggio)",
+            "widget": "string"
+          },
+          {
+            "name": "heroAvailableLabel",
+            "label": "Etichetta cuccioli disponibili nella copertina",
+            "widget": "string",
+            "hint": "Colori e periodo vengono presi in automatico dalla pagina Cuccioli (ultima cucciolata)."
+          },
+          {
             "name": "heroFoot",
             "label": "Nota in basso nella copertina",
             "widget": "string"
@@ -788,6 +833,29 @@
             "name": "homePuppyCta",
             "label": "Collegamento ai cuccioli",
             "widget": "string"
+          },
+          {
+            "name": "homeFaqTitle",
+            "label": "Titolo delle domande frequenti",
+            "widget": "string"
+          },
+          {
+            "name": "homeFaqs",
+            "label": "Domande frequenti in home",
+            "widget": "list",
+            "hint": "Risposte brevi e precise: sono usate anche da Google e dagli assistenti AI.",
+            "fields": [
+              {
+                "name": "question",
+                "label": "Domanda",
+                "widget": "string"
+              },
+              {
+                "name": "answer",
+                "label": "Risposta",
+                "widget": "text"
+              }
+            ]
           }
         ]
       }
