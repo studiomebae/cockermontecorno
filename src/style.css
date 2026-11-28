@@ -128,3 +128,4 @@ h1 em,h2 em,blockquote em,.brand>strong{font-style:normal}
 .hero-litter>span+span:before{content:'·';margin-right:18px;opacity:.6}
 .home-faq{margin-bottom:0}
 @media(max-width:700px){.hero-actions{flex-direction:column;align-items:center;gap:16px;margin-top:26px}.hero-litter{flex-direction:column;gap:3px;margin-top:22px;font-size:13px;padding:10px 14px}.hero-litter>span+span:before{display:none}}
+@media(min-width:701px){.hero-litter{max-width:none;flex-wrap:nowrap;white-space:nowrap}}
