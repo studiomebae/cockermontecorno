@@ -114,3 +114,9 @@ h1 em,h2 em,blockquote em,.brand>strong{font-style:normal}
 @media(min-width:1101px){.header-left{justify-content:flex-end}}
 .hero-image>img{object-position:62% center}
 @media(max-width:700px){.hero-image>img{object-position:70% center}}
+/* Header in Capers (verde oliva) */
+.site-header,.site-header .brand,.site-header .language a,.site-header .language a[aria-current=page],.site-header .header-contact,.mobile-nav{color:var(--muted)}
+.site-header .language a:not([aria-current=page]){opacity:.6}
+.site-header a[aria-current=page]:not(.brand),.mobile-nav [aria-current=page]{color:var(--muted);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.header-left a:hover,.site-header .header-contact:hover,.mobile-nav a:hover{color:var(--brown)}
+.site-header .menu-button>span{background:var(--muted)}
