@@ -15,9 +15,9 @@
   },
   "photos": {
     "hero": {
-      "src": "/images/uploads/img_5173.png",
-      "altIt": "Cocker Spaniel Inglese",
-      "altEn": "English Cocker Spaniel",
+      "src": "/images/uploads/cocker-erba-hero.jpg",
+      "altIt": "Cocker Spaniel Inglese fulvo sdraiato sull’erba",
+      "altEn": "Golden English Cocker Spaniel lying in the grass",
       "illustrative": false
     },
     "puppies": {
