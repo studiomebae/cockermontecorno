@@ -10,11 +10,11 @@
     "foster": "Family placements"
   },
   "contactSection": {
-    "contactLabel": "LOVELY THINGS START WITH HELLO.",
-    "contactTitle": "Shall we meet?",
-    "contactText": "A little curiosity or the dream of a new best friend. Message Natascia: we reply to WhatsApp messages only.",
+    "contactLabel": "CONTACT",
+    "contactTitle": "Get in touch.",
+    "contactText": "For information about puppies, visits or placements, message Natascia. We reply to WhatsApp messages only.",
     "whatsapp": "Write to Natascia",
-    "footerLine": "English Cocker Spaniels. A family passion.",
+    "footerLine": "English Cocker Spaniel breeding home in Grosseto.",
     "location": "Grosseto, Tuscany · Italy",
     "recognition": "Since 2005 · ENCI and FCI recognition since 2010",
     "privacy": "Privacy",
@@ -22,10 +22,10 @@
     "phoneNotice": "WhatsApp messages only · We do not answer calls"
   },
   "enquiry": {
-    "dialogTitle": "Let’s start with hello.",
+    "dialogTitle": "Message Natascia.",
     "dialogText": "Prepare your message for Natascia. We reply to WhatsApp messages only, not calls.",
     "nameLabel": "Your name",
-    "namePlaceholder": "What’s your name?",
+    "namePlaceholder": "Full name",
     "topicLabel": "Let’s talk about",
     "topics": [
       "Puppies",
@@ -36,7 +36,7 @@
       "A family placement"
     ],
     "messageLabel": "Your message",
-    "messagePlaceholder": "Tell us a little about yourself…",
+    "messagePlaceholder": "Write your request here",
     "send": "Continue to WhatsApp",
     "formNote": "Nothing is sent automatically. Your details are not stored on this website.",
     "sent": "Your message is ready. Open WhatsApp to send it to Natascia.",
@@ -47,7 +47,7 @@
     "privacyText": "This website uses no analytics or marketing cookies. The form prepares a message on your device without storing your details. If you continue to WhatsApp or email us, those services and Natascia handle the information to respond to you. For questions, use the email address shown on the website."
   },
   "interface": {
-    "contact": "Let’s talk",
+    "contact": "Contact",
     "menu": "Open menu",
     "close": "Close",
     "skip": "Skip to content",

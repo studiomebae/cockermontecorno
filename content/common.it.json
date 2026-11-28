@@ -10,11 +10,11 @@
     "foster": "Affido"
   },
   "contactSection": {
-    "contactLabel": "LE COSE BELLE INIZIANO CON UN CIAO.",
-    "contactTitle": "Ci conosciamo?",
-    "contactText": "Una curiosità o il sogno di un nuovo amico. Scrivi a Natascia: rispondiamo solo ai messaggi WhatsApp.",
+    "contactLabel": "CONTATTI",
+    "contactTitle": "Scrivici.",
+    "contactText": "Per informazioni su cuccioli, visite in allevamento o affido, scrivi a Natascia. Rispondiamo solo ai messaggi WhatsApp.",
     "whatsapp": "Scrivi a Natascia",
-    "footerLine": "Cocker Spaniel Inglesi. Una passione di famiglia.",
+    "footerLine": "Allevamento di Cocker Spaniel Inglesi a Grosseto.",
     "location": "Grosseto, Toscana · Italia",
     "recognition": "Dal 2005 · Riconosciuto ENCI e FCI dal 2010",
     "privacy": "Privacy",
@@ -22,10 +22,10 @@
     "phoneNotice": "Solo messaggi WhatsApp · Non rispondiamo alle chiamate"
   },
   "enquiry": {
-    "dialogTitle": "Cominciamo da un ciao.",
+    "dialogTitle": "Scrivi a Natascia.",
     "dialogText": "Prepara il tuo messaggio per Natascia. Rispondiamo solo ai messaggi WhatsApp, non alle chiamate.",
     "nameLabel": "Il tuo nome",
-    "namePlaceholder": "Come ti chiami?",
+    "namePlaceholder": "Nome e cognome",
     "topicLabel": "Di cosa parliamo?",
     "topics": [
       "I cuccioli",
@@ -36,7 +36,7 @@
       "L’affido di un cane"
     ],
     "messageLabel": "Il tuo messaggio",
-    "messagePlaceholder": "Raccontaci un po’ di te…",
+    "messagePlaceholder": "Scrivi qui la tua richiesta",
     "send": "Continua su WhatsApp",
     "formNote": "Nessun messaggio viene inviato automaticamente. I dati non vengono salvati sul sito.",
     "sent": "Il tuo messaggio è pronto. Apri WhatsApp per inviarlo a Natascia.",
@@ -47,7 +47,7 @@
     "privacyText": "Questo sito non usa cookie di analisi o marketing. Il modulo prepara un messaggio sul tuo dispositivo e non salva i dati. Se continui su WhatsApp o scrivi via email, i dati sono gestiti dai rispettivi servizi e da Natascia per rispondere alla richiesta. Per domande, contattaci all’indirizzo email indicato sul sito."
   },
   "interface": {
-    "contact": "Parliamone",
+    "contact": "Contatti",
     "menu": "Apri menu",
     "close": "Chiudi",
     "skip": "Vai al contenuto",

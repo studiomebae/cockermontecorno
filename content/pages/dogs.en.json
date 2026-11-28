@@ -6,10 +6,10 @@
   },
   "dogsLabel": "OUR BREEDING HOME’S DOGS",
   "dogsTitle": {
-    "line1": "Every one,",
-    "line2": "a world of their own."
+    "line1": "Our dogs.",
+    "line2": "One by one."
   },
-  "dogsIntro": "Our English Cocker Spaniels: different characters, with an endless love of being together.",
+  "dogsIntro": "Profiles of the English Cocker Spaniels at our breeding home, with coat, year of birth, pedigree and tests.",
   "demoNote": "Demonstration profiles: names, years, images, pedigree and test indicators are examples, not records of the actual dogs.",
   "filterLabel": "Coat",
   "allCoats": "All coats",
@@ -19,10 +19,10 @@
   "pedigree": "Pedigree",
   "tests": "Tests",
   "checkYes": "Yes · demonstration data",
-  "dogCta": "Come and meet them",
+  "dogCta": "Ask for information",
   "checkYesReal": "Yes",
   "checkNo": "Not listed",
-  "dogsEmpty": "Meet our dogs here soon. In the meantime, say hello.",
+  "dogsEmpty": "Profiles of our dogs will be published soon. For information, please message us.",
   "sexLabel": "Sex",
   "maleLabel": "Male",
   "femaleLabel": "Female",

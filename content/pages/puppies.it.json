@@ -6,12 +6,12 @@
   },
   "puppiesLabel": "CUCCIOLI DI COCKER SPANIEL INGLESE",
   "puppiesTitle": {
-    "line1": "Piccoli, grandi",
-    "line2": "inizi."
+    "line1": "Cuccioli.",
+    "line2": "Cucciolate e disponibilità."
   },
-  "puppiesIntro": "Un nuovo amico non si sceglie di fretta. Si incontra, si conosce. E a un certo punto, ci si riconosce.",
-  "puppyCta": "Parliamo dei cuccioli",
-  "careTitle": "Pronti per la vita.\nInsieme a te.",
+  "puppiesIntro": "Ogni affido inizia con un colloquio e una visita in allevamento, per conoscere la famiglia e presentarle il cucciolo.",
+  "puppyCta": "Chiedi informazioni sui cuccioli",
+  "careTitle": "Cosa accompagna\nil cucciolo.",
   "careText": "Dopo i 60 giorni di età, con le giuste attenzioni e solo dopo un colloquio conoscitivo in allevamento.",
   "checks": [
     "Pedigree ENCI / FCI",
@@ -20,22 +20,22 @@
     "Sverminazione",
     "Trattamento antiparassitario"
   ],
-  "journeyTitle": "Tre passi, fatti bene.",
+  "journeyTitle": "Come funziona.",
   "steps": [
     {
-      "heading": "Una chiacchierata",
-      "text": "Ci racconti di te, dei tuoi ritmi e della tua famiglia."
+      "heading": "Il primo contatto",
+      "text": "Ci scrivi su WhatsApp e ci racconti della tua famiglia e delle tue abitudini."
     },
     {
-      "heading": "Un incontro a Grosseto",
-      "text": "Vieni a conoscerci e incontri i nostri cocker."
+      "heading": "La visita a Grosseto",
+      "text": "Vieni in allevamento a conoscerci e a incontrare i nostri cani."
     },
     {
-      "heading": "Un nuovo inizio",
-      "text": "Ti accompagniamo nell’arrivo a casa del cucciolo."
+      "heading": "L’arrivo a casa",
+      "text": "Ti seguiamo nella preparazione all’arrivo del cucciolo e nelle prime settimane."
     }
   ],
-  "europeTitle": "Ci trovi anche dall’altra parte d’Europa.",
+  "europeTitle": "Famiglie dall’estero.",
   "europeText": "Scrivici anche in inglese. Organizzeremo una visita in Toscana e parleremo dei requisiti per il tuo Paese. Per i viaggi all’estero, l’età di partenza può essere successiva ai 60 giorni.",
   "faqs": [
     {
@@ -51,14 +51,14 @@
       "answer": "Pedigree ENCI/FCI, vaccinazioni, microchip, sverminazione e trattamento antiparassitario. Natascia ti illustrerà la documentazione e le cure del tuo cucciolo."
     }
   ],
-  "faqTitle": "Prima di conoscerci.",
+  "faqTitle": "Domande frequenti.",
   "currentLitter": {
     "label": "L’ULTIMA CUCCIOLATA",
     "bornLabel": "Nati a inizio",
     "bornPeriod": "Ottobre 2026",
     "readyLabel": "Pronti da",
     "readyPeriod": "Metà dicembre 2026",
-    "intro": "Piccoli Cocker Spaniel Inglesi che crescono con noi, giorno dopo giorno. Le nuove famiglie potranno accoglierli da metà dicembre 2026.",
+    "intro": "Cocker Spaniel Inglesi nati a inizio ottobre 2026, che crescono in allevamento. Potranno raggiungere le nuove famiglie da metà dicembre 2026.",
     "malesLabel": "Maschi",
     "males": "Bianco arancio e bianco roano.",
     "femalesLabel": "Femmine",
@@ -67,9 +67,9 @@
     "image": ""
   },
   "nextLitter": {
-    "label": "IL PROSSIMO CAPITOLO",
+    "label": "LA PROSSIMA CUCCIOLATA",
     "period": "Gennaio 2027",
-    "intro": "La prossima cucciolata è prevista per gennaio 2027. Un nuovo incontro da immaginare, con la stessa cura di sempre.",
+    "intro": "La prossima cucciolata è prevista per gennaio 2027.",
     "coloursLabel": "Colori previsti",
     "colours": "Bianco nero e bianco arancio.",
     "parentsLabel": "I genitori della prossima cucciolata",

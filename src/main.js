@@ -1,8 +1,3 @@
-import '@fontsource/inter-tight/latin-400.css';
-import '@fontsource/inter-tight/latin-500.css';
-import '@fontsource/inter-tight/latin-600.css';
-import '@fontsource/source-serif-4/latin-400.css';
-import '@fontsource/source-serif-4/latin-400-italic.css';
 import './style.css';
 const menuButton=document.querySelector('.menu-button');
 const mobileNav=document.querySelector('#mobile-nav');

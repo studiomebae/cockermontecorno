@@ -6,14 +6,14 @@
   },
   "galleryLabel": "THE GALLERY",
   "galleryTitle": {
-    "line1": "Sometimes,",
-    "line2": "words can wait."
+    "line1": "Gallery.",
+    "line2": "The English Cocker Spaniel."
   },
-  "galleryIntro": "Soft ears, curious eyes. A closer look at the cocker world.",
+  "galleryIntro": "A collection of images of the English Cocker Spaniel.",
   "galleryNote": "Illustrative images generated for the website; they do not show the breeder’s actual dogs.",
   "galleryOpen": "Open photograph",
   "galleryClose": "Close photograph",
   "previous": "Previous photograph",
   "next": "Next photograph",
-  "galleryEmpty": "New photographs are on their way."
+  "galleryEmpty": "New photographs will be published soon."
 }

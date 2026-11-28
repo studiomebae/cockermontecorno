@@ -6,10 +6,10 @@
   },
   "dogsLabel": "I CANI DELL’ALLEVAMENTO",
   "dogsTitle": {
-    "line1": "Ognuno, un piccolo",
-    "line2": "mondo a sé."
+    "line1": "I nostri cani.",
+    "line2": "Uno per uno."
   },
-  "dogsIntro": "I nostri Cocker Spaniel Inglesi: caratteri da scoprire, un’inesauribile voglia di stare insieme.",
+  "dogsIntro": "Le schede dei Cocker Spaniel Inglesi dell’allevamento, con mantello, anno di nascita, pedigree e test.",
   "demoNote": "Schede dimostrative: nomi, anni, immagini e indicazioni su pedigree e test sono di esempio, non dati dei cani reali.",
   "filterLabel": "Mantello",
   "allCoats": "Tutti i mantelli",
@@ -19,10 +19,10 @@
   "pedigree": "Pedigree",
   "tests": "Test",
   "checkYes": "Sì · dato dimostrativo",
-  "dogCta": "Vieni a conoscerli",
+  "dogCta": "Chiedi informazioni",
   "checkYesReal": "Sì",
   "checkNo": "Non indicato",
-  "dogsEmpty": "Presto ti presenteremo i nostri cani. Nel frattempo, scrivici.",
+  "dogsEmpty": "Le schede dei nostri cani saranno pubblicate a breve. Per informazioni, scrivici.",
   "sexLabel": "Sesso",
   "maleLabel": "Maschio",
   "femaleLabel": "Femmina",

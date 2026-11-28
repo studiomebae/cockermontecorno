@@ -20,7 +20,7 @@ for(const target of pages){
    expect(schemas.find(s=>s['@type']==='LocalBusiness').name).toBe(settings.business.name);
    if(target.key==='puppies')expect(schemas.find(s=>s['@type']==='FAQPage').mainEntity).toHaveLength(3);
    const fonts=await page.evaluate(()=>({body:getComputedStyle(document.body).fontFamily,title:getComputedStyle(document.querySelector('h1')).fontFamily,padding:parseFloat(getComputedStyle(document.querySelector('.wrap')).paddingLeft)}));
-   expect(fonts.body).toContain('Inter Tight');expect(fonts.title).toContain('Source Serif 4');expect(fonts.padding).toBeLessThanOrEqual(25);
+   expect(fonts.body).toContain('Helvetica Neue');expect(fonts.title).toContain('Cherry Swash');expect(fonts.padding).toBeLessThanOrEqual(25);
    for(const width of [360,390,768,1024,1440]){
     await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${path} overflow at ${width}px`).toBe(true);
     if(width<=1100){const brand=await page.locator('.site-header .brand strong').boundingBox(),actions=await page.locator('.header-right').boundingBox();expect(brand.x+brand.width,`${path} branding overlaps navigation at ${width}px`).toBeLessThanOrEqual(actions.x-8);}

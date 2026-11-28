@@ -6,12 +6,12 @@
   },
   "puppiesLabel": "ENGLISH COCKER SPANIEL PUPPIES",
   "puppiesTitle": {
-    "line1": "Little, lovely",
-    "line2": "beginnings."
+    "line1": "Puppies.",
+    "line2": "Litters and availability."
   },
-  "puppiesIntro": "A new best friend isn’t chosen in a hurry. You meet, get to know each other. Then, one day, it just feels right.",
-  "puppyCta": "Let’s talk puppies",
-  "careTitle": "Ready for life.\nTogether with you.",
+  "puppiesIntro": "Every placement begins with a conversation and a visit to our breeding home, so we can meet the family and introduce the puppy.",
+  "puppyCta": "Ask about the puppies",
+  "careTitle": "What comes\nwith each puppy.",
   "careText": "Puppies join their families after 60 days of age, with thoughtful care and an introductory visit to our breeding home.",
   "checks": [
     "ENCI / FCI pedigree",
@@ -20,22 +20,22 @@
     "Deworming",
     "Parasite treatment"
   ],
-  "journeyTitle": "Three thoughtful steps.",
+  "journeyTitle": "How it works.",
   "steps": [
     {
-      "heading": "A conversation",
-      "text": "Tell us about your life, your routines, and your family."
+      "heading": "First contact",
+      "text": "Message us on WhatsApp and tell us about your family and your routines."
     },
     {
       "heading": "A visit to Grosseto",
-      "text": "Come and meet us, and spend time with our cockers."
+      "text": "Visit the breeding home to meet us and our dogs."
     },
     {
-      "heading": "A new beginning",
-      "text": "We help you prepare for your puppy’s arrival at home."
+      "heading": "Arriving home",
+      "text": "We help you prepare for the puppy’s arrival and stay in touch during the first weeks."
     }
   ],
-  "europeTitle": "A little Tuscany. Wherever you call home.",
+  "europeTitle": "Families from abroad.",
   "europeText": "You’re welcome to write in English. We’ll plan your visit to Tuscany and discuss requirements for your country. For international travel, puppies may need to be older than 60 days.",
   "faqs": [
     {
@@ -51,14 +51,14 @@
       "answer": "An ENCI/FCI pedigree, vaccinations, microchip, deworming, and parasite treatment. Natascia will explain the documents and care for your individual puppy."
     }
   ],
-  "faqTitle": "Before we meet.",
+  "faqTitle": "Frequently asked questions.",
   "currentLitter": {
     "label": "OUR LATEST LITTER",
     "bornLabel": "Born in early",
     "bornPeriod": "October 2026",
     "readyLabel": "Ready from",
     "readyPeriod": "Mid-December 2026",
-    "intro": "Little English Cocker Spaniels growing up with us, day by day. They will be ready to join their new families from mid-December 2026.",
+    "intro": "English Cocker Spaniels born in early October 2026, growing up at our breeding home. They can join their new families from mid-December 2026.",
     "malesLabel": "Males",
     "males": "Orange and white, and white roan.",
     "femalesLabel": "Females",
@@ -67,9 +67,9 @@
     "image": ""
   },
   "nextLitter": {
-    "label": "THE NEXT CHAPTER",
+    "label": "THE NEXT LITTER",
     "period": "January 2027",
-    "intro": "Our next litter is expected in January 2027. A new beginning to look forward to, with the same thoughtful care.",
+    "intro": "Our next litter is expected in January 2027.",
     "coloursLabel": "Expected colours",
     "colours": "Black and white, and orange and white.",
     "parentsLabel": "Parents of the planned litter",
